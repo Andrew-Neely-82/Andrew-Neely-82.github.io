@@ -1,0 +1,26 @@
+@import "./variables";
+
+* {
+  font-family: sans-serif;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  color: map-get($colors, text);
+  background: map-get($colors, main-bg);
+}
+
+section {
+  min-height: 100vh;
+  padding: 10rem 9% 2rem;
+}
