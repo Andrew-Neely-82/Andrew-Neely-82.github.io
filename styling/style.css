@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
 * {
   font-family: "Manrope", sans-serif;
   box-sizing: border-box;
@@ -34,6 +34,7 @@ section {
   align-items: center;
   width: 100%;
   padding: 2rem 9%;
+  background: #112;
   z-index: 100;
 }
 .header .logo {
@@ -84,6 +85,8 @@ section {
 .home .home-content h1 {
   width: fit-content;
   font-size: 5.6rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
   line-height: 1.3;
   background: linear-gradient(89.97deg, #ae67fa 1.84%, #f49867 102.67%);
   -webkit-background-clip: text;
