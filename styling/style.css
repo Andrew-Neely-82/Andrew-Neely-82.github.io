@@ -1,11 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope&display=swap");
 * {
-  font-family: sans-serif;
+  font-family: "Manrope", sans-serif;
   box-sizing: border-box;
   text-decoration: none;
   border: none;
   scroll-behavior: smooth;
   padding: 0;
   margin: 0;
+  user-select: text;
 }
 
 html {
@@ -52,7 +54,11 @@ section {
   margin-left: 4rem;
   transition: 300ms ease-in-out;
 }
-.header .navbar a:hover, .header .navbar a.active {
+.header .navbar a:hover {
+  color: #0ef;
+  filter: drop-shadow(0 0 0.5rem #0ef);
+}
+.header .navbar a.active {
   color: #0ef;
 }
 
@@ -68,13 +74,97 @@ section {
 .home .home-content h3 {
   font-size: 3.2rem;
 }
+.home .home-content h3 span {
+  color: #0ef;
+  text-shadow: 0 0 2rem black;
+  filter: drop-shadow(0 0 0.25rem #0ef);
+}
+.home .home-content h3:nth-of-type(2) {
+  margin-bottom: 2rem;
+}
 .home .home-content h1 {
   font-size: 5.6rem;
   line-height: 1.3;
 }
+.home .home-content p {
+  font-size: 1.6rem;
+  width: 75%;
+}
+.home .home-content .social-media a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 4rem;
+  width: 4rem;
+  color: #0ef;
+  background: transparent;
+  box-shadow: 0 0 1rem #0ef inset;
+  border: 0.2rem solid #0ef;
+  border-radius: 100%;
+  margin: 3rem 1.5rem 3rem 0;
+  transition: 150ms ease-in-out;
+}
+.home .home-content .social-media a:hover {
+  background-color: #0ef;
+  color: #323946;
+  box-shadow: 0 0 1.5rem #0ef, 0 0 1rem #323946 inset;
+  transition: 150ms ease-in-out;
+}
+.home .home-content .social-media a:active {
+  filter: brightness(0.75);
+}
+.home .home-content .social-media a .bx {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scale: 1.5;
+}
+.home .home-content .btn {
+  display: inline-block;
+  position: relative;
+  background: #1f242d;
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  color: #0ef;
+  text-shadow: 0 0 1em #1f242d;
+  border: 2px solid #0ef;
+  border-radius: 10em;
+  box-shadow: 0 0 1em #0ef;
+  padding: 1rem 2.8rem;
+  transition: 500ms ease-in-out;
+  user-select: none;
+}
+.home .home-content .btn::before {
+  content: "";
+  position: absolute;
+  background: #0ef;
+  top: 120%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transform: perspective(1.5em) rotateX(40deg) scale(1, 0.35);
+  filter: blur(1em);
+  transition: 500ms ease-in-out;
+  opacity: 0;
+}
+.home .home-content .btn:hover {
+  color: #1f242d;
+  background-color: #0ef;
+  box-shadow: 0 0 2rem #0ef;
+  transition: 500ms ease-in-out;
+}
+.home .home-content .btn:hover::before {
+  opacity: 0.5;
+  transition: 500ms ease-in-out;
+}
 .home .home-img img {
-  width: 35vw;
-  border-radius: 10em 2em 0 0;
+  height: 35rem;
+  width: 35rem;
+  border: 0.5rem solid #0ef;
+  border-radius: 100%;
+  box-shadow: 0 0 2rem #0ef;
+  user-select: none;
 }
 
 /*# sourceMappingURL=style.css.map */
