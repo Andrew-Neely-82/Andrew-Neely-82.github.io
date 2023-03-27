@@ -17,7 +17,7 @@ html {
 
 body {
   color: #fff;
-  background: #1f242d;
+  background: linear-gradient(176deg, rgb(17, 17, 34) 25%, rgb(0, 38, 55) 100%);
 }
 
 section {
@@ -34,7 +34,6 @@ section {
   align-items: center;
   width: 100%;
   padding: 2rem 9%;
-  background: #1f242d;
   z-index: 100;
 }
 .header .logo {
@@ -83,8 +82,14 @@ section {
   margin-bottom: 2rem;
 }
 .home .home-content h1 {
+  width: fit-content;
   font-size: 5.6rem;
   line-height: 1.3;
+  background: linear-gradient(89.97deg, #ae67fa 1.84%, #f49867 102.67%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(2px 2px 2px rgba(255, 255, 255, 0.25));
 }
 .home .home-content p {
   font-size: 1.6rem;
@@ -117,23 +122,23 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  scale: 1.5;
+  scale: 2;
 }
 .home .home-content .btn {
-  display: inline-block;
+  display: inline-flex;
   position: relative;
-  background: #1f242d;
+  background: #112;
   font-size: 1.6rem;
   font-weight: 600;
   letter-spacing: 0.1rem;
   color: #0ef;
-  text-shadow: 0 0 1em #1f242d;
+  text-shadow: 0 0 1em #112;
   border: 2px solid #0ef;
   border-radius: 10em;
   box-shadow: 0 0 1em #0ef;
   padding: 1rem 2.8rem;
-  transition: 500ms ease-in-out;
   user-select: none;
+  transition: transform 100ms ease-in-out;
 }
 .home .home-content .btn::before {
   content: "";
@@ -143,20 +148,27 @@ section {
   left: 0;
   height: 100%;
   width: 100%;
-  transform: perspective(1.5em) rotateX(40deg) scale(1, 0.35);
+  transform: perspective(2.5em) rotateX(40deg) scale(1, 0.35);
   filter: blur(1em);
-  transition: 500ms ease-in-out;
   opacity: 0;
+  transition: opacity 500ms ease-in-out, top 100ms ease-in-out;
 }
-.home .home-content .btn:hover {
-  color: #1f242d;
+.home .home-content .btn:hover:not(:active) {
+  color: #112;
   background-color: #0ef;
   box-shadow: 0 0 2rem #0ef;
-  transition: 500ms ease-in-out;
+  transition: color 500ms ease-in-out, background-color 500ms ease-in-out, box-shadow 500ms ease-in-out;
 }
-.home .home-content .btn:hover::before {
+.home .home-content .btn:hover:not(:active)::before {
   opacity: 0.5;
-  transition: 500ms ease-in-out;
+}
+.home .home-content .btn:active {
+  transform: translateY(2px);
+  transition: none;
+}
+.home .home-content .btn:active::before {
+  opacity: 0.7;
+  transform: translateY(-2px) perspective(2.5em) rotateX(40deg) scale(1, 0.35);
 }
 .home .home-img img {
   height: 35rem;
