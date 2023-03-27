@@ -17,7 +17,7 @@ html {
 
 body {
   color: #fff;
-  background: linear-gradient(176deg, rgb(17, 17, 34) 25%, rgb(0, 38, 55) 100%);
+  background: #112;
 }
 
 section {
@@ -66,6 +66,7 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: linear-gradient(176deg, rgb(17, 17, 34) 25%, rgb(0, 38, 55) 100%);
 }
 .home .home-content h3,
 .home .home-content h1 {
@@ -180,6 +181,95 @@ section {
   border-radius: 100%;
   box-shadow: 0 0 2rem #0ef;
   user-select: none;
+}
+
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18rem;
+  background: linear-gradient(176deg, rgb(0, 38, 55) 25%, rgb(17, 17, 34) 55%);
+}
+.about .about-img img {
+  height: 35rem;
+  width: 35rem;
+  border: 0.5rem solid #0ef;
+  border-radius: 100%;
+  box-shadow: 0 0 2rem #0ef;
+  user-select: none;
+}
+.about .about-content .heading {
+  font-size: 4.5rem;
+}
+.about .about-content .heading span {
+  color: #0ef;
+  text-shadow: 0 0 2rem black;
+  filter: drop-shadow(0 0 0.25rem #0ef);
+}
+.about .about-content h2 {
+  line-height: 1.2;
+}
+.about .about-content h3 {
+  width: fit-content;
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.3;
+  background: linear-gradient(89.97deg, #ae67fa 1.84%, #f49867 102.67%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(2px 2px 2px rgba(255, 255, 255, 0.25));
+}
+.about .about-content p {
+  font-size: 1.6rem;
+  margin: 2rem 0 3rem;
+}
+.about .about-content .btn {
+  display: inline-flex;
+  position: relative;
+  background: #112;
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  color: #0ef;
+  text-shadow: 0 0 1em #112;
+  border: 2px solid #0ef;
+  border-radius: 10em;
+  box-shadow: 0 0 1em #0ef;
+  padding: 1rem 2.8rem;
+  user-select: none;
+  transition: transform 100ms ease-in-out;
+}
+.about .about-content .btn::before {
+  content: "";
+  position: absolute;
+  background: #0ef;
+  top: 120%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transform: perspective(2.5em) rotateX(40deg) scale(1, 0.35);
+  filter: blur(1em);
+  opacity: 0;
+  transition: opacity 500ms ease-in-out, top 100ms ease-in-out;
+}
+.about .about-content .btn:hover:not(:active) {
+  color: #112;
+  background-color: #0ef;
+  box-shadow: 0 0 2rem #0ef;
+  transition: color 500ms ease-in-out, background-color 500ms ease-in-out, box-shadow 500ms ease-in-out;
+}
+.about .about-content .btn:hover:not(:active)::before {
+  opacity: 0.5;
+}
+.about .about-content .btn:active {
+  transform: translateY(2px);
+  transition: none;
+}
+.about .about-content .btn:active::before {
+  opacity: 0.7;
+  transform: translateY(-2px) perspective(2.5em) rotateX(40deg) scale(1, 0.35);
 }
 
 /*# sourceMappingURL=style.css.map */

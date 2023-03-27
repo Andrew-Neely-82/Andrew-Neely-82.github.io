@@ -19,7 +19,8 @@ html {
 
 body {
   color: map-get($colors, text);
-  background: linear-gradient(176deg, rgba(17, 17, 34, 1) 25%, rgba(0, 38, 55, 1) 100%);
+  // background: linear-gradient(176deg, rgba(17, 17, 34, 1) 25%, rgba(0, 38, 55, 1) 100%);
+  background: map-get($colors, main-bg);
 }
 
 section {
