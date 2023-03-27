@@ -34,7 +34,7 @@ section {
   align-items: center;
   width: 100%;
   padding: 2rem 9%;
-  background: #112;
+  background: inherit;
   z-index: 100;
 }
 .header .logo {
@@ -270,6 +270,19 @@ section {
 .about .about-content .btn:active::before {
   opacity: 0.7;
   transform: translateY(-2px) perspective(2.5em) rotateX(40deg) scale(1, 0.35);
+}
+
+::-webkit-scrollbar {
+  width: 1rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgb(17, 17, 34);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(0, 38, 55);
+  border-radius: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */
