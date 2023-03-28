@@ -1,0 +1,117 @@
+@import "./variables";
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 55%;
+  }
+}
+
+@media (max-width: 990px) {
+  .header {
+    padding: 2rem 3%;
+  }
+
+  section {
+    padding: 10rem 3% 2rem;
+  }
+}
+
+@media (max-width: 770px) {
+  .header {
+    width: 100%;
+
+    .bx-menu {
+      display: block;
+      color: white;
+    }
+  }
+
+  .navbar {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem 3%;
+    background: map-get($colors, main-bg);
+    border-top: 0.1rem solid rgba(0 0 0 /0.2);
+    box-shadow: 0 0.5rem 1rem rgba(0 0 0 /0.2);
+    transition: 250ms ease;
+
+    a {
+      display: block;
+      font-size: 2rem;
+      margin: 3rem 0;
+    }
+  }
+
+  .navbar.active {
+    display: block;
+  }
+
+  .home {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+
+    .home-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10em;
+    }
+  }
+
+  .about,
+  .about-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .skills {
+    .skills-container {
+      flex-wrap: wrap;
+
+      .skills-box {
+        width: 100%;
+        margin: 1rem 0;
+        text-align: center;
+        padding: 1rem;
+
+        i {
+          font-size: 3rem;
+        }
+
+        h3 {
+          font-size: 2rem;
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+        }
+
+        p {
+          font-size: 1.4rem;
+        }
+
+        .btn {
+          font-size: 1.4rem;
+          padding: 0.5rem 1rem;
+        }
+      }
+    }
+  }
+
+  .contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer {
+    width: 100%;
+  }
+}
