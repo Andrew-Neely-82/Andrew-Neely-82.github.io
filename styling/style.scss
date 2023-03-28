@@ -45,6 +45,10 @@
   }
 }
 
+.header.sticky {
+  border-bottom: 0.1rem solid rgba(0 0 0 / 0.2);
+}
+
 .home {
   display: flex;
   justify-content: center;
@@ -182,6 +186,12 @@
       border-radius: 100%;
       box-shadow: 0 0 2rem map-get($colors, main);
       user-select: none;
+      transition: 250ms ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.02);
+      }
     }
   }
 }
@@ -201,6 +211,12 @@
       border-radius: 100%;
       box-shadow: 0 0 2rem map-get($colors, main);
       user-select: none;
+      transition: 250ms ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.02);
+      }
     }
   }
 
@@ -291,18 +307,270 @@
   }
 }
 
+.skills {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 
+  h2 {
+    margin-bottom: 5rem;
+  }
 
-::-webkit-scrollbar {
-  width: 1rem;
+  .heading {
+  }
+  .skills-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    .skills-box {
+      flex: 1 1 20rem;
+      // text-align: center;
+      background: map-get($colors, second-bg);
+      border: 0.2rem solid map-get($colors, main);
+      border-radius: 2rem;
+      padding: 3rem 2rem 4rem;
+      transition: 250ms ease-in-out;
+
+      &:hover {
+        filter: drop-shadow(0 0 1em map-get($colors, main));
+        transform: scale(1.02);
+      }
+    }
+
+    i {
+      font-size: 7rem;
+      color: map-get($colors, main);
+    }
+
+    h3 {
+      font-size: 2.6rem;
+    }
+
+    p {
+      font-size: 1.6rem;
+      margin: 1rem 0 3rem;
+    }
+  }
 }
 
-::-webkit-scrollbar-track {
-  // background-color: rgba(0, 38, 55, 1);
-  background-color: rgba(17, 17, 34, 1);
+.portfolio {
+  // background: inherit; // TODO: update
+  h2 {
+    margin-bottom: 4rem;
+  }
+  .heading {
+    span {
+      color: map-get($colors, main);
+      text-shadow: 0 0 2rem black;
+      filter: drop-shadow(0 0 0.25rem map-get($colors, main));
+    }
+  }
+  .portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 2.5rem;
+
+    .portfolio-box {
+      position: relative;
+      display: flex;
+      border-radius: 2rem;
+      box-shadow: 0 0 1rem map-get($colors, main-bg);
+      overflow: hidden;
+
+      &:hover .portfolio-layer {
+        transform: translateY(0);
+      }
+
+      img {
+        height: 100%;
+        width: 100%;
+        transition: 250ms ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+
+      .portfolio-layer {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        background: linear-gradient(rgba(0 0 0 / 0.1), rgba(0 238 221 / 0.25));
+        padding: 0 4rem;
+        transform: translateY(100%);
+        transition: 250ms ease-in-out;
+        cursor: pointer;
+
+        h4 {
+          font-size: 2.5rem;
+        }
+
+        p {
+          font-size: 1.25rem;
+          margin: 0.3rem 0 1rem;
+        }
+
+        a {
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          height: 5rem;
+          width: 5rem;
+          background: map-get($colors, text);
+          border-radius: 50%;
+
+          i {
+            font-size: 2rem;
+            color: map-get($colors, second-bg);
+          }
+        }
+      }
+    }
+  }
 }
 
-::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 38, 55, 1);
-  border-radius: 10px;
+.contact {
+  h2 {
+    margin: 3rem;
+  }
+
+  form {
+    max-width: 70rem;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 3rem;
+
+    .input-box {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+
+      input {
+        display: flex;
+        gap: 1rem;
+      }
+    }
+
+    textarea {
+      resize: none;
+    }
+  }
+
+  form .input-box input,
+  form textarea {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: map-get($colors, text);
+    background: map-get($colors, second-bg);
+    border-radius: 0.8rem;
+    margin: 0.7rem 0;
+  }
 }
+
+.btn {
+  display: inline-flex;
+  position: relative;
+  background: map-get($colors, main-bg);
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  color: map-get($colors, main);
+  text-shadow: 0 0 1em map-get($colors, main-bg);
+  border: 2px solid map-get($colors, main);
+  border-radius: 10em;
+  box-shadow: 0 0 1em map-get($colors, main);
+  padding: 1rem 2.8rem;
+  user-select: none;
+  transition: transform 100ms ease-in-out;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    background: map-get($colors, main);
+    top: 120%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transform: perspective(2.5em) rotateX(40deg) scale(1, 0.35);
+    filter: blur(1em);
+    opacity: 0;
+    transition: opacity 500ms ease-in-out, top 100ms ease-in-out;
+  }
+
+  &:hover:not(:active) {
+    color: map-get($colors, main-bg);
+    background-color: map-get($colors, main);
+    box-shadow: 0 0 2rem map-get($colors, main);
+    transition: color 500ms ease-in-out, background-color 500ms ease-in-out, box-shadow 500ms ease-in-out;
+
+    &::before {
+      opacity: 0.5;
+    }
+  }
+
+  &:active {
+    transform: translateY(2px);
+    transition: none;
+
+    &::before {
+      opacity: 0.7;
+      transform: translateY(-2px) perspective(2.5em) rotateX(40deg) scale(1, 0.35);
+    }
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background: map-get($colors, second-bg);
+  padding: 2rem 9%;
+
+  .footer-text {
+    p {
+      font-size: 1.6rem;
+    }
+  }
+
+  .footer-iconTop {
+    a {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      background: map-get($colors, main);
+      border-radius: 100%;
+      padding: 0.8rem;
+      transition: 250ms ease-in-out;
+
+      &:hover {
+        box-shadow: 0 0 1rem map-get($colors, main);
+      }
+
+      i {
+        font-size: 2.4rem;
+        color: map-get($colors, second-bg);
+      }
+    }
+  }
+}
+
+@import "./media";
