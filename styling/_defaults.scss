@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
 @import "./variables";
+@import "./mixins";
 
 * {
   font-family: "Manrope", sans-serif;
@@ -7,8 +8,7 @@
   text-decoration: none;
   border: none;
   scroll-behavior: smooth;
-  padding: 0;
-  margin: 0;
+  @include p0m0;
   user-select: text;
 }
 
@@ -19,7 +19,6 @@ html {
 
 body {
   color: map-get($colors, text);
-  // background: linear-gradient(176deg, rgba(17, 17, 34, 1) 25%, rgba(0, 38, 55, 1) 100%);
   background: map-get($colors, main-bg);
 }
 
@@ -28,18 +27,29 @@ section {
   padding: 10rem 9% 2rem;
 }
 
-// scroll bar
+::placeholder {
+  color: rgba(255 255 255 / 0.5);
+}
+
+// * scroll bar
 
 ::-webkit-scrollbar {
-  width: 1rem;
+  width: 1.5rem;
+  border-radius: 100vw;
 }
 
 ::-webkit-scrollbar-track {
-  // background-color: rgba(0, 38, 55, 1);
-  background-color: rgba(17, 17, 34, 1);
+  background: linear-gradient(176deg, rgba(17, 17, 34, 1) 25%, rgba(0, 38, 55, 1) 100%);
+  margin-block: 7.5rem auto;
+  border-radius: 100vw;
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: rgba(0, 38, 55, 1);
-  border-radius: 10px;
+  border: 1px solid black;
+  border-radius: 100vw;
+
+  &:hover {
+    background-color: rgba(0, 68, 85, 1);
+  }
 }

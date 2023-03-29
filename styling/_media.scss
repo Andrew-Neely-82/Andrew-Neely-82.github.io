@@ -1,4 +1,5 @@
 @import "./variables";
+@import "./mixins";
 
 @media (max-width: 1200px) {
   html {
@@ -36,8 +37,8 @@
     background: map-get($colors, main-bg);
     border-top: 0.1rem solid rgba(0 0 0 /0.2);
     box-shadow: 0 0.5rem 1rem rgba(0 0 0 /0.2);
-    transition: 250ms ease;
-
+    @include transition;
+    
     a {
       display: block;
       font-size: 2rem;

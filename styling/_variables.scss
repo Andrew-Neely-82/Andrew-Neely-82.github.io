@@ -4,3 +4,40 @@ $colors: (
   text: #fff,
   main: #0ef,
 );
+
+$display: (
+  flex: flex,
+  none: none,
+  inline-flex: inline-flex,
+  grid: grid,
+);
+$flex-direction: (
+  row: row,
+  column: column,
+  column-reverse: column-reverse,
+);
+$justify-content: (
+  flex-start: flex-start,
+  center: center,
+  flex-end: flex-end,
+  space-between: space-between,
+);
+$align-content: (
+  center: center,
+  flex-start: flex-start,
+  flex-end: flex-end,
+  space-around: space-around,
+  space-between: space-between,
+  stretch: stretch,
+);
+$align-items: (
+  center: center,
+  flex-start: flex-start,
+  flex-end: flex-end,
+  stretch: stretch,
+  baseline: baseline,
+);
+$flex-wrap: (
+  wrap: wrap,
+  nowrap: nowrap,
+);
