@@ -176,3 +176,103 @@
     width: 100%;
   }
 }
+
+@media (max-width: 375px) {
+  .home {
+    .home-img {
+      img {
+        @include heightWidth(30rem, same);
+      }
+    }
+  }
+  .portfolio {
+    .heading {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+
+      span {
+        margin-left: 1rem;
+      }
+    }
+  }
+
+  .footer {
+    .footer-text {
+      span {
+        display: block;
+      }
+    }
+  }
+}
+
+@media (max-width: 280px) {
+  .home {
+    .home-content {
+      h3 {
+        font-size: 2rem;
+      }
+      h1 {
+        font-size: 4rem;
+      }
+    }
+
+    .home-img {
+      img {
+        height: 22rem;
+        width: 22rem;
+      }
+    }
+  }
+
+  .about {
+    .about-content {
+      .heading {
+        font-size: 4rem;
+      }
+
+      h3 {
+        font-size: 4rem;
+      }
+      p {
+        text-align: center;
+
+        &:nth-of-type(2) {
+          font-size: 1.3em;
+        }
+      }
+    }
+  }
+
+  .skills {
+    .heading {
+      width: 100%;
+      font-size: 3rem;
+      margin: 2rem auto;
+    }
+  }
+
+  .portfolio {
+    .heading {
+      font-size: 3rem;
+    }
+  }
+
+  .contact {
+    .heading {
+      font-size: 3rem;
+    }
+
+    form {
+      .input-box {
+        input {
+          font-size: 1.25rem;
+        }
+      }
+
+      textarea {
+        font-size: 1.25rem;
+      }
+    }
+  }
+}

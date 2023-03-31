@@ -27,6 +27,14 @@ section {
   padding: 10rem 9% 2rem;
 }
 
+h1,
+h2,
+h3,
+p,
+span {
+  filter: drop-shadow(0 0 1rem rgba(0 0 0 / 1));
+}
+
 ::placeholder {
   color: rgba(255 255 255 / 0.5);
 }
@@ -45,12 +53,12 @@ section {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 45, 62, 1);
+  background-color: rgba(0, 70, 90, 1);
   border: 1px solid black;
   border-radius: 100vw;
 
   &:hover {
-    background-color: rgba(0, 68, 85, 1);
+    background-color: rgba(0, 100, 120, 1);
   }
 
   &:active {

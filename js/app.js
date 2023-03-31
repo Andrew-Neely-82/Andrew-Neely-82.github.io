@@ -31,10 +31,18 @@ const toggleStickyHeader = () => {
 const toggleMobileMenu = () => {
   const menuIcon = document.querySelector("#menu-icon");
   const navbar = document.querySelector(".navbar");
+  const navLinks = document.querySelectorAll(".navbar a");
 
   menuIcon.addEventListener("click", () => {
     menuIcon.classList.toggle("bx-x");
     navbar.classList.toggle("active");
+  });
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      menuIcon.classList.remove("bx-x");
+      navbar.classList.remove("active");
+    });
   });
 };
 
@@ -78,11 +86,37 @@ const animateContactPlaceholders = () => {
   document.addEventListener("scroll", checkVisibility);
 };
 
+const toggleFooterVisibility = () => {
+  const footer = document.querySelector("footer");
+  const contactSection = document.getElementById("message");
+  const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+  const checkFooterVisibility = () => {
+    const rect = contactSection.getBoundingClientRect();
+    const isVisible = rect.top <= windowHeight && rect.top + rect.height >= 0;
+
+    if (isVisible) {
+      footer.classList.add("visible");
+      footer.classList.remove("hidden");
+    } else {
+      footer.classList.add("hidden");
+      footer.classList.remove("visible");
+    }
+  };
+
+  // Call the function initially to set the correct state
+  checkFooterVisibility();
+
+  // Update the footer visibility on scroll
+  window.addEventListener("scroll", checkFooterVisibility);
+};
+
 const init = () => {
   highlightActiveNavLink();
   toggleStickyHeader();
   toggleMobileMenu();
   animateContactPlaceholders();
+  toggleFooterVisibility();
 };
 
 init();
