@@ -17,7 +17,7 @@
   }
 
   .contact {
-    @include flexbox(flex, column, center, center, 0)
+    @include flexbox(flex, column, center, center, 0);
   }
 
   ::-webkit-scrollbar {
@@ -70,6 +70,21 @@
       justify-content: center;
       align-items: center;
       margin-top: 10em;
+
+      h3,
+      h1,
+      p {
+        width: 100%;
+        text-align: start;
+      }
+    }
+    .social-media,
+    .social-media a,
+    i {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
     }
   }
 
@@ -81,35 +96,72 @@
     align-items: center;
   }
 
+  .about {
+    .about-img {
+      display: none;
+    }
+    .about-content {
+      p {
+        padding: 0 2rem;
+      }
+    }
+  }
+
   .skills {
+    .heading {
+      width: 100%;
+      margin: 2rem 4rem;
+      padding-left: 3rem;
+    }
+
     .skills-container {
-      flex-wrap: wrap;
+      display: flex;
 
       .skills-box {
-        width: 100%;
-        margin: 1rem 0;
-        text-align: center;
-        padding: 1rem;
+        height: 35rem;
+        padding: 0 2rem !important;
 
-        i {
-          font-size: 3rem;
+        .skills-box-header {
+          display: flex;
+          width: 100%;
+          text-align: center;
+          @include p0m0;
+
+          i {
+            font-size: 6rem;
+          }
+
+          h3 {
+            font-size: 3rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+          }
+
+          p {
+            font-size: 1.4rem;
+          }
+        }
+        br {
+          display: none;
         }
 
-        h3 {
-          font-size: 2rem;
-          margin-top: 1rem;
-          margin-bottom: 1rem;
-        }
-
-        p {
-          font-size: 1.4rem;
-        }
-
-        .btn {
-          font-size: 1.4rem;
-          padding: 0.5rem 1rem;
+        .btn-container {
+          .btn {
+            font-size: 1.4rem;
+            padding: 0.5rem 1rem;
+            margin: 2rem;
+          }
         }
       }
+    }
+  }
+
+  .portfolio {
+    .portfolio-wrapper {
+      border: none;
+      padding: 0;
+      height: 100%;
+      overflow: inherit;
     }
   }
 

@@ -751,6 +751,20 @@ section {
     align-items: center;
     margin-top: 10em;
   }
+  .home .home-content h3,
+  .home .home-content h1,
+  .home .home-content p {
+    width: 100%;
+    text-align: start;
+  }
+  .home .social-media,
+  .home .social-media a,
+  .home i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
   .about,
   .about-content {
     display: flex;
@@ -758,29 +772,55 @@ section {
     justify-content: center;
     align-items: center;
   }
+  .about .about-img {
+    display: none;
+  }
+  .about .about-content p {
+    padding: 0 2rem;
+  }
+  .skills .heading {
+    width: 100%;
+    margin: 2rem 4rem;
+    padding-left: 3rem;
+  }
   .skills .skills-container {
-    flex-wrap: wrap;
+    display: flex;
   }
   .skills .skills-container .skills-box {
+    height: 35rem;
+    padding: 0 2rem !important;
+  }
+  .skills .skills-container .skills-box .skills-box-header {
+    display: flex;
     width: 100%;
-    margin: 1rem 0;
     text-align: center;
-    padding: 1rem;
+    padding: 0;
+    margin: 0;
   }
-  .skills .skills-container .skills-box i {
+  .skills .skills-container .skills-box .skills-box-header i {
+    font-size: 6rem;
+  }
+  .skills .skills-container .skills-box .skills-box-header h3 {
     font-size: 3rem;
-  }
-  .skills .skills-container .skills-box h3 {
-    font-size: 2rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
-  .skills .skills-container .skills-box p {
+  .skills .skills-container .skills-box .skills-box-header p {
     font-size: 1.4rem;
   }
-  .skills .skills-container .skills-box .btn {
+  .skills .skills-container .skills-box br {
+    display: none;
+  }
+  .skills .skills-container .skills-box .btn-container .btn {
     font-size: 1.4rem;
     padding: 0.5rem 1rem;
+    margin: 2rem;
+  }
+  .portfolio .portfolio-wrapper {
+    border: none;
+    padding: 0;
+    height: 100%;
+    overflow: inherit;
   }
   .contact {
     display: flex;
