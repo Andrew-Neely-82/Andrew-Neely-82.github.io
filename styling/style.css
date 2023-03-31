@@ -41,12 +41,15 @@ section {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgb(0, 38, 55);
+  background-color: rgb(0, 45, 62);
   border: 1px solid black;
   border-radius: 100vw;
 }
 ::-webkit-scrollbar-thumb:hover {
   background-color: rgb(0, 68, 85);
+}
+::-webkit-scrollbar-thumb:active {
+  cursor: -webkit-grabbing;
 }
 
 .header {
@@ -158,6 +161,34 @@ section {
   transform: scale(1.25);
   transition: 250ms ease-in-out;
 }
+.home .home-content .social-media a::before {
+  content: "";
+  inset: 120% 0 0 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: #0ef;
+  transform: perspective(2.5em) rotateX(40deg) scale(1, 0.35);
+  filter: blur(1em);
+  opacity: 0;
+  transition: opacity 500ms ease-in-out, top 100ms ease-in-out, transform 500ms ease-in-out;
+}
+.home .home-content .social-media a:hover:not(:active) {
+  color: #112;
+  background-color: #0ef;
+  box-shadow: 0 0 2rem #0ef;
+}
+.home .home-content .social-media a:hover:not(:active)::before {
+  opacity: 0.5;
+}
+.home .home-content .social-media a:active {
+  transform: translateY(2px);
+}
+.home .home-content .social-media a:active::before {
+  opacity: 0.7;
+  transform: translateY(-2px) perspective(2.5em) rotateX(40deg) scale(1, 0.35);
+  z-index: 100;
+}
 .home .home-content .social-media a:active {
   filter: brightness(0.75);
 }
@@ -183,7 +214,7 @@ section {
   padding: 1rem 2.8rem;
   margin: 0;
   user-select: none;
-  transition: transform 100ms ease-in-out;
+  transition: transform 100ms ease-in-out, color 500ms ease-in-out, background-color 500ms ease-in-out, box-shadow 500ms ease-in-out;
 }
 .home .home-content .btn::before {
   content: "";
@@ -195,20 +226,18 @@ section {
   transform: perspective(2.5em) rotateX(40deg) scale(1, 0.35);
   filter: blur(1em);
   opacity: 0;
-  transition: opacity 500ms ease-in-out, top 100ms ease-in-out;
+  transition: opacity 500ms ease-in-out, top 100ms ease-in-out, transform 500ms ease-in-out;
 }
 .home .home-content .btn:hover:not(:active) {
   color: #112;
   background-color: #0ef;
   box-shadow: 0 0 2rem #0ef;
-  transition: color 500ms ease-in-out, background-color 500ms ease-in-out, box-shadow 500ms ease-in-out;
 }
 .home .home-content .btn:hover:not(:active)::before {
   opacity: 0.5;
 }
 .home .home-content .btn:active {
   transform: translateY(2px);
-  transition: none;
 }
 .home .home-content .btn:active::before {
   opacity: 0.7;
@@ -290,34 +319,32 @@ section {
   border-radius: 10em;
   box-shadow: 0 0 1em #0ef;
   padding: 1rem 2.8rem;
-  margin: auto;
+  margin: 0;
   user-select: none;
-  transition: transform 100ms ease-in-out;
+  transition: transform 100ms ease-in-out, color 500ms ease-in-out, background-color 500ms ease-in-out, box-shadow 500ms ease-in-out;
 }
 .about .about-content .btn::before {
   content: "";
-  position: absolute;
-  background: #0ef;
   inset: 120% 0 0 0;
   height: 100%;
   width: 100%;
+  position: absolute;
+  background: #0ef;
   transform: perspective(2.5em) rotateX(40deg) scale(1, 0.35);
   filter: blur(1em);
   opacity: 0;
-  transition: opacity 500ms ease-in-out, top 100ms ease-in-out;
+  transition: opacity 500ms ease-in-out, top 100ms ease-in-out, transform 500ms ease-in-out;
 }
 .about .about-content .btn:hover:not(:active) {
   color: #112;
   background-color: #0ef;
   box-shadow: 0 0 2rem #0ef;
-  transition: color 500ms ease-in-out, background-color 500ms ease-in-out, box-shadow 500ms ease-in-out;
 }
 .about .about-content .btn:hover:not(:active)::before {
   opacity: 0.5;
 }
 .about .about-content .btn:active {
   transform: translateY(2px);
-  transition: none;
 }
 .about .about-content .btn:active::before {
   opacity: 0.7;
@@ -332,8 +359,14 @@ section {
 }
 .skills h2 {
   margin-bottom: 5rem;
+  margin-left: 7rem;
 }
 .skills .heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
   font-size: 4.5rem;
 }
 .skills .heading span {
@@ -350,7 +383,10 @@ section {
   gap: 2rem;
 }
 .skills .skills-container .skills-box {
-  flex: 1 1 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 40rem;
   background: radial-gradient(rgba(0, 0, 0, 0.1), #323946);
   border: 0.2rem solid #0ef;
   border-radius: 2rem;
@@ -361,6 +397,67 @@ section {
 .skills .skills-container .skills-box:hover {
   filter: drop-shadow(0 0 1em #0ef);
   transform: scale(1.02);
+}
+.skills .skills-container .skills-box .skills-box-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.skills .skills-container .skills-box .skills-box-header h3 {
+  margin-left: 1rem;
+}
+.skills .skills-container .skills-box .btn-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.skills .skills-container .skills-box .btn-container .btn {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  width: 20rem;
+  background: #112;
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  color: #0ef;
+  text-shadow: 0 0 1em #112;
+  border: 2px solid #0ef;
+  border-radius: 10em;
+  box-shadow: 0 0 1em #0ef;
+  padding: 1rem 2.8rem;
+  margin: 0;
+  user-select: none;
+  transition: transform 100ms ease-in-out, color 500ms ease-in-out, background-color 500ms ease-in-out, box-shadow 500ms ease-in-out;
+  cursor: pointer;
+}
+.skills .skills-container .skills-box .btn-container .btn::before {
+  content: "";
+  inset: 120% 0 0 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: #0ef;
+  transform: perspective(2.5em) rotateX(40deg) scale(1, 0.35);
+  filter: blur(1em);
+  opacity: 0;
+  transition: opacity 500ms ease-in-out, top 100ms ease-in-out, transform 500ms ease-in-out;
+}
+.skills .skills-container .skills-box .btn-container .btn:hover:not(:active) {
+  color: #112;
+  background-color: #0ef;
+  box-shadow: 0 0 2rem #0ef;
+}
+.skills .skills-container .skills-box .btn-container .btn:hover:not(:active)::before {
+  opacity: 0.5;
+}
+.skills .skills-container .skills-box .btn-container .btn:active {
+  transform: translateY(2px);
+}
+.skills .skills-container .skills-box .btn-container .btn:active::before {
+  opacity: 0.7;
+  transform: translateY(-2px) perspective(2.5em) rotateX(40deg) scale(1, 0.35);
+  z-index: 100;
 }
 .skills .skills-container i {
   font-size: 7rem;
@@ -374,22 +471,36 @@ section {
   margin: 1rem 0 3rem;
 }
 
+.portfolio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .portfolio h2 {
+  text-align: end;
   font-size: 4.5rem;
   margin-bottom: 4rem;
+  margin-right: 7rem;
 }
 .portfolio .heading span {
   color: #0ef;
   text-shadow: 0 0 2rem black;
   filter: drop-shadow(0 0 0.25rem #0ef);
 }
-.portfolio .portfolio-container {
+.portfolio .portfolio-wrapper {
+  max-height: 70vh;
+  overflow-x: auto;
+  border: 0.5rem solid #0ef;
+  border-radius: 2rem;
+  padding: 6rem 4rem 8rem 6rem;
+}
+.portfolio .portfolio-wrapper .portfolio-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   align-items: center;
   gap: 2.5rem;
 }
-.portfolio .portfolio-container .portfolio-box {
+.portfolio .portfolio-wrapper .portfolio-container .portfolio-box {
   position: relative;
   display: flex;
   border: 0.5rem solid #0ef;
@@ -397,19 +508,19 @@ section {
   box-shadow: 0 0 1rem #112;
   overflow: hidden;
 }
-.portfolio .portfolio-container .portfolio-box:hover .portfolio-layer {
+.portfolio .portfolio-wrapper .portfolio-container .portfolio-box:hover .portfolio-layer {
   transform: translateY(0);
 }
-.portfolio .portfolio-container .portfolio-box img {
+.portfolio .portfolio-wrapper .portfolio-container .portfolio-box img {
   height: 100%;
   width: 100%;
   transition: 250ms ease-in-out;
   cursor: pointer;
 }
-.portfolio .portfolio-container .portfolio-box img:hover {
+.portfolio .portfolio-wrapper .portfolio-container .portfolio-box img:hover {
   transform: scale(1.1);
 }
-.portfolio .portfolio-container .portfolio-box .portfolio-layer {
+.portfolio .portfolio-wrapper .portfolio-container .portfolio-box .portfolio-layer {
   position: absolute;
   inset: 0 0 0 0;
   display: flex;
@@ -426,14 +537,14 @@ section {
   transition: 250ms ease-in-out;
   cursor: pointer;
 }
-.portfolio .portfolio-container .portfolio-box .portfolio-layer h4 {
+.portfolio .portfolio-wrapper .portfolio-container .portfolio-box .portfolio-layer h4 {
   font-size: 2.5rem;
 }
-.portfolio .portfolio-container .portfolio-box .portfolio-layer p {
+.portfolio .portfolio-wrapper .portfolio-container .portfolio-box .portfolio-layer p {
   font-size: 1.25rem;
   margin: 0.3rem 0 1rem;
 }
-.portfolio .portfolio-container .portfolio-box .portfolio-layer a {
+.portfolio .portfolio-wrapper .portfolio-container .portfolio-box .portfolio-layer a {
   display: inline-flex;
   flex-direction: row;
   justify-content: center;
@@ -444,11 +555,17 @@ section {
   border: 2px solid #0ef;
   border-radius: 100%;
 }
-.portfolio .portfolio-container .portfolio-box .portfolio-layer a i {
+.portfolio .portfolio-wrapper .portfolio-container .portfolio-box .portfolio-layer a i {
   font-size: 2rem;
   color: #323946;
 }
 
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  user-select: none;
+}
 .contact h2 {
   text-align: center;
   font-size: 4.5rem;
@@ -479,6 +596,52 @@ section {
 .contact form textarea {
   resize: none;
 }
+.contact form .btn {
+  display: inline-flex;
+  position: relative;
+  background: #112;
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  color: #0ef;
+  text-shadow: 0 0 1em #112;
+  border: 2px solid #0ef;
+  border-radius: 10em;
+  box-shadow: 0 0 1em #0ef;
+  padding: 1rem 2.8rem;
+  margin: 2rem;
+  user-select: none;
+  transition: transform 100ms ease-in-out, color 500ms ease-in-out, background-color 500ms ease-in-out, box-shadow 500ms ease-in-out;
+  cursor: pointer;
+}
+.contact form .btn::before {
+  content: "";
+  inset: 120% 0 0 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: #0ef;
+  transform: perspective(2.5em) rotateX(40deg) scale(1, 0.35);
+  filter: blur(1em);
+  opacity: 0;
+  transition: opacity 500ms ease-in-out, top 100ms ease-in-out, transform 500ms ease-in-out;
+}
+.contact form .btn:hover:not(:active) {
+  color: #112;
+  background-color: #0ef;
+  box-shadow: 0 0 2rem #0ef;
+}
+.contact form .btn:hover:not(:active)::before {
+  opacity: 0.5;
+}
+.contact form .btn:active {
+  transform: translateY(2px);
+}
+.contact form .btn:active::before {
+  opacity: 0.7;
+  transform: translateY(-2px) perspective(2.5em) rotateX(40deg) scale(1, 0.35);
+  z-index: 100;
+}
 .contact form .input-box input,
 .contact form textarea {
   height: auto;
@@ -491,54 +654,6 @@ section {
   border-radius: 0.8rem;
   padding: 1.5rem;
   margin: 0.7rem 0;
-}
-
-.btn {
-  display: inline-flex;
-  position: relative;
-  background: #112;
-  font-size: 1.6rem;
-  font-weight: 600;
-  letter-spacing: 0.1rem;
-  color: #0ef;
-  text-shadow: 0 0 1em #112;
-  border: 2px solid #0ef;
-  border-radius: 10em;
-  box-shadow: 0 0 0.5em #0ef;
-  padding: 1rem 2.8rem;
-  margin: 1rem;
-  user-select: none;
-  transition: transform 100ms ease-in-out;
-  cursor: pointer;
-}
-.btn::before {
-  content: "";
-  position: absolute;
-  background: #0ef;
-  inset: 120% 0 0 0;
-  height: 100%;
-  width: 100%;
-  transform: perspective(2.5em) rotateX(40deg) scale(1, 0.35);
-  filter: blur(1em);
-  opacity: 0;
-  transition: opacity 500ms ease-in-out, top 100ms ease-in-out;
-}
-.btn:hover:not(:active) {
-  color: #112;
-  background-color: #0ef;
-  box-shadow: 0 0 2rem #0ef;
-  transition: color 500ms ease-in-out, background-color 500ms ease-in-out, box-shadow 500ms ease-in-out;
-}
-.btn:hover:not(:active)::before {
-  opacity: 0.5;
-}
-.btn:active {
-  transform: translateY(2px);
-  transition: none;
-}
-.btn:active::before {
-  opacity: 0.7;
-  transform: translateY(-2px) perspective(2.5em) rotateX(40deg) scale(1, 0.35);
 }
 
 .footer {
@@ -584,6 +699,15 @@ section {
   }
   section {
     padding: 10rem 3% 2rem;
+  }
+  .contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  ::-webkit-scrollbar {
+    display: none;
   }
 }
 @media (max-width: 770px) {

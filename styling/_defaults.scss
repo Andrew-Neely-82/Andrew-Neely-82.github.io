@@ -45,11 +45,15 @@ section {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 38, 55, 1);
+  background-color: rgba(0, 45, 62, 1);
   border: 1px solid black;
   border-radius: 100vw;
 
   &:hover {
     background-color: rgba(0, 68, 85, 1);
+  }
+
+  &:active {
+    cursor: -webkit-grabbing;
   }
 }
