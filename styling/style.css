@@ -82,7 +82,7 @@ span {
   cursor: pointer;
   user-select: none;
 }
-.header .bx-menu {
+.header .bx-menu-alt-right {
   font-size: 3.6rem;
   color: #fff;
   display: none;
@@ -153,6 +153,12 @@ span {
   border-radius: 2rem;
   padding: 2rem;
   margin: 0;
+}
+.home .home-content p::before {
+  content: '"';
+}
+.home .home-content p::after {
+  content: '"';
 }
 .home .home-content .social-media {
   user-select: none;
@@ -333,6 +339,12 @@ span {
   padding: 2rem;
   margin: 1rem auto;
 }
+.about .about-content p:nth-of-type(1)::before {
+  content: '"';
+}
+.about .about-content p:nth-of-type(1)::after {
+  content: '"';
+}
 .about .about-content .btn {
   display: inline-flex;
   position: relative;
@@ -412,8 +424,8 @@ span {
 .skills .skills-container .skills-box {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
   height: 40rem;
+  width: auto;
   background: radial-gradient(rgba(0, 0, 0, 0.1), #323946);
   border: 0.2rem solid #0ef;
   border-radius: 2rem;
@@ -523,8 +535,8 @@ span {
 }
 .portfolio .portfolio-wrapper .portfolio-container {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
   align-items: center;
+  grid-template-columns: repeat(1, 1fr);
   gap: 2.5rem;
 }
 .portfolio .portfolio-wrapper .portfolio-container .portfolio-box {
@@ -685,6 +697,7 @@ span {
 }
 
 .footer {
+  user-select: none;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -720,6 +733,10 @@ span {
 .footer .footer-iconTop a i {
   color: #323946;
   font-size: 2.4rem;
+}
+
+.footer * {
+  user-select: none;
 }
 
 .hidden {
@@ -758,7 +775,8 @@ span {
   .header {
     width: 100%;
   }
-  .header .bx-menu {
+  .header .bx-menu-alt-right {
+    font-size: 2.6rem;
     display: block;
     color: white;
   }

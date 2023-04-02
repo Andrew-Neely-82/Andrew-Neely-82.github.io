@@ -21,7 +21,7 @@
     user-select: none;
   }
 
-  .bx-menu {
+  .bx-menu-alt-right {
     font-size: 3.6rem;
     color: map-get($colors, text);
     display: none;
@@ -95,6 +95,13 @@
       background-color: #112;
       @include borderAndRad(0.6rem solid map-get($colors, main), 2rem);
       @include padmar(2rem, 0);
+
+      &::before {
+        content: '"';
+      }
+      &::after {
+        content: '"';
+      }
     }
     .social-media {
       user-select: none;
@@ -281,6 +288,13 @@
         background-color: #112;
         @include borderAndRad(0.6rem solid map-get($colors, main), 2rem);
         @include padmar(2rem, 1rem auto);
+
+        &::before {
+          content: '"';
+        }
+        &::after {
+          content: '"';
+        }
       }
     }
 
@@ -358,10 +372,8 @@
     gap: 2rem;
 
     .skills-box {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      height: 40rem;
+      @include flexbox(flex, column, space-evenly);
+      @include heightWidth(40rem, auto);
       background: radial-gradient(rgba(0 0 0 / 0.1), map-get($colors, second-bg));
       @include borderAndRad(0.2rem solid map-get($colors, main), 2rem);
       @include padmar(3rem 2rem 4rem, 0);
@@ -479,14 +491,13 @@
     padding: 6rem 4rem 8rem 6rem;
 
     .portfolio-container {
-      display: grid;
+      @include flexbox(grid, auto, 0, center);
       grid-template-columns: repeat(1, 1fr);
-      align-items: center;
       gap: 2.5rem;
 
       .portfolio-box {
         position: relative;
-        display: flex;
+        @include flexbox(flex);
         @include borderAndRad(0.5rem solid map-get($colors, main), 2rem);
         box-shadow: 0 0 1rem map-get($colors, main-bg);
         overflow: hidden;
@@ -572,7 +583,7 @@
       gap: 1rem;
 
       input {
-        display: flex;
+        @include flexbox(flex);
         gap: 1rem;
       }
     }
@@ -582,7 +593,7 @@
     }
 
     .btn {
-      display: inline-flex;
+      @include flexbox(inline-flex);
       position: relative;
       background: map-get($colors, main-bg);
       font-size: 1.6rem;
@@ -644,6 +655,8 @@
 }
 
 .footer {
+  user-select: none;
+
   @include flexbox(flex, row, space-between, center, wrap);
   position: fixed;
   bottom: 0;
@@ -677,6 +690,12 @@
         font-size: 2.4rem;
       }
     }
+  }
+}
+
+.footer {
+  * {
+    user-select: none;
   }
 }
 
