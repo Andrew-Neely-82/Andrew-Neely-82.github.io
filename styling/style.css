@@ -421,6 +421,28 @@ span {
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
+.skills .skills-container:before {
+  content: "";
+  position: absolute;
+  width: 42%;
+  height: 35%;
+  border-top: 3px dotted #0ef;
+  border-left: 3px dotted #0ef;
+  border-radius: 5rem 0 0 0;
+  transform: translate(-2em, -16vh);
+  z-index: -1;
+}
+.skills .skills-container:after {
+  content: "";
+  position: absolute;
+  width: 40%;
+  height: 50%;
+  border-bottom: 3px dotted #0ef;
+  border-right: 3px dotted #0ef;
+  border-radius: 0 0 5rem 0;
+  transform: translate(42.75vw, 8.75vh);
+  z-index: -1;
+}
 .skills .skills-container .skills-box {
   display: flex;
   flex-direction: column;
@@ -752,6 +774,9 @@ span {
 @media (max-width: 1200px) {
   html {
     font-size: 55%;
+  }
+  .skills .skills-container::before, .skills .skills-container::after {
+    display: none;
   }
 }
 @media (max-width: 990px) {

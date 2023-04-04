@@ -371,6 +371,34 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 
+    // TODO: Make more symmetrical
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: 42%;
+      height: 35%;
+      border-top: 3px dotted map-get($colors, main);
+      border-left: 3px dotted map-get($colors, main);
+      border-radius: 5rem 0 0 0;
+      // transform: translate(-3rem, -28rem);
+      // transform: translate(-3rem, -94%);
+      transform: translate(-2em, -16vh);
+      z-index: -1;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 40%;
+      height: 50%;
+      border-bottom: 3px dotted map-get($colors, main);
+      border-right: 3px dotted map-get($colors, main);
+      border-radius: 0 0 5rem 0;
+      transform: translate(42.75vw, 8.75vh);
+      z-index: -1;
+    }
+
     .skills-box {
       @include flexbox(flex, column, space-evenly);
       @include heightWidth(40rem, auto);
