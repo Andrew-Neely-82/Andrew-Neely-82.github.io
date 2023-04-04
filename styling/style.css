@@ -153,6 +153,8 @@ span {
   border-radius: 2rem;
   padding: 2rem;
   margin: 0;
+  line-height: 3rem;
+  text-indent: 1em;
 }
 .home .home-content p::before {
   content: '"';
@@ -338,12 +340,13 @@ span {
   border-radius: 2rem;
   padding: 2rem;
   margin: 1rem auto;
+  line-height: 3rem;
+  text-indent: 1em;
 }
-.about .about-content p:nth-of-type(1)::before {
+.about .about-content p:nth-of-type(1)::before, .about .about-content p:nth-of-type(1)::after {
   content: '"';
-}
-.about .about-content p:nth-of-type(1)::after {
-  content: '"';
+  position: relative;
+  font-display: auto;
 }
 .about .about-content .btn {
   display: inline-flex;

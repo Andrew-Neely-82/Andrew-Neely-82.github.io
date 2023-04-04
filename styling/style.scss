@@ -95,7 +95,9 @@
       background-color: #112;
       @include borderAndRad(0.6rem solid map-get($colors, main), 2rem);
       @include padmar(2rem, 0);
-
+      line-height: 3rem;
+      text-indent: 1em;
+      
       &::before {
         content: '"';
       }
@@ -288,12 +290,14 @@
         background-color: #112;
         @include borderAndRad(0.6rem solid map-get($colors, main), 2rem);
         @include padmar(2rem, 1rem auto);
+        line-height: 3rem;
+        text-indent: 1em;
 
-        &::before {
-          content: '"';
-        }
+        &::before,
         &::after {
           content: '"';
+          position: relative;
+          font-display: auto;
         }
       }
     }
