@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "version": "0.1.0",
-  "homepage": "https://Andrew-Neely-82.github.io/Andrew-Neely-82.github.io",
+  "homepage": "https://Andrew-Neely-82.github.io",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",

@@ -27,26 +27,36 @@ const Navbar = () => {
     highlightActiveNavLink();
   }, []);
 
+  const toggleNavbar = () => {
+    const navbar = document.querySelector(".navbar");
+    navbar.classList.toggle("active");
+  };
+
+  const closeNavbar = () => {
+    const navbar = document.querySelector(".navbar");
+    navbar.classList.remove("active");
+  };
+
   return (
     <header className="header">
       <a href="#" className="logo" title="Portfolio">
         My Portfolio
       </a>
-      <i className="bx bx-menu-alt-right" id="menu-icon"></i>
+      <i className="bx bx-menu-alt-right" id="menu-icon" onClick={toggleNavbar}></i>
       <nav className="navbar">
-        <a href="#home" className="active" title="Home">
+        <a href="#home" className="active" title="Home" onClick={closeNavbar}>
           Home
         </a>
-        <a href="#about" title="About">
+        <a href="#about" title="About" onClick={closeNavbar}>
           About
         </a>
-        <a href="#skills" title="Skills">
+        <a href="#skills" title="Skills" onClick={closeNavbar}>
           Skills
         </a>
-        <a href="#portfolio" title="Portfolio">
+        <a href="#portfolio" title="Portfolio" onClick={closeNavbar}>
           Portfolio
         </a>
-        <a href="#contact" title="Contact">
+        <a href="#contact" title="Contact" onClick={closeNavbar}>
           Contact
         </a>
       </nav>
