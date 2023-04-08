@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Andrew-Neely-82.github.io/static/css/main.df764aba.css",
+    "main.js": "/Andrew-Neely-82.github.io/static/js/main.67ddbb23.js",
+    "static/js/787.1ed0c42c.chunk.js": "/Andrew-Neely-82.github.io/static/js/787.1ed0c42c.chunk.js",
+    "index.html": "/Andrew-Neely-82.github.io/index.html",
+    "main.df764aba.css.map": "/Andrew-Neely-82.github.io/static/css/main.df764aba.css.map",
+    "main.67ddbb23.js.map": "/Andrew-Neely-82.github.io/static/js/main.67ddbb23.js.map",
+    "787.1ed0c42c.chunk.js.map": "/Andrew-Neely-82.github.io/static/js/787.1ed0c42c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.df764aba.css",
+    "static/js/main.67ddbb23.js"
+  ]
+}
