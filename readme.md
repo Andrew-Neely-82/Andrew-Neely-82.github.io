@@ -1,55 +1,70 @@
-# **My Portfolio**
+# Getting Started with Create React App
 
-## **Description**
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-This is a modern and responsive portfolio website created by Andrew Neely, a web developer. The website is built using React, a popular JavaScript library for building user interfaces, and showcases his skills and projects. The website contains several sections, including Home, About, Skills, Portfolio, and Contact.
+## Available Scripts
 
-You can visit the live website at https://andrew-neely-82.github.io/
+In the project directory, you can run:
 
-<hr>
+### `npm start`
 
-## **Getting Started**
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-To get started with the project, clone the repository and install the necessary dependencies by running `npm install` or `yarn install` in the project directory. After installing the dependencies, you can start the development server by running `npm start` or `yarn start`. This will open the website in your default web browser at `http://localhost:3000`.
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-<hr>
+### `npm test`
 
-## **Sections**
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### **Home**
+### `npm run build`
 
-The Home section contains a brief introduction to Andrew Neely, a photo, and links to his GitHub, LinkedIn, and Codeup Alumni pages.
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-### **About**
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-The About section provides insight into Andrew Neely's background and journey into web development. It also includes a button that will eventually lead to more information.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### **Skills**
+### `npm run eject`
 
-The Skills section highlights Andrew Neely's proficiency in HTML5, CSS/SCSS, JavaScript, React.js, MySQL, and Java. Each skill has a brief description and a "Read More" button that will lead to additional information about the skill.
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-### **Portfolio**
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-The Portfolio section showcases examples of Andrew Neely's latest projects. Each project has an image, a brief description, and a link to more information.
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-### **Contact**
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-The Contact section contains a form for visitors to get in touch with Andrew Neely. Currently, it is not functional, and visitors are asked to use the LinkedIn link provided in the Home section.
+## Learn More
 
-## Icons Sourced from the links below:
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-- [Boxicons](https://boxicons.com/)
-- [Devicons](https://devicons.github.io/devicon/)
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-<hr>
+### Code Splitting
 
-## **Technologies**
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-This portfolio website is built using:
+### Analyzing the Bundle Size
 
-- React.js
-- SCSS
-- HTML5
-- JavaScript (ES6+)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-The project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
