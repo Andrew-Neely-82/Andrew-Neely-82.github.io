@@ -26,3 +26,4 @@ yarn-error.log*
 env.js
 /node_modules/
 >>>>>>> d36918aa271bdad65fb305d1c32a2ea5c8336317
+README.md
