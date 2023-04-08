@@ -1,0 +1,36 @@
+@import "../../styling/variables";
+@import "../../styling/mixins";
+
+@media (max-width: 770px) {
+  .portfolio {
+    .portfolio-wrapper {
+      border: none;
+      padding: 0;
+      height: 100%;
+      overflow: inherit;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .portfolio {
+    .heading {
+      // display: flex;
+      // justify-content: center;
+      @include flexbox(flex, row, center);
+      width: 100%;
+
+      span {
+        margin-left: 1rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 280px) {
+  .portfolio {
+    .heading {
+      font-size: 3rem;
+    }
+  }
+}

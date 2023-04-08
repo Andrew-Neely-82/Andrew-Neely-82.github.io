@@ -1,0 +1,72 @@
+@import "../../styling/variables";
+@import "../../styling/mixins";
+
+@media (max-width: 1200px) {
+  .skills {
+    .skills-container {
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 770px) {
+  .skills {
+    .heading {
+      width: 100%;
+      @include flexbox(flex, row, center, center);
+      margin: 2rem 4rem;
+    }
+
+    .skills-container {
+      display: flex;
+
+      .skills-box {
+        height: 35rem;
+        padding: 0 2rem !important;
+
+        .skills-box-header {
+          display: flex;
+          width: 100%;
+          text-align: center;
+          @include p0m0;
+
+          i {
+            font-size: 6rem;
+          }
+
+          h3 {
+            font-size: 3rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+          }
+
+          p {
+            font-size: 1.4rem;
+          }
+        }
+        br {
+          display: none;
+        }
+
+        .btn-container {
+          .btn {
+            font-size: 1.4rem;
+            padding: 0.5rem 1rem;
+            margin: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 280px) {
+  .skills {
+    .heading {
+      font-size: 3rem;
+    }
+  }
+}

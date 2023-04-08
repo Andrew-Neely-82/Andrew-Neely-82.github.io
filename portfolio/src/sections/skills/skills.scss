@@ -1,0 +1,150 @@
+@import "../../styling/variables";
+@import "../../styling/mixins";
+
+.skills {
+  @include flexbox(flex, column, center, center, 0);
+
+  h2 {
+    margin-bottom: 5rem;
+    margin-left: 7rem;
+  }
+
+  .heading {
+    @include flexbox(flex, row, flex-start, center, 0);
+    width: 100%;
+    font-size: 4.5rem;
+    span {
+      color: map-get($colors, main);
+      text-shadow: 0 0 2rem black;
+      filter: drop-shadow(0 0 0.25rem map-get($colors, main));
+    }
+  }
+
+  .skills-container {
+    @include flexbox(grid, 0, center, center, wrap);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+
+    // TODO: Make more symmetrical
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: 42%;
+      height: 35%;
+      border-top: 3px dotted map-get($colors, main);
+      border-left: 3px dotted map-get($colors, main);
+      border-radius: 5rem 0 0 0;
+      // transform: translate(-3rem, -28rem);
+      // transform: translate(-3rem, -94%);
+      transform: translate(-2em, -16vh);
+      z-index: -1;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 40%;
+      height: 50%;
+      border-bottom: 3px dotted map-get($colors, main);
+      border-right: 3px dotted map-get($colors, main);
+      border-radius: 0 0 5rem 0;
+      transform: translate(42.75vw, 8.75vh);
+      z-index: -1;
+    }
+
+    .skills-box {
+      @include flexbox(flex, column, space-evenly);
+      @include heightWidth(40rem, auto);
+      background: radial-gradient(rgba(0 0 0 / 0.1), map-get($colors, second-bg));
+      @include borderAndRad(0.2rem solid map-get($colors, main), 2rem);
+      @include padmar(3rem 2rem 4rem, 0);
+      @include transition;
+
+      &:hover {
+        filter: drop-shadow(0 0 1em map-get($colors, main));
+        transform: scale(1.02);
+      }
+
+      .skills-box-header {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        h3 {
+          margin-left: 1rem;
+        }
+      }
+
+      .btn-container {
+        @include flexbox(flex, row, center, 0, 0);
+
+        .btn {
+          position: relative;
+          @include flexbox(inline-flex, row center, center, nowrap);
+          width: 20rem;
+          background: map-get($colors, main-bg);
+          font-size: 1.6rem;
+          font-weight: 600;
+          letter-spacing: 0.1rem;
+          color: map-get($colors, main);
+          text-shadow: 0 0 1em map-get($colors, main-bg);
+          @include borderAndRad(2px solid map-get($colors, main), 10em);
+          box-shadow: 0 0 1em map-get($colors, main);
+          @include padmar(1rem 2.8rem, 0);
+          user-select: none;
+          transition: transform 100ms ease-in-out, color 500ms ease-in-out, background-color 500ms ease-in-out, box-shadow 500ms ease-in-out;
+          cursor: pointer;
+
+          &::before {
+            content: "";
+            inset: 120% 0 0 0;
+            @include heightWidth(100%, same);
+            position: absolute;
+            background: map-get($colors, main);
+            transform: perspective(2.5em) rotateX(40deg) scale(1, 0.35);
+            filter: blur(1em);
+            opacity: 0;
+            transition: opacity 500ms ease-in-out, top 100ms ease-in-out, transform 500ms ease-in-out;
+          }
+
+          &:hover:not(:active) {
+            color: map-get($colors, main-bg);
+            background-color: map-get($colors, main);
+            box-shadow: 0 0 2rem map-get($colors, main);
+
+            &::before {
+              opacity: 0.5;
+            }
+          }
+
+          &:active {
+            transform: translateY(2px);
+
+            &::before {
+              opacity: 0.7;
+              transform: translateY(-2px) perspective(2.5em) rotateX(40deg) scale(1, 0.35);
+              z-index: 100;
+            }
+          }
+        }
+      }
+    }
+
+    i {
+      font-size: 7rem;
+      color: map-get($colors, main);
+    }
+
+    h3 {
+      font-size: 2.6rem;
+    }
+
+    p {
+      font-size: 1.6rem;
+      margin: 1rem 0 3rem;
+    }
+  }
+}
+
+@import "./media";

@@ -1,0 +1,45 @@
+@import "../../styling/variables";
+@import "../../styling/mixins";
+
+@media (max-width: 770px) {
+  .about,
+  .about-content {
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+    @include flexbox(flex, column, center, center);
+  }
+
+  .about {
+    .about-img {
+      display: none;
+    }
+    .about-content {
+      p {
+        padding: 0 2rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 280px) {
+  .about {
+    .about-content {
+      .heading {
+        font-size: 4rem;
+      }
+
+      h3 {
+        font-size: 4rem;
+      }
+      p {
+        text-align: center;
+
+        &:nth-of-type(2) {
+          font-size: 1.3em;
+        }
+      }
+    }
+  }
+}

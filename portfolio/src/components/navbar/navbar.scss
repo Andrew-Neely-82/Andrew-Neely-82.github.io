@@ -1,0 +1,55 @@
+@import "../../styling/variables";
+@import "../../styling/mixins";
+
+.header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  @include flexbox(flex, row, space-between, center, 0);
+  @include heightWidth(auto, 100%);
+  @include padmar(2rem 9%, 0);
+  background: map-get($colors, main-bg);
+  z-index: 100;
+  user-select: none;
+
+  .logo {
+    font-size: 2.5rem;
+    color: map-get($colors, text);
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .bx-menu-alt-right {
+    font-size: 3.6rem;
+    color: map-get($colors, text);
+    display: none;
+    user-select: none;
+  }
+
+  .navbar {
+    a {
+      font-size: 1.7rem;
+      color: map-get($colors, text);
+      margin-left: 4rem;
+      @include transition;
+      user-select: none;
+
+      &:hover {
+        color: map-get($colors, main);
+        filter: drop-shadow(0 0 0.5rem map-get($colors, main));
+        user-select: none;
+      }
+
+      &.active {
+        color: map-get($colors, main);
+        user-select: none;
+      }
+    }
+  }
+}
+
+.header.sticky {
+  border-bottom: 0.1rem solid rgba(0 0 0 / 0.2);
+}
+
+@import "./media";

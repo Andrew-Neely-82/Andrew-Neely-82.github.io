@@ -3,6 +3,7 @@
 @import "./mixins";
 
 // * Navbar section
+
 .header {
   position: fixed;
   inset: 0 0 auto 0;
@@ -97,7 +98,7 @@
       @include padmar(2rem, 0);
       line-height: 3rem;
       text-indent: 1em;
-      
+
       &::before {
         content: '"';
       }

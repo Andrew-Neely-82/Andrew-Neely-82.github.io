@@ -1,0 +1,15 @@
+@import "./styling/defaults";
+@import "./styling/variables";
+@import "./styling/mixins";
+
+.hidden {
+  transform: translateY(100%);
+  transition: transform 0.5s ease-in-out;
+}
+
+.visible {
+  transform: translateY(0);
+  transition: transform 0.5s ease-in-out;
+}
+
+@import "./styling/media";

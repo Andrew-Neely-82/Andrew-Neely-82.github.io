@@ -1,0 +1,31 @@
+@media (max-width: 990px) {
+  .contact {
+    @include flexbox(flex, column, center, center, 0);
+  }
+}
+
+@media (max-width: 770px) {
+  .contact {
+    @include flexbox(flex, column, center, center);
+  }
+}
+
+@media (max-width: 280px) {
+  .contact {
+    .heading {
+      font-size: 3rem;
+    }
+
+    form {
+      .input-box {
+        input {
+          font-size: 1.25rem;
+        }
+      }
+
+      textarea {
+        font-size: 1.25rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+@media (max-width: 770px) {
+  .footer {
+    width: 100%;
+  }
+}
+
+@media (max-width: 375px) {
+  .footer {
+    .footer-text {
+      span {
+        display: block;
+      }
+    }
+  }
+}
