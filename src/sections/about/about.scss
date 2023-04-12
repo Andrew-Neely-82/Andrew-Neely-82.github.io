@@ -69,49 +69,62 @@
       }
     }
 
-    .btn {
-      display: inline-flex;
-      position: relative;
-      background: map-get($colors, main-bg);
-      font-size: 1.6rem;
-      font-weight: 600;
-      letter-spacing: 0.1rem;
-      color: map-get($colors, main);
-      text-shadow: 0 0 1em map-get($colors, main-bg);
-      @include borderAndRad(2px solid map-get($colors, main), 10em);
-      box-shadow: 0 0 1em map-get($colors, main);
-      @include padmar(1rem 2.8rem, 0);
-      user-select: none;
-      transition: transform 100ms ease-in-out, color 500ms ease-in-out, background-color 500ms ease-in-out, box-shadow 500ms ease-in-out;
+    .btn-container {
+      display: flex;
+      flex-direction: column;
+      @include flexbox(flex, column, flex-end, flex-end);
 
-      &::before {
-        content: "";
-        inset: 120% 0 0 0;
-        @include heightWidth(100%, same);
-        position: absolute;
-        background: map-get($colors, main);
-        transform: perspective(2.5em) rotateX(40deg) scale(1, 0.35);
-        filter: blur(1em);
-        opacity: 0;
-        transition: opacity 500ms ease-in-out, top 100ms ease-in-out, transform 500ms ease-in-out;
+      p {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        border: none;
+        background: transparent;
       }
-
-      &:hover:not(:active) {
-        color: map-get($colors, main-bg);
-        background-color: map-get($colors, main);
-        box-shadow: 0 0 2rem map-get($colors, main);
+      .btn {
+        display: inline-flex;
+        position: relative;
+        background: map-get($colors, main-bg);
+        font-size: 1.6rem;
+        font-weight: 600;
+        letter-spacing: 0.1rem;
+        color: map-get($colors, main);
+        text-shadow: 0 0 1em map-get($colors, main-bg);
+        @include borderAndRad(2px solid map-get($colors, main), 10em);
+        box-shadow: 0 0 1em map-get($colors, main);
+        @include padmar(1rem 2.8rem, 0);
+        user-select: none;
+        transition: transform 100ms ease-in-out, color 500ms ease-in-out, background-color 500ms ease-in-out, box-shadow 500ms ease-in-out;
 
         &::before {
-          opacity: 0.5;
+          content: "";
+          inset: 120% 0 0 0;
+          @include heightWidth(100%, same);
+          position: absolute;
+          background: map-get($colors, main);
+          transform: perspective(2.5em) rotateX(40deg) scale(1, 0.35);
+          filter: blur(1em);
+          opacity: 0;
+          transition: opacity 500ms ease-in-out, top 100ms ease-in-out, transform 500ms ease-in-out;
         }
-      }
 
-      &:active {
-        transform: translateY(2px);
+        &:hover:not(:active) {
+          color: map-get($colors, main-bg);
+          background-color: map-get($colors, main);
+          box-shadow: 0 0 2rem map-get($colors, main);
 
-        &::before {
-          opacity: 0.7;
-          transform: translateY(-2px) perspective(2.5em) rotateX(40deg) scale(1, 0.35);
+          &::before {
+            opacity: 0.5;
+          }
+        }
+
+        &:active {
+          transform: translateY(2px);
+
+          &::before {
+            opacity: 0.7;
+            transform: translateY(-2px) perspective(2.5em) rotateX(40deg) scale(1, 0.35);
+          }
         }
       }
     }

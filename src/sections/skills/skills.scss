@@ -55,7 +55,7 @@
 
     .skills-box {
       @include flexbox(flex, column, space-evenly);
-      @include heightWidth(40rem, auto);
+      @include heightWidth(40rem !important, auto !important);
       background: radial-gradient(rgba(0 0 0 / 0.1), map-get($colors, second-bg));
       @include borderAndRad(0.2rem solid map-get($colors, main), 2rem);
       @include padmar(3rem 2rem 4rem, 0);
@@ -73,6 +73,17 @@
 
         h3 {
           margin-left: 1rem;
+        }
+
+        .bx:nth-child(3) {
+          @include flexbox(flex, 0, center, center);
+          color: map-get($colors, main-bg);
+          font-size: 4rem;
+          background-color: map-get($colors, main);
+          @include heightWidth(4rem, same);
+
+          border-radius: 100%;
+          margin-left: auto;
         }
       }
 

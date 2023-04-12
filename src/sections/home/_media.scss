@@ -25,6 +25,40 @@
   }
 }
 
+@media (max-width: 390px) {
+  .home {
+    .home-content {
+      @include flexbox(flex, 0, flex-start, flex-start);
+      margin-top: 1rem;
+
+      h1 {
+        width: fit-content;
+      }
+    }
+  }
+
+  .about {
+    .btn-container {
+      justify-content: center !important;
+      align-items: center !important;
+    }
+  }
+
+  .skills {
+    .skills-container {
+      .skills-box-header {
+        margin-top: 2rem !important;
+      }
+    }
+  }
+
+  .contact {
+    .heading {
+      justify-content: flex-start;
+    }
+  }
+}
+
 @media (max-width: 375px) {
   .home {
     .home-img {

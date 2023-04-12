@@ -63,6 +63,25 @@
   }
 }
 
+@media (max-width: 390px) {
+  .skills {
+    .skills-container {
+      .skills-box {
+        @include heightWidth(auto !important, 40rem !important);
+
+        &:hover {
+          filter: none;
+          transform: scale(1.02);
+        }
+
+        .skills-box-header {
+          margin: 1rem !important;
+        }
+      }
+    }
+  }
+}
+
 @media (max-width: 280px) {
   .skills {
     .heading {
