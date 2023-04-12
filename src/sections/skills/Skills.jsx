@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./skills.scss";
 
 const skillsData = [
@@ -42,8 +42,22 @@ const skillsData = [
 
 const Skills = () => {
   const [openSkillIndex, setOpenSkillIndex] = useState(-1);
+  const [width, setWidth] = useState(window.innerWidth);
+  const isMobile = width <= 768;
+
+  const updateDimensions = () => {
+    setWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", updateDimensions);
+    return () => window.removeEventListener("resize", updateDimensions);
+  }, []);
+
   const toggleSkill = (index) => {
-    setOpenSkillIndex(openSkillIndex === index ? -1 : index);
+    if (isMobile) {
+      setOpenSkillIndex(openSkillIndex === index ? -1 : index);
+    }
   };
 
   return (
@@ -54,14 +68,14 @@ const Skills = () => {
 
       <div className="skills-container">
         {skillsData.map((skill, index) => {
-          const displayValue = openSkillIndex === index ? "flex" : "none";
+          const displayValue = isMobile ? (openSkillIndex === index ? "flex" : "none") : "flex";
 
           return (
             <div className="skills-box" key={index}>
               <div className="skills-box-header" onClick={() => toggleSkill(index)}>
                 <i className={skill.icon}></i>
                 <h3>{skill.name}</h3>
-                <i className={`bx ${openSkillIndex === index ? "bx-up-arrow-alt" : "bx-down-arrow-alt"}`}></i>
+                <i className={`bx ${openSkillIndex === index ? "bx-up-arrow-alt" : "bx-down-arrow-alt"}`} style={{ display: isMobile ? "flex" : "none" }}></i>
               </div>
               <p className="skill-description" style={{ display: displayValue }}>
                 {skill.description}
