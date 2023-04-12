@@ -72,10 +72,10 @@ const Skills = () => {
 
           return (
             <div className="skills-box" key={index}>
-              <div className="skills-box-header" onClick={() => toggleSkill(index)}>
+              <div className="skills-box-header">
                 <i className={skill.icon}></i>
                 <h3>{skill.name}</h3>
-                <i className={`bx ${openSkillIndex === index ? "bx-up-arrow-alt" : "bx-down-arrow-alt"}`} style={{ display: isMobile ? "flex" : "none" }}></i>
+                <i className={`bx ${openSkillIndex === index ? "bx-up-arrow-alt" : "bx-down-arrow-alt"}`} style={{ display: isMobile ? "flex" : "none" }} onClick={() => toggleSkill(index)}></i>{" "}
               </div>
               <p className="skill-description" style={{ display: displayValue }}>
                 {skill.description}
