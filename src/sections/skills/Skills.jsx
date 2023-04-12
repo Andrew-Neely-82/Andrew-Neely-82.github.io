@@ -43,7 +43,7 @@ const skillsData = [
 const Skills = () => {
   const [openSkillIndex, setOpenSkillIndex] = useState(-1);
   const [width, setWidth] = useState(window.innerWidth);
-  const isMobile = width <= 768;
+  const isMobile = width <= 770;
 
   const updateDimensions = () => {
     setWidth(window.innerWidth);

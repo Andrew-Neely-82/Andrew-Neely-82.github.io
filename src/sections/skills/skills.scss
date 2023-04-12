@@ -2,7 +2,7 @@
 @import "../../styling/mixins";
 
 .skills {
-  @include flexbox(flex, column, center, center, 0);
+  @include flexbox(flex, column, flex-start, center, 0);
 
   h2 {
     margin-bottom: 5rem;
@@ -35,8 +35,8 @@
       border-top: 3px dotted map-get($colors, main);
       border-left: 3px dotted map-get($colors, main);
       border-radius: 5rem 0 0 0;
-      // transform: translate(-3rem, -28rem);
-      // transform: translate(-3rem, -94%);
+      // transform: translate(-3rem, -28rem); // save these for later
+      // transform: translate(-3rem, -94%); // save these for later
       transform: translate(-2em, -16vh);
       z-index: -1;
     }
