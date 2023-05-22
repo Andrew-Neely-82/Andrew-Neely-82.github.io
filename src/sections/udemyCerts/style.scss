@@ -1,0 +1,96 @@
+@import "../../styling/variables";
+@import "../../styling/mixins";
+
+.Udemy_ {
+  @include flexbox(flex, column, flex-start, center, 0);
+  width: 100%;
+
+  h2 {
+    margin-bottom: 5rem;
+    margin-left: 7rem;
+  }
+
+  .heading {
+    @include flexbox(flex, row, flex-start, center, 0);
+    width: 100%;
+    font-size: 4.5rem;
+
+    span {
+      color: map-get($colors, main);
+      text-shadow: 0 0 2rem black;
+      filter: drop-shadow(0 0 0.25rem map-get($colors, main));
+    }
+  }
+
+  .Udemy_certs-container {
+    @include flexbox(grid, center, center, center, 0);
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+
+    img {
+      width: 90%;
+      margin-inline: auto;
+      border: 3px solid map-get($colors, main);
+      border-radius: 2rem;
+      transition: 200ms ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(4px);
+    z-index: 999;
+    padding: 1rem;
+
+    .modal_close {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: white;
+      color: black;
+      // font-family: map-get($font, manrope);
+      font-size: 2.5rem;
+      font-weight: bold;
+      border: 3px solid white;
+      border-top: none;
+      border-right: none;
+      border-radius: 0 0 0 0.5em;
+      padding: 12px 24px;
+      transition: 250ms all;
+      cursor: pointer;
+      user-select: none;
+
+      &:hover {
+        background: red;
+        color: white;
+      }
+    }
+
+    img {
+      width: 70%;
+    }
+
+    h3 {
+      position: absolute;
+      bottom: 5rem;
+      left: auto;
+      color: white;
+      font-size: 3rem;
+      margin-top: 1rem;
+      text-align: center;
+    }
+  }
+}
