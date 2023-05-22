@@ -5,11 +5,84 @@
   @include flexbox(flex, row, center, center, 0);
   background: linear-gradient(176deg, rgba(17, 17, 34, 1) 25%, rgba(0, 38, 55, 1) 100%);
 
+  @media (max-width: 770px) {
+    @include flexbox(flex, column-reverse, center, center);
+  }
+
+  .modal {
+    position: fixed;
+    display: flex;
+    inset: 0;
+    background: rgba(0 0 0 / 0.25);
+    height: 100vh;
+    width: 100vw;
+    backdrop-filter: blur(1em);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 10000;
+
+    .modal-content {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 40%;
+      width: 40%;
+      background: rgba(17, 17, 34, 1);
+      border: 3px solid map-get($colors, main);
+      border-radius: 2rem;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      margin: auto auto;
+      overflow: hidden;
+
+      h2 {
+        font-size: 2rem;
+        padding: 10em auto;
+        text-align: center;
+      }
+
+      span {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 2rem;
+        font-weight: bolder;
+        background: black;
+        border: 3px solid map-get($colors, main);
+        border-top: 0;
+        border-right: 0;
+        filter: drop-shadow(0 0 0 black);
+        transition: 250ms ease-in-out;
+        padding: 1rem 2rem;
+        margin: auto;
+        cursor: pointer;
+        box-sizing: border-box;
+
+        &:hover {
+          background: red;
+          transition: 250ms ease-in-out;
+        }
+      }
+    }
+  }
+
   .home-content {
+    @media (max-width: 770px) {
+      @include flexbox(flex, column, center, center);
+      margin-top: 10em;
+    }
+
+    @media (max-width: 390px) {
+      @include flexbox(flex, 0, flex-start, flex-start);
+      margin-top: 1rem;
+    }
+
     h3,
     h1 {
       font-weight: 700;
     }
+
     h3 {
       font-size: 3.2rem;
 
@@ -35,7 +108,12 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
       filter: drop-shadow(2px 2px 2px rgba(255 255 255 / 0.25));
+
+      @media (max-width: 390px) {
+        width: fit-content;
+      }
     }
+
     p {
       @include heightWidth(auto, 75%);
       font-size: 1.6rem;
@@ -52,8 +130,10 @@
         content: '"';
       }
     }
+
     .social-media {
       user-select: none;
+
       a {
         @include flexbox(inline-flex, row, center, center, 0);
         @include heightWidth(4rem, same);
@@ -166,6 +246,7 @@
   }
 
   .home-img {
+    //
     img {
       @include heightWidth(35rem, same);
       @include borderAndRad(0.5rem solid map-get($colors, main), 100%);
@@ -176,6 +257,10 @@
 
       &:hover {
         transform: scale(1.02);
+      }
+
+      @media (max-width: 375px) {
+        @include heightWidth(30rem, same);
       }
     }
   }

@@ -17,7 +17,7 @@ const About = () => {
         <div className="btn-container">
           <span style={{ color: "yellow" }}>Button below for more info coming soon:</span>
           <span style={{ color: "yellow", marginBottom: "2rem", padding: 0 }}>Click it anyways to see a cool effect!</span>
-          <a href="#about" class="btn">
+          <a href="#about" className="btn">
             Read More
           </a>
         </div>

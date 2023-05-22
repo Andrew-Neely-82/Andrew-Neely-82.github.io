@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from "react";
 import "./contact.scss";
 
 const Contact = () => {
-  
   const useAnimatedPlaceholders = (refs) => {
     const [animated, setAnimated] = useState(false);
 

@@ -81,7 +81,7 @@ const Skills = () => {
                 {skill.description}
               </p>
               <div className="btn-container" style={{ display: displayValue }}>
-                <a href={skill.link} target="_blank" className="btn">
+                <a href={skill.link} target="_blank" className="btn" rel="noreferrer">
                   Read More
                 </a>
               </div>

@@ -22,22 +22,20 @@ const Footer = () => {
   }, []);
 
   return (
-    <>
-      <footer className={`footer ${footerVisible ? "visible" : "hidden"}`}>
-        <div className="footer-text">
-          <p>
-            Last updated on &nbsp;
-            <span style={{ color: "yellow", textShadow: "none" }}>22 MAY 2023 &nbsp;</span>
-            by <span style={{ textShadow: "none" }}>Andrew Neely</span>
-          </p>
-        </div>
-        <div className="footer-iconTop">
-          <a href="#home">
-            <i className="bx bx-up-arrow-alt"></i>
-          </a>
-        </div>
-      </footer>
-    </>
+    <footer className={`footer ${footerVisible ? "visible" : "hidden"}`}>
+      <div className="footer-text">
+        <p>
+          Last updated on &nbsp;
+          <span style={{ color: "yellow", textShadow: "none" }}>22 MAY 2023 &nbsp;</span>
+          by <span style={{ textShadow: "none" }}>Andrew Neely</span>
+        </p>
+      </div>
+      <div className="footer-iconTop">
+        <a href="#home">
+          <i className="bx bx-up-arrow-alt"></i>
+        </a>
+      </div>
+    </footer>
   );
 };
 
