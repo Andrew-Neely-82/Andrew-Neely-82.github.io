@@ -1,9 +1,8 @@
-import { Home, About, Skills, Portfolio, Contact } from "./sections/index.js";
+import { Home, About, Skills, Udemy, Portfolio, Contact } from "./sections/index.js";
 import { Navbar, Footer } from "./components/index.js";
 import "./style.scss";
 
 function App() {
-
   return (
     <>
       <Navbar />
@@ -11,6 +10,7 @@ function App() {
         <Home />
         <About />
         <Skills />
+        <Udemy />
         <Portfolio />
         <Contact />
       </div>

@@ -53,6 +53,9 @@ const Navbar = () => {
         <a href="#skills" title="Skills" onClick={closeNavbar}>
           Skills
         </a>
+        <a href="#udemy" title="Udemy Certifications" onClick={closeNavbar}>
+          Udemy Certifications
+        </a>
         <a href="#portfolio" title="Portfolio" onClick={closeNavbar}>
           Portfolio
         </a>
