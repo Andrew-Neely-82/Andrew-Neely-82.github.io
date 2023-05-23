@@ -74,13 +74,15 @@
       flex-direction: column;
       @include flexbox(flex, column, flex-end, flex-end);
 
-      p {
-        display: flex;
-        justify-content: flex-end;
-        width: 100%;
-        border: none;
-        background: transparent;
+      span {
+        color: yellow;
+
+        &:nth-of-type(2) {
+          margin-bottom: 2rem;
+          padding: 0;
+        }
       }
+
       .btn {
         display: inline-flex;
         position: relative;
