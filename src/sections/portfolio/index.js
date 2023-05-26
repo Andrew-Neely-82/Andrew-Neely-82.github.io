@@ -1,5 +1,15 @@
 export const portfolioBoxes = [
   {
+    img: "",
+    alt: "",
+    h4: "",
+    p1: "React Page Templates",
+    p2: "React Page Templates is a collection of w3.css templates that I used as reference to make some small recreation projects",
+    p3: "The projects in this are organized by increasing difficulty to complete and of course are all built in React with SCSS Styling",
+    a: "https://andrew-neely-82.github.io/react-page-templates/",
+    i: "bx bx-link-external",
+  },
+  {
     img: "https://neilpatel.com/wp-content/uploads/2021/07/social-media-profile_featured-image.png",
     alt: "Troop Talk",
     h4: "Troop Talk",
