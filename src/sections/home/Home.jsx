@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { info } from "./info.js";
+import { useState } from "react";
 import { links } from "./links";
 import "./home.scss";
-import { useState } from "react";
 
 const Home = () => {
   const [showModal, setShowModal] = useState(true);

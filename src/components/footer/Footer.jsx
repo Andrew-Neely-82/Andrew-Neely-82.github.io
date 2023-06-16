@@ -26,7 +26,7 @@ const Footer = () => {
       <div className="footer-text">
         <p>
           Last updated on &nbsp;
-          <span style={{ color: "yellow", textShadow: "none" }}>26 MAY 2023 &nbsp;</span>
+          <span style={{ color: "yellow", textShadow: "none" }}>15 JUNE 2023 &nbsp;</span>
           by <span style={{ textShadow: "none" }}>Andrew Neely</span>
         </p>
       </div>

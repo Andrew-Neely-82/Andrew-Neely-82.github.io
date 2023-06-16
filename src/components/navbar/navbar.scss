@@ -3,7 +3,7 @@
 
 .header {
   position: fixed;
-  inset: 0 0 auto 0;
+  inset: auto;
   @include flexbox(flex, row, space-between, center, 0);
   @include heightWidth(auto, 100%);
   @include padmar(2rem 9%, 0);

@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { id, info } from "./info";
 import "./navbar.scss";
 
 const Navbar = () => {
@@ -50,33 +51,35 @@ const Navbar = () => {
     }
   };
 
+  const renderLinks = () => {
+    return id.map((item, linkKey) => {
+      const key = Object.keys(item)[0];
+      const value = Object.values(item)[0];
+      const capitalizedValue = key.charAt(0).toUpperCase() + key.slice(1);
+      const linkText = capitalizedValue === "Udemy" ? `Udemy Certifications` : capitalizedValue;
+
+      return (
+        <a href={`#${value}`} activeClassName="active" onClick={scrollToSection} key={linkKey}>
+          {linkText}
+        </a>
+      );
+    });
+  };
+
   return (
-    <header className="header">
-      <a href="#home" className="logo" title="Portfolio" onClick={scrollToSection}>
-        My Portfolio
-      </a>
-      <i className="bx bx-menu-alt-right" id="menu-icon" onClick={toggleNavbar}></i>
-      <nav className="navbar">
-        <a href="#home" activeClassName="active" onClick={scrollToSection}>
-          Home
-        </a>
-        <a href="#about" activeClassName="active" onClick={scrollToSection}>
-          About
-        </a>
-        <a href="#skills" activeClassName="active" onClick={scrollToSection}>
-          Skills
-        </a>
-        <a href="#udemy" activeClassName="active" onClick={scrollToSection}>
-          Udemy Certifications
-        </a>
-        <a href="#portfolio" activeClassName="active" onClick={scrollToSection}>
-          Portfolio
-        </a>
-        <a href="#contact" activeClassName="active" onClick={scrollToSection}>
-          Contact
-        </a>
-      </nav>
-    </header>
+    <React.Fragment>
+      {info.map((infoItem, key) => {
+        return (
+          <header className="header" key={key}>
+            <a href="#home" className="logo" title="Portfolio" onClick={scrollToSection}>
+              {infoItem.port}
+            </a>
+            <i className="bx bx-menu-alt-right" id="menu-icon" onClick={toggleNavbar}></i>
+            <nav className="navbar">{renderLinks()}</nav>
+          </header>
+        );
+      })}
+    </React.Fragment>
   );
 };
 
