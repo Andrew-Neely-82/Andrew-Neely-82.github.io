@@ -4,20 +4,36 @@
 .about {
   @include flexbox(flex, row, center, center, 0);
   background: linear-gradient(176deg, rgba(0, 38, 55, 1) 25%, rgba(17, 17, 34, 1) 55%);
-  gap: 18rem;
+  gap: 9rem;
 
-  .about-img {
-    img {
-      @include heightWidth(35rem, same);
-      @include borderAndRad(0.6rem solid map-get($colors, main), 100%);
-      box-shadow: 0 0 2rem map-get($colors, main);
-      user-select: none;
-      @include transition;
-      cursor: pointer;
+  // .about-img {
+  //   // img {
+  //   //   @include heightWidth(35rem, same);
+  //   //   @include borderAndRad(0.6rem solid map-get($colors, main), 100%);
+  //   //   box-shadow: 0 0 2rem map-get($colors, main);
+  //   //   user-select: none;
+  //   //   @include transition;
+  //   //   cursor: pointer;
 
-      &:hover {
-        transform: scale(1.02);
-      }
+  //   //   &:hover {
+  //   //     transform: scale(1.02);
+  //   //   }
+  //   // }
+  // }
+
+  .spline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    canvas {
+      vertical-align: middle;
+      height: 350px !important;
+      width: 350px !important;
+      @include borderAndRad(0.6rem solid map-get($colors, main), 2rem);
+      box-shadow: 0 0 1em map-get($colors, main);
+      border-radius: 100%;
+      transform: perspective(25px);
     }
   }
 

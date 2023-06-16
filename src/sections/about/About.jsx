@@ -1,13 +1,31 @@
-import React from "react";
+import { useState, useEffect } from "react";
+import Spline from "@splinetool/react-spline";
 import "./about.scss";
 
 const About = () => {
+  const [splineScale, setSplineScale] = useState(1);
+
+  useEffect(() => {
+    // Adjust the spline scale based on the window width
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setSplineScale(0.25); // Adjust the scale value as per your requirements
+      } else {
+        setSplineScale(0.6);
+      }
+    };
+
+    handleResize(); // Initial scale adjustment
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <section className="about" id="about">
-      <div className="about-img">
-        <img src="https://avatars.githubusercontent.com/u/114946953?v=4" alt="me" title="Me!" />
-      </div>
-
+      <Spline scene="https://prod.spline.design/LwqzmMfKq7HTx971/scene.splinecode" className="spline" />
       <div className="about-content">
         <h2 className="heading">
           About <span>Me...</span>
