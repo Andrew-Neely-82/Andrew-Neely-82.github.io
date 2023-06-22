@@ -21,6 +21,18 @@
   }
 }
 
+@media (max-width: 390px) {
+  .home {
+    .modal {
+      .modal-content {
+        width: 90% !important;
+        height: 25%;
+        padding: 0.5em;
+      }
+    }
+  }
+}
+
 @media (max-width: 280px) {
   .home {
     .home-content {

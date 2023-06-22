@@ -1,4 +1,4 @@
-import { HTML, SASS } from "./img/export";
+import { HTML, Python1, SASS } from "./img/export";
 
 export const certs = [
   {
@@ -9,8 +9,8 @@ export const certs = [
     img: SASS,
     alt: "SASS and SCSS",
   },
-  // {
-  //   img: "",
-  //   alt: "",
-  // },
+  {
+    img: Python1,
+    alt: "Python for Absolute Beginners",
+  },
 ];

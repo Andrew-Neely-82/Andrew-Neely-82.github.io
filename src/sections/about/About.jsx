@@ -3,9 +3,11 @@ import { info } from "./index";
 import "./about.scss";
 
 const About = () => {
+  const scene = "https://prod.spline.design/LwqzmMfKq7HTx971/scene.splinecode";
+
   return (
     <section className="about" id="about">
-      <Spline scene="https://prod.spline.design/LwqzmMfKq7HTx971/scene.splinecode" className="spline" />
+      <Spline scene={scene} className="spline" />
       {info.map((info, key) => {
         return (
           <div className="about-content" key={key}>
