@@ -1,4 +1,4 @@
-import { Home, About, Skills, Udemy, Portfolio, Contact } from "./sections/index.js";
+import { Home, About, Skills, PersonalDevelopment, Portfolio, Contact } from "./sections/index.js";
 import { Navbar, Footer } from "./components/index.js";
 import "./style.scss";
 
@@ -10,7 +10,7 @@ function App() {
         <Home />
         <About />
         <Skills />
-        <Udemy />
+        <PersonalDevelopment />
         <Portfolio />
         <Contact />
       </div>

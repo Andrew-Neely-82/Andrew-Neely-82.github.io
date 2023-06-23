@@ -1,28 +1,27 @@
-import React, { useEffect } from "react";
-import { id, info } from "./info";
+import { icon, iconId, info, q, scrollSettings } from "./index";
+import React, { useEffect, useState } from "react";
 import "./navbar.scss";
 
 const Navbar = () => {
+  const [activeLink, setActiveLink] = useState(q.home);
+
   const highlightActiveNavLink = () => {
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll("header nav a");
+    const sections = document.querySelectorAll(q.section);
 
     window.addEventListener("scroll", () => {
-      sections.forEach((section) => {
+      const currentSection = [...sections].find((section) => {
         const top = window.scrollY;
         const offset = section.offsetTop - 150;
         const height = section.offsetHeight;
-        const id = section.getAttribute("id");
-
-        if (top >= offset && top < offset + height) {
-          navLinks.forEach((link) => {
-            link.classList.remove("active");
-            if (link.getAttribute("href") === `#${id}`) {
-              link.classList.add("active");
-            }
-          });
-        }
+        return top >= offset && top < offset + height;
       });
+
+      if (currentSection) {
+        const currentLinkId = currentSection.getAttribute(q.id);
+        setActiveLink(currentLinkId);
+      } else {
+        setActiveLink(null);
+      }
     });
   };
 
@@ -31,55 +30,52 @@ const Navbar = () => {
   }, []);
 
   const toggleNavbar = () => {
-    const navbar = document.querySelector(".navbar");
-    navbar.classList.toggle("active");
+    const navbar = document.querySelector(q.nav);
+    navbar.classList.toggle(q.active);
   };
 
   const closeNavbar = () => {
-    const navbar = document.querySelector(".navbar");
-    navbar.classList.remove("active");
+    const navbar = document.querySelector(q.nav);
+    navbar.classList.remove(q.active);
   };
 
-  const scrollToSection = (event) => {
-    event.preventDefault();
-    const targetId = event.target.getAttribute("href");
+  const scrollToSection = (e) => {
+    e.preventDefault();
+    const targetId = e.target.getAttribute(q.href);
     const targetSection = document.querySelector(targetId);
 
     if (targetSection) {
-      targetSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      targetSection.scrollIntoView(scrollSettings);
       closeNavbar();
     }
   };
 
-  const renderLinks = () => {
-    return id.map((item, linkKey) => {
-      const key = Object.keys(item)[0];
-      const value = Object.values(item)[0];
-      const capitalizedValue = key.charAt(0).toUpperCase() + key.slice(1);
-      const linkText = capitalizedValue === "Udemy" ? `Udemy Certifications` : capitalizedValue;
+  const RenderLinks = () => {
+    return info.map((item, linkKey) => {
+      const isActive = item.href === activeLink;
 
       return (
-        <a href={`#${value}`} activeClassName="active" onClick={scrollToSection} key={linkKey}>
-          {linkText}
-        </a>
+        <li key={linkKey}>
+          <a href={`#${item.href}`} className={isActive ? q.active : q.nActive} onClick={scrollToSection}>
+            {item.a}
+          </a>
+        </li>
       );
     });
   };
 
   return (
-    <React.Fragment>
-      {info.map((infoItem, key) => {
-        return (
-          <header className="header" key={key}>
-            <a href="#home" className="logo" title="Portfolio" onClick={scrollToSection}>
-              {infoItem.port}
-            </a>
-            <i className="bx bx-menu-alt-right" id="menu-icon" onClick={toggleNavbar}></i>
-            <nav className="navbar">{renderLinks()}</nav>
-          </header>
-        );
-      })}
-    </React.Fragment>
+    <nav className="header">
+      <a href="#home" className="logo" title="Portfolio" onClick={scrollToSection}>
+        My Portfolio
+      </a>
+      <i className={icon} id={iconId} onClick={toggleNavbar}></i>
+      <nav className="navbar">
+        <ul>
+          <RenderLinks />
+        </ul>
+      </nav>
+    </nav>
   );
 };
 

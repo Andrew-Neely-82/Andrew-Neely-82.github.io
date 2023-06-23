@@ -1,8 +1,9 @@
+import { Codeup } from "./img/export";
 import { useState } from "react";
 import { certs } from "./certs";
 import "./style.scss";
 
-const UdemyCerts = () => {
+const PersonalDevelopment = () => {
   const [selectedImg, setSelectedImg] = useState(null);
 
   const openModal = (img) => {
@@ -14,9 +15,9 @@ const UdemyCerts = () => {
   };
 
   return (
-    <section className="Udemy_" id="udemy">
+    <section className="Udemy_" id="personalDevelopment">
       <h2 className="heading">
-        Udemy &nbsp;<span>Certifications</span>
+        Personal &nbsp;<span>Development</span>
       </h2>
       {selectedImg && (
         <div className="modal">
@@ -24,10 +25,14 @@ const UdemyCerts = () => {
             x
           </span>
           <img src={selectedImg} alt="Modal" className="modal-image" />
-          <h3>{certs.find((cert) => cert.img === selectedImg)?.alt} Certificate from Udemy</h3>
+          <h3>{certs.find((cert) => cert.img === selectedImg) ? `Certificate from Udemy` : `Codeup Graduation Certificate`}</h3>
         </div>
       )}
       <div className="Udemy_certs-container">
+        <div className="Udemy_certs">
+          <img src={Codeup} alt="Codeup Graduation Certificate" onClick={() => openModal(Codeup)} />
+          <span>Codeup Graduation Certificate</span>
+        </div>
         {certs.map((cert, key) => {
           return (
             <div key={key} className="Udemy_certs">
@@ -41,4 +46,4 @@ const UdemyCerts = () => {
   );
 };
 
-export default UdemyCerts;
+export default PersonalDevelopment;

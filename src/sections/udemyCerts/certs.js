@@ -1,6 +1,10 @@
-import { HTML, Python1, SASS } from "./img/export";
+import { Codeup, HTML, Python1, SASS } from "./img/export";
 
 export const certs = [
+  // {
+  //   img: Codeup,
+  //   alt: 'Test'
+  // },
   {
     img: HTML,
     alt: "HTML",

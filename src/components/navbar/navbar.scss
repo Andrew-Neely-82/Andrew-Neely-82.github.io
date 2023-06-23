@@ -27,29 +27,44 @@
   }
 
   .navbar {
-    a {
-      font-size: 1.7rem;
-      color: map-get($colors, text);
-      margin-left: 4rem;
-      @include transition;
-      user-select: none;
-
-      &:hover {
-        color: map-get($colors, main);
-        filter: drop-shadow(0 0 0.5rem map-get($colors, main));
-        user-select: none;
+    ul {
+      display: flex;
+      @include screen(tablet) {
+        flex-direction: column;
       }
 
-      &.active {
-        color: map-get($colors, main);
-        user-select: none;
+      li {
+        list-style: none;
+
+        a {
+          font-size: 1.7rem;
+          color: map-get($colors, text);
+          margin-left: 4rem;
+          @include transition;
+          user-select: none;
+
+          &:hover {
+            color: map-get($colors, main);
+            filter: drop-shadow(0 0 0.5rem map-get($colors, main));
+            user-select: none;
+          }
+
+          &.active {
+            color: map-get($colors, main);
+            user-select: none;
+          }
+
+          @include screen(mobile) {
+            margin: 1em 0.5em;
+          }
+        }
       }
     }
   }
 }
 
 .header.sticky {
-  border-bottom: 0.1rem solid rgba(0 0 0 / 0.2);
+  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
 }
 
 @import "./media";
