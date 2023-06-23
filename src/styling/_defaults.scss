@@ -20,6 +20,10 @@ html {
 body {
   color: map-get($colors, text);
   background: map-get($colors, main-bg);
+
+  @include screen(tablet) {
+    overflow: hidden;
+  }
 }
 
 section {

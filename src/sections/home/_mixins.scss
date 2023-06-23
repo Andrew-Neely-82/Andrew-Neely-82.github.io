@@ -1,3 +1,32 @@
+@mixin home {
+  @include flexbox(flex, row, center, center, 0);
+  background: linear-gradient(176deg, rgba(17, 17, 34, 1) 25%, rgba(0, 38, 55, 1) 100%);
+  padding: 10rem 9%;
+  margin-top: -1rem;
+  scroll-margin-top: 100em;
+
+  @include screen(surfacePro) {
+    @include flexbox(flex, column-reverse, center, center);
+    padding: 1em 3%;
+  }
+
+  @include screen(duo) {
+    margin-top: 4em;
+  }
+
+  @include screen(mobile) {
+    margin-top: 12em;
+  }
+
+  @include screen(iphoneXR) {
+    margin-top: 3rem;
+  }
+
+  @include screen(iphoneSE) {
+    margin-top: 5em;
+  }
+}
+
 @mixin modal {
   position: fixed;
   display: flex;
@@ -26,6 +55,11 @@
   margin: auto auto;
   overflow: hidden;
 
+  @include screen(ipadAir) {
+    width: 75%;
+    height: 50%;
+  }
+
   @include screen(mobile) {
     height: 30%;
     width: 90%;
@@ -51,6 +85,36 @@
   box-sizing: border-box;
 }
 
+@mixin intro {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  @media (max-width: 1024px) and (max-height: 1366px) {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+
+  @include screen(ipadAir) {
+    flex-direction: column-reverse;
+    height: 55rem;
+    margin: auto;
+  }
+}
+
+@mixin intro-details {
+  @include flexbox(flex, column, center, flex-start);
+  margin: auto;
+  width: 100%;
+
+  @include screen(laptop) {
+    @include flexbox(flex, column, center, center);
+  }
+}
+
 @mixin intro-details_p {
   @include heightWidth(auto, 100%);
   font-size: 1.6rem;
@@ -65,6 +129,36 @@
   }
   &::after {
     content: '"';
+  }
+
+  @include screen(ipadPro) {
+    font-size: 2.25rem;
+  }
+
+  @include screen(ipadAir) {
+    font-size: 2rem;
+    line-height: 1.5;
+  }
+
+  @include screen(tablet) {
+    font-size: 1.5rem;
+  }
+
+  @include screen(mobile) {
+    font-size: 1.75rem;
+  }
+
+  @include screen(iphoneSE) {
+    font-size: 1.5rem;
+    line-height: 1.25;
+  }
+
+  @include screen(mobile-small) {
+    line-height: 1.25;
+  }
+
+  @include screen(fold) {
+    font-size: 1.25em;
   }
 }
 
@@ -142,8 +236,13 @@
     justify-content: flex-end;
   }
 
-  @include screen(tablet) {
-    justify-content: center;
+  @media (max-width: 1024px) and (max-height: 1366px) {
+    @include flexbox(flex, center, center);
+    width: 100%;
+  }
+
+  @include screen(ipadAir) {
+    @include flexbox(flex, center, center);
     width: 100%;
   }
 
@@ -165,15 +264,33 @@
     transform: scale(1.02);
   }
 
-  @include screen(tablet) {
-    @include heightWidth(25rem, same);
+  @include screen(laptop) {
+    margin-bottom: 3em;
+  }
+
+  @include screen(ipadAir) {
+    max-width: 40rem;
+    min-width: 25rem;
+    max-height: 40rem;
+    min-height: 25rem;
     margin-bottom: 2em;
   }
 
-  @include screen(mobile) {
+  @include screen(duo) {
     max-width: 22em;
     min-width: 15em;
     max-height: 22em;
+    min-height: 15em;
+  }
+
+  @include screen(iphoneSE) {
+    margin-top: 0;
+  }
+
+  @include screen(fold) {
+    max-width: 20em;
+    max-height: 20em;
+    min-width: 15em;
     min-height: 15em;
   }
 }

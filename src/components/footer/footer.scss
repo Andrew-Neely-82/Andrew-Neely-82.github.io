@@ -3,6 +3,9 @@
 
 .footer {
   user-select: none;
+  @include screen(mobile) {
+    display: none;
+  }
 
   @include flexbox(flex, row, space-between, center, wrap);
   position: fixed;

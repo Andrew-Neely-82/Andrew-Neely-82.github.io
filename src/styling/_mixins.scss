@@ -57,23 +57,6 @@
   transition: 250ms ease-in-out;
 }
 
-// media queries
-
-$size-map: (
-  mobile: 480px,
-  tablet: 768px,
-  laptop: 1024px,
-  desktop: 1200,
-);
-
-@mixin screen($size) {
-  $option: map-get($size-map, $size);
-
-  @media screen and (max-width: $option) {
-    @content;
-  }
-}
-
 // reusability
 
 @mixin glowSpan {
@@ -93,4 +76,37 @@ $size-map: (
   -webkit-text-fill-color: transparent;
   background-clip: text;
   filter: drop-shadow(2px 2px 2px rgba(255 255 255 / 0.25));
+}
+
+// media query specific
+
+$deviceWidth: (
+  hubMax: 1280px,
+  desktop: 1200px,
+  hub: 1024px,
+  ipadPro: 1024px,
+  laptop: 1024px,
+  surfacePro: 912px,
+  1000: 1000px,
+  ipadAir: 820px,
+  tablet: 768px,
+  ipadMini: 768px,
+  duo: 540px,
+  mobile: 480px,
+  iphoneXR: 414px,
+  s20: 412px,
+  pixel5: 393px,
+  iphone12Pro: 390px,
+  iphoneSE: 375px,
+  s8: 360px,
+  mobile-small: 350px,
+  fold: 280px,
+);
+
+@mixin screen($size) {
+  $option: map-get($deviceWidth, $size);
+
+  @media screen and (max-width: $option) {
+    @content;
+  }
 }
