@@ -1,7 +1,7 @@
 @import "../../styling/variables";
 @import "../../styling/mixins";
 
-@media (max-width: 770px) {
+@include screen(tablet) {
   .home {
     .home-content {
       h3,

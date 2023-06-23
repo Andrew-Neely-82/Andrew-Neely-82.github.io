@@ -11,6 +11,10 @@
   z-index: 100;
   user-select: none;
 
+  @include screen(laptop) {
+    padding: 2rem 3%;
+  }
+
   .logo {
     font-size: 2.5rem;
     color: map-get($colors, text);
@@ -24,12 +28,36 @@
     color: map-get($colors, text);
     display: none;
     user-select: none;
+
+    @include screen(laptop) {
+      font-size: 2.6rem;
+      display: block;
+      color: white;
+    }
   }
 
   .navbar {
+    @include screen(laptop) {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      padding: 1rem 3%;
+      background: map-get($colors, main-bg);
+      border-top: 0.1rem solid rgba(0 0 0 /0.2);
+      box-shadow: 0 0.5rem 1rem rgba(0 0 0 /0.2);
+      @include transition;
+      z-index: 1000;
+    }
+
+    &.active {
+      display: block;
+    }
+
     ul {
       display: flex;
-      @include screen(tablet) {
+      @include screen(laptop) {
         flex-direction: column;
       }
 
@@ -54,7 +82,9 @@
             user-select: none;
           }
 
-          @include screen(mobile) {
+          @include screen(laptop) {
+            display: block;
+            font-size: 2rem;
             margin: 1em 0.5em;
           }
         }
@@ -66,5 +96,3 @@
 .header.sticky {
   border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
 }
-
-@import "./media";
