@@ -1,0 +1,176 @@
+@mixin modal {
+  position: fixed;
+  display: flex;
+  inset: 0;
+  background: rgba(0 0 0 / 0.25);
+  height: 100vh;
+  width: 100vw;
+  backdrop-filter: blur(1em);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 10000;
+}
+
+@mixin modalContent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 40%;
+  width: 40%;
+  background: rgba(17, 17, 34, 1);
+  border: 3px solid map-get($colors, main);
+  border-radius: 2rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  margin: auto auto;
+  overflow: hidden;
+}
+
+@mixin modalSpan {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 2rem;
+  font-weight: bolder;
+  background: black;
+  border: 3px solid map-get($colors, main);
+  border-top: 0;
+  border-right: 0;
+  filter: drop-shadow(0 0 0 black);
+  transition: 250ms ease-in-out;
+  padding: 1rem 2rem;
+  margin: auto;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+@mixin intro-details_H1 {
+  @include heightWidth(auto, fit-content);
+  font-size: 5.6rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.3;
+  background: linear-gradient(89.97deg, #ae67fa 1.84%, #f49867 102.67%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(2px 2px 2px rgba(255 255 255 / 0.25));
+}
+
+@mixin intro-details_p {
+  @include heightWidth(auto, 100%);
+  font-size: 1.6rem;
+  background-color: #112;
+  @include borderAndRad(0.6rem solid map-get($colors, main), 2rem);
+  @include padmar(2rem, 0);
+  line-height: 3rem;
+  text-indent: 1em;
+
+  &::before {
+    content: '"';
+  }
+  &::after {
+    content: '"';
+  }
+}
+
+@mixin homeIcons {
+  a {
+    @include flexbox(inline-flex, row, center, center, 0);
+    @include heightWidth(4rem, same);
+    color: map-get($colors, main);
+    background: transparent;
+    box-shadow: 0 0 1rem map-get($colors, main) inset;
+    @include borderAndRad(0.2rem solid map-get($colors, main), 100%);
+    margin: 3rem 1.5rem 3rem 0;
+    @include transition;
+    user-select: none;
+
+    &:hover {
+      background-color: map-get($colors, main);
+      color: map-get($colors, second-bg);
+      box-shadow: 0 0 1.5rem map-get($colors, main), 0 0 1rem map-get($colors, second-bg) inset;
+      transform: scale(1.25);
+      @include transition;
+    }
+
+    &::before {
+      content: "";
+      inset: 120% 0 0 0;
+      @include heightWidth(100%, same);
+      position: absolute;
+      background: map-get($colors, main);
+      transform: perspective(2.5em) rotateX(40deg) scale(1, 0.35);
+      filter: blur(1em);
+      opacity: 0;
+      transition: opacity 500ms ease-in-out, top 100ms ease-in-out, transform 500ms ease-in-out;
+    }
+
+    &:hover:not(:active) {
+      color: map-get($colors, main-bg);
+      background-color: map-get($colors, main);
+      box-shadow: 0 0 2rem map-get($colors, main);
+
+      &::before {
+        opacity: 0.5;
+      }
+    }
+
+    &:active {
+      transform: translateY(2px);
+
+      &::before {
+        opacity: 0.7;
+        transform: translateY(-2px) perspective(2.5em) rotateX(40deg) scale(1, 0.35);
+        z-index: 100;
+      }
+    }
+
+    &:active {
+      filter: brightness(0.75);
+    }
+
+    .bx {
+      @include flexbox(flex, 0, center, center, 0);
+      font-size: 2rem;
+      user-select: none;
+    }
+  }
+}
+
+@mixin home-img {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 66%;
+
+  @include screen(laptop) {
+    justify-content: flex-end;
+  }
+
+  @include screen(tablet) {
+    position: relative;
+    top: 16em;
+    left: 0;
+    justify-content: flex-end;
+    width: 100%;
+  }
+}
+
+@mixin home-img_img {
+  @include heightWidth(35rem, same);
+  @include borderAndRad(0.5rem solid map-get($colors, main), 100%);
+  box-shadow: 0 0 2rem map-get($colors, main);
+  user-select: none;
+  @include transition;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+
+  @include screen(tablet) {
+    @include heightWidth(30rem, same);
+  }
+}

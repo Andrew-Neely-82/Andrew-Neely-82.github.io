@@ -73,3 +73,11 @@ $size-map: (
     @content;
   }
 }
+
+// reusability
+
+@mixin glowSpan {
+  color: map-get($colors, main);
+  text-shadow: 0 0 2rem black;
+  filter: drop-shadow(0 0 0.25rem map-get($colors, main));
+}

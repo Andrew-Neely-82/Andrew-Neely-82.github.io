@@ -10,7 +10,7 @@ export const links = [
     title: "My LinkedIn",
   },
   {
-    href: "https://alumni.codeup.com/students/1781",
+    href: "https://alumni.codeup.com/candidate/andrew-neely/",
     class: "bx bxs-school",
     title: "My Codeup Alumni Page",
   },

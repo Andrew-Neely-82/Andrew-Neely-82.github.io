@@ -1,40 +1,23 @@
 @import "../../styling/variables";
 @import "../../styling/mixins";
+@import "./mixins";
 
 .home {
   @include flexbox(flex, row, center, center, 0);
   background: linear-gradient(176deg, rgba(17, 17, 34, 1) 25%, rgba(0, 38, 55, 1) 100%);
+  padding: 0 9% 2rem;
+  margin-top: -1rem;
 
-  @include screen(tablet) {
+  @include screen(laptop) {
     @include flexbox(flex, column-reverse, center, center);
+    padding: 1em 3%;
   }
 
   .modal {
-    position: fixed;
-    display: flex;
-    inset: 0;
-    background: rgba(0 0 0 / 0.25);
-    height: 100vh;
-    width: 100vw;
-    backdrop-filter: blur(1em);
-    -webkit-backdrop-filter: blur(10px);
-    z-index: 10000;
+    @include modal;
 
     .modal-content {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 40%;
-      width: 40%;
-      background: rgba(17, 17, 34, 1);
-      border: 3px solid map-get($colors, main);
-      border-radius: 2rem;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      margin: auto auto;
-      overflow: hidden;
+      @include modalContent;
 
       h2 {
         font-size: 2rem;
@@ -43,21 +26,7 @@
       }
 
       span {
-        position: absolute;
-        top: 0;
-        right: 0;
-        font-size: 2rem;
-        font-weight: bolder;
-        background: black;
-        border: 3px solid map-get($colors, main);
-        border-top: 0;
-        border-right: 0;
-        filter: drop-shadow(0 0 0 black);
-        transition: 250ms ease-in-out;
-        padding: 1rem 2rem;
-        margin: auto;
-        cursor: pointer;
-        box-sizing: border-box;
+        @include modalSpan;
 
         &:hover {
           background: red;
@@ -68,202 +37,91 @@
   }
 
   .home-content {
+    display: flex;
+    flex-direction: column;
+
+    @include screen(laptop) {
+      h1,
+      h3,
+      p {
+        width: 100% !important;
+        text-align: start;
+      }
+    }
+
+    @include screen(tablet) {
+      margin: 0 !important;
+    }
+
     @media (max-width: 770px) {
       @include flexbox(flex, column, center, center);
       margin-top: 10em;
     }
 
-    @media (max-width: 390px) {
+    @include screen(mobile) {
       @include flexbox(flex, 0, flex-start, flex-start);
       margin-top: 1rem;
     }
 
-    h3,
-    h1 {
-      font-weight: 700;
-    }
+    .intro {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
 
-    h3 {
-      font-size: 3.2rem;
-
-      span {
-        color: map-get($colors, main);
-        text-shadow: 0 0 2rem black;
-        filter: drop-shadow(0 0 0.25rem map-get($colors, main));
+      @include screen(tablet) {
+        flex-direction: column-reverse;
+        height: 55rem;
       }
-    }
 
-    h3:nth-of-type(2) {
-      margin-bottom: 2rem;
-    }
+      .intro-details {
+        @include flexbox(flex, column, center, flex-start);
+        width: 100%;
 
-    h1 {
-      @include heightWidth(auto, fit-content);
-      font-size: 5.6rem;
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      line-height: 1.3;
-      background: linear-gradient(89.97deg, #ae67fa 1.84%, #f49867 102.67%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      filter: drop-shadow(2px 2px 2px rgba(255 255 255 / 0.25));
+        h3,
+        h1 {
+          font-weight: 700;
+          width: fit-content !important;
+        }
 
-      @media (max-width: 390px) {
-        width: fit-content;
+        h3 {
+          font-size: 3.2rem;
+
+          span {
+            @include glowSpan;
+          }
+        }
+
+        h3:nth-of-type(2) {
+          margin-bottom: 2rem;
+        }
+
+        h1 {
+          @include intro-details_H1;
+
+          @media (max-width: 390px) {
+            width: fit-content;
+          }
+        }
       }
-    }
 
-    p {
-      @include heightWidth(auto, 75%);
-      font-size: 1.6rem;
-      background-color: #112;
-      @include borderAndRad(0.6rem solid map-get($colors, main), 2rem);
-      @include padmar(2rem, 0);
-      line-height: 3rem;
-      text-indent: 1em;
-
-      &::before {
-        content: '"';
-      }
-      &::after {
-        content: '"';
+      p {
+        @include intro-details_p;
       }
     }
 
     .social-media {
       user-select: none;
-
-      a {
-        @include flexbox(inline-flex, row, center, center, 0);
-        @include heightWidth(4rem, same);
-        color: map-get($colors, main);
-        background: transparent;
-        box-shadow: 0 0 1rem map-get($colors, main) inset;
-        @include borderAndRad(0.2rem solid map-get($colors, main), 100%);
-        margin: 3rem 1.5rem 3rem 0;
-        @include transition;
-        user-select: none;
-
-        &:hover {
-          background-color: map-get($colors, main);
-          color: map-get($colors, second-bg);
-          box-shadow: 0 0 1.5rem map-get($colors, main), 0 0 1rem map-get($colors, second-bg) inset;
-          transform: scale(1.25);
-          @include transition;
-        }
-
-        &::before {
-          content: "";
-          inset: 120% 0 0 0;
-          @include heightWidth(100%, same);
-          position: absolute;
-          background: map-get($colors, main);
-          transform: perspective(2.5em) rotateX(40deg) scale(1, 0.35);
-          filter: blur(1em);
-          opacity: 0;
-          transition: opacity 500ms ease-in-out, top 100ms ease-in-out, transform 500ms ease-in-out;
-        }
-
-        &:hover:not(:active) {
-          color: map-get($colors, main-bg);
-          background-color: map-get($colors, main);
-          box-shadow: 0 0 2rem map-get($colors, main);
-
-          &::before {
-            opacity: 0.5;
-          }
-        }
-
-        &:active {
-          transform: translateY(2px);
-
-          &::before {
-            opacity: 0.7;
-            transform: translateY(-2px) perspective(2.5em) rotateX(40deg) scale(1, 0.35);
-            z-index: 100;
-          }
-        }
-
-        &:active {
-          filter: brightness(0.75);
-        }
-
-        .bx {
-          @include flexbox(flex, 0, center, center, 0);
-          scale: 2;
-          user-select: none;
-        }
-      }
-    }
-
-    .btn {
-      display: inline-flex;
-      position: relative;
-      background: map-get($colors, main-bg);
-      font-size: 1.6rem;
-      font-weight: 600;
-      letter-spacing: 0.1rem;
-      color: map-get($colors, main);
-      text-shadow: 0 0 1em map-get($colors, main-bg);
-      @include borderAndRad(2px solid map-get($colors, main), 10em);
-      box-shadow: 0 0 1em map-get($colors, main);
-      @include padmar(1rem 2.8rem, 0);
-      user-select: none;
-      transition: transform 100ms ease-in-out, color 500ms ease-in-out, background-color 500ms ease-in-out, box-shadow 500ms ease-in-out;
-
-      &::before {
-        content: "";
-        inset: 120% 0 0 0;
-        @include heightWidth(100%, same);
-        position: absolute;
-        background: map-get($colors, main);
-        transform: perspective(2.5em) rotateX(40deg) scale(1, 0.35);
-        filter: blur(1em);
-        opacity: 0;
-        transition: opacity 500ms ease-in-out, top 100ms ease-in-out, transform 500ms ease-in-out;
-      }
-
-      &:hover:not(:active) {
-        color: map-get($colors, main-bg);
-        background-color: map-get($colors, main);
-        box-shadow: 0 0 2rem map-get($colors, main);
-
-        &::before {
-          opacity: 0.5;
-        }
-      }
-
-      &:active {
-        transform: translateY(2px);
-
-        &::before {
-          opacity: 0.7;
-          transform: translateY(-2px) perspective(2.5em) rotateX(40deg) scale(1, 0.35);
-        }
+      .social-media_icon {
+        @include homeIcons;
       }
     }
   }
 
   .home-img {
-    //
+    @include home-img;
+
     img {
-      @include heightWidth(35rem, same);
-      @include borderAndRad(0.5rem solid map-get($colors, main), 100%);
-      box-shadow: 0 0 2rem map-get($colors, main);
-      user-select: none;
-      @include transition;
-      cursor: pointer;
-
-      &:hover {
-        transform: scale(1.02);
-      }
-
-      @media (max-width: 375px) {
-        @include heightWidth(30rem, same);
-      }
+      @include home-img_img;
     }
   }
 }
-
-@import "./media";

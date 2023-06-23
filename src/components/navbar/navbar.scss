@@ -2,8 +2,8 @@
 @import "../../styling/mixins";
 
 .header {
-  position: fixed;
-  inset: auto;
+  position: sticky;
+  inset: 0 0;
   @include flexbox(flex, row, space-between, center, 0);
   @include heightWidth(auto, 100%);
   @include padmar(2rem 9%, 0);
