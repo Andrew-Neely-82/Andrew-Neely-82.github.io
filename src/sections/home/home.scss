@@ -7,10 +7,19 @@
   background: linear-gradient(176deg, rgba(17, 17, 34, 1) 25%, rgba(0, 38, 55, 1) 100%);
   padding: 0 9% 2rem;
   margin-top: -1rem;
+  scroll-margin-top: 100em;
 
   @include screen(laptop) {
     @include flexbox(flex, column-reverse, center, center);
     padding: 1em 3%;
+  }
+
+  @include screen(tablet) {
+    margin-top: 5em;
+  }
+
+  @include screen(mobile) {
+    margin-top: 8em;
   }
 
   .modal {
@@ -53,7 +62,7 @@
       margin: 0 !important;
     }
 
-    @media (max-width: 770px) {
+    @include screen(tablet) {
       @include flexbox(flex, column, center, center);
       margin-top: 10em;
     }
@@ -71,11 +80,24 @@
       @include screen(tablet) {
         flex-direction: column-reverse;
         height: 55rem;
+        margin: auto;
       }
 
       .intro-details {
         @include flexbox(flex, column, center, flex-start);
         width: 100%;
+
+        @include screen(desktop) {
+          margin-right: 10%;
+        }
+
+        @include screen(laptop) {
+          margin-right: 10%;
+        }
+
+        @include screen(tablet) {
+          @include flexbox(flex, column, center, center);
+        }
 
         h3,
         h1 {
@@ -86,6 +108,11 @@
         h3 {
           font-size: 3.2rem;
 
+          @include screen(mobile) {
+            font-size: 2rem;
+            margin-top: 1em;
+          }
+
           span {
             @include glowSpan;
           }
@@ -93,13 +120,18 @@
 
         h3:nth-of-type(2) {
           margin-bottom: 2rem;
+
+          @include screen(mobile) {
+            margin: 0;
+            margin-bottom: 2rem;
+          }
         }
 
         h1 {
-          @include intro-details_H1;
+          @include gradientHeading;
 
-          @media (max-width: 390px) {
-            width: fit-content;
+          @include screen(mobile) {
+            font-size: 3em;
           }
         }
       }
@@ -110,7 +142,6 @@
     }
 
     .social-media {
-      user-select: none;
       .social-media_icon {
         @include homeIcons;
       }

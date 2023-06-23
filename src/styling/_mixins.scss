@@ -81,3 +81,16 @@ $size-map: (
   text-shadow: 0 0 2rem black;
   filter: drop-shadow(0 0 0.25rem map-get($colors, main));
 }
+
+@mixin gradientHeading {
+  @include heightWidth(auto, fit-content);
+  font-size: 5.6rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.3;
+  background: linear-gradient(89.97deg, #ae67fa 1.84%, #f49867 102.67%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(2px 2px 2px rgba(255 255 255 / 0.25));
+}
