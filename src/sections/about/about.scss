@@ -1,39 +1,15 @@
 @import "../../styling/variables";
 @import "../../styling/mixins";
+@import "./mixins"; // long styles
 
 .about {
-  @include flexbox(flex, row, center, center, 0);
-  background: linear-gradient(176deg, rgba(0, 38, 55, 1) 25%, rgba(17, 17, 34, 1) 55%);
-  gap: 9rem;
-
-  // .about-img {
-  //   // img {
-  //   //   @include heightWidth(35rem, same);
-  //   //   @include borderAndRad(0.6rem solid map-get($colors, main), 100%);
-  //   //   box-shadow: 0 0 2rem map-get($colors, main);
-  //   //   user-select: none;
-  //   //   @include transition;
-  //   //   cursor: pointer;
-
-  //   //   &:hover {
-  //   //     transform: scale(1.02);
-  //   //   }
-  //   // }
-  // }
+  @include home;
 
   .spline {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flexbox(flex, 0, center, center);
 
     canvas {
-      vertical-align: middle;
-      height: 350px !important;
-      width: 350px !important;
-      @include borderAndRad(0.6rem solid map-get($colors, main), 2rem);
-      box-shadow: 0 0 1em map-get($colors, main);
-      border-radius: 100%;
-      transform: perspective(25px);
+      @include canvas;
     }
   }
 
@@ -47,95 +23,34 @@
     }
 
     h2 {
-      line-height: 1.2;
+      @include h2;
     }
 
     h3 {
-      @include gradientHeading;
+      @include h3;
     }
 
     p {
-      font-size: 1.6rem;
-      @include padmar(auto, 2rem 0 3rem);
-
-      &:nth-of-type(1) {
-        background-color: #112;
-        @include borderAndRad(0.6rem solid map-get($colors, main), 2rem);
-        @include padmar(2rem, 1rem auto);
-        line-height: 3rem;
-        text-indent: 1em;
-
-        &::before,
-        &::after {
-          content: '"';
-          position: relative;
-          font-display: auto;
-        }
-      }
+      @include p;
     }
 
-    .btn-container {
-      display: flex;
-      flex-direction: column;
-      @include flexbox(flex, column, flex-end, flex-end);
+    // .btn-container {
+    //   display: flex;
+    //   flex-direction: column;
+    //   @include flexbox(flex, column, flex-end, flex-end);
 
-      span {
-        color: yellow;
+    //   span {
+    //     color: yellow;
 
-        &:nth-of-type(2) {
-          margin-bottom: 2rem;
-          padding: 0;
-        }
-      }
+    //     &:nth-of-type(2) {
+    //       margin-bottom: 2rem;
+    //       padding: 0;
+    //     }
+    //   }
 
-      .btn {
-        display: inline-flex;
-        position: relative;
-        background: map-get($colors, main-bg);
-        font-size: 1.6rem;
-        font-weight: 600;
-        letter-spacing: 0.1rem;
-        color: map-get($colors, main);
-        text-shadow: 0 0 1em map-get($colors, main-bg);
-        @include borderAndRad(2px solid map-get($colors, main), 10em);
-        box-shadow: 0 0 1em map-get($colors, main);
-        @include padmar(1rem 2.8rem, 0);
-        user-select: none;
-        transition: transform 100ms ease-in-out, color 500ms ease-in-out, background-color 500ms ease-in-out, box-shadow 500ms ease-in-out;
-
-        &::before {
-          content: "";
-          inset: 120% 0 0 0;
-          @include heightWidth(100%, same);
-          position: absolute;
-          background: map-get($colors, main);
-          transform: perspective(2.5em) rotateX(40deg) scale(1, 0.35);
-          filter: blur(1em);
-          opacity: 0;
-          transition: opacity 500ms ease-in-out, top 100ms ease-in-out, transform 500ms ease-in-out;
-        }
-
-        &:hover:not(:active) {
-          color: map-get($colors, main-bg);
-          background-color: map-get($colors, main);
-          box-shadow: 0 0 2rem map-get($colors, main);
-
-          &::before {
-            opacity: 0.5;
-          }
-        }
-
-        &:active {
-          transform: translateY(2px);
-
-          &::before {
-            opacity: 0.7;
-            transform: translateY(-2px) perspective(2.5em) rotateX(40deg) scale(1, 0.35);
-          }
-        }
-      }
-    }
+    //   .btn {
+    //     @include btn;
+    //   }
+    // }
   }
 }
-
-@import "./media";

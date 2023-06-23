@@ -1,0 +1,148 @@
+@import "../../styling/variables";
+@import "../../styling/mixins";
+
+@mixin home {
+  @include flexbox(flex, row, center, center, 0);
+  background: linear-gradient(176deg, rgba(0, 38, 55, 1) 25%, rgba(17, 17, 34, 1) 55%);
+  gap: 9rem;
+
+  @include screen(ipadAir) {
+    @include flexbox(flex, column, center, center);
+    gap: 2.5rem;
+  }
+}
+
+@mixin canvas {
+  @include heightWidth(35rem !important, same);
+  @include borderAndRad(0.6rem solid map-get($colors, main), 100%);
+  box-shadow: 0 0 1em map-get($colors, main);
+  transform: perspective(25px);
+
+  @include screen(iphoneSE) {
+    @include heightWidth(25rem !important, same);
+  }
+}
+
+@media (max-width: 770px) {
+  .about,
+  .about-content {
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+    @include flexbox(flex, column, center, center);
+  }
+
+  .about {
+    .about-img {
+      display: none;
+    }
+    .about-content {
+      p {
+        padding: 0 2rem;
+      }
+    }
+  }
+}
+
+@include screen(fold) {
+  .about {
+    .about-content {
+      .heading {
+        font-size: 4rem;
+      }
+
+      h3 {
+        font-size: 4rem;
+      }
+      p {
+        text-align: center;
+
+        &:nth-of-type(2) {
+          font-size: 1.3em;
+        }
+      }
+    }
+  }
+}
+
+@mixin h2 {
+  line-height: 1.2;
+}
+
+@mixin h3 {
+  @include gradientHeading;
+
+  @include screen(iphoneSE) {
+    font-size: 3rem;
+  }
+}
+
+@mixin p {
+  background-color: #112;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  text-indent: 1em;
+  @include borderAndRad(0.6rem solid map-get($colors, main), 2rem);
+  @include padmar(2rem, 1rem auto);
+  user-select: none;
+
+  &::before,
+  &::after {
+    content: '"';
+    position: relative;
+    font-display: auto;
+  }
+
+  @include screen(iphoneXR) {
+    @include heightWidth(20rem, 100%);
+    overflow-y: scroll;
+  }
+}
+
+@mixin btn {
+  display: inline-flex;
+  position: relative;
+  background: map-get($colors, main-bg);
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  color: map-get($colors, main);
+  text-shadow: 0 0 1em map-get($colors, main-bg);
+  @include borderAndRad(2px solid map-get($colors, main), 10em);
+  box-shadow: 0 0 1em map-get($colors, main);
+  @include padmar(1rem 2.8rem, 0);
+  user-select: none;
+  transition: transform 100ms ease-in-out, color 500ms ease-in-out, background-color 500ms ease-in-out, box-shadow 500ms ease-in-out;
+
+  &::before {
+    content: "";
+    inset: 120% 0 0 0;
+    @include heightWidth(100%, same);
+    position: absolute;
+    background: map-get($colors, main);
+    transform: perspective(2.5em) rotateX(40deg) scale(1, 0.35);
+    filter: blur(1em);
+    opacity: 0;
+    transition: opacity 500ms ease-in-out, top 100ms ease-in-out, transform 500ms ease-in-out;
+  }
+
+  &:hover:not(:active) {
+    color: map-get($colors, main-bg);
+    background-color: map-get($colors, main);
+    box-shadow: 0 0 2rem map-get($colors, main);
+
+    &::before {
+      opacity: 0.5;
+    }
+  }
+
+  &:active {
+    transform: translateY(2px);
+
+    &::before {
+      opacity: 0.7;
+      transform: translateY(-2px) perspective(2.5em) rotateX(40deg) scale(1, 0.35);
+    }
+  }
+}

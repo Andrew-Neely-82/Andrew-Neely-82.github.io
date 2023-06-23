@@ -16,13 +16,13 @@ const About = () => {
             </h2>
             <h3>{info.h3}</h3>
             <p>{info.p}</p>
-            <div className="btn-container">
+            {/* <div className="btn-container">
               <span>{info.span1}</span>
               <span>{info.span2}</span>
               <a href="#about" className="btn">
                 {info.a}
               </a>
-            </div>
+            </div> */}
           </div>
         );
       })}
