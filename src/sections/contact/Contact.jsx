@@ -62,24 +62,8 @@ const Contact = () => {
       <h2 className="heading">
         Contact <span>Me!</span>
       </h2>
-      <span
-        style={{
-          textAlign: "center",
-          fontSize: "large",
-          marginBottom: "1rem",
-          color: "yellow",
-        }}>
-        Updating the form below soon!
-      </span>
-      <span
-        style={{
-          textAlign: "center",
-          fontSize: "large",
-          marginBottom: "1rem",
-          color: "yellow",
-        }}>
-        Please use Linkedin button above in Home section
-      </span>
+      <span className="yellow-text">Updating the form below soon!</span>
+      <span className="yellow-text">Please use Linkedin button above in Home section</span>
       <form action={`#`}>
         <div className="input-box">
           <input ref={nameRef} type="text" name="name" id="name" placeholder="Full Name" />

@@ -1,35 +1,23 @@
 @import "../../styling/variables";
 @import "../../styling/mixins";
+@import "./media";
 
 .contact {
-  @include flexbox(flex, column, center);
-  user-select: none;
+  @include contact;
 
   h2 {
-    text-align: center;
-    font-size: 4.5rem;
-    margin: 3rem;
+    @include contact_h2;
+  }
 
-    span {
-      @include glowSpan;
-    }
+  .yellow-text {
+    @include yellow-text;
   }
 
   form {
-    max-width: 70rem;
-    margin: 1rem auto;
-    text-align: center;
-    margin-bottom: 3rem;
+    @include form;
 
     .input-box {
-      @include flexbox(grid, 0, space-between, 0, wrap);
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-
-      input {
-        @include flexbox(flex);
-        gap: 1rem;
-      }
+      @include input-box;
     }
 
     textarea {
@@ -37,65 +25,12 @@
     }
 
     .btn {
-      @include flexbox(inline-flex);
-      position: relative;
-      background: map-get($colors, main-bg);
-      font-size: 1.6rem;
-      font-weight: 600;
-      letter-spacing: 0.1rem;
-      color: map-get($colors, main);
-      text-shadow: 0 0 1em map-get($colors, main-bg);
-      @include borderAndRad(2px solid map-get($colors, main), 10em);
-      box-shadow: 0 0 1em map-get($colors, main);
-      @include padmar(1rem 2.8rem, 2rem);
-      user-select: none;
-      transition: transform 100ms ease-in-out, color 500ms ease-in-out, background-color 500ms ease-in-out, box-shadow 500ms ease-in-out;
-      cursor: pointer;
-
-      &::before {
-        content: "";
-        inset: 120% 0 0 0;
-        @include heightWidth(100%, same);
-        position: absolute;
-        background: map-get($colors, main);
-        transform: perspective(2.5em) rotateX(40deg) scale(1, 0.35);
-        filter: blur(1em);
-        opacity: 0;
-        transition: opacity 500ms ease-in-out, top 100ms ease-in-out, transform 500ms ease-in-out;
-      }
-
-      &:hover:not(:active) {
-        color: map-get($colors, main-bg);
-        background-color: map-get($colors, main);
-        box-shadow: 0 0 2rem map-get($colors, main);
-
-        &::before {
-          opacity: 0.5;
-        }
-      }
-
-      &:active {
-        transform: translateY(2px);
-
-        &::before {
-          opacity: 0.7;
-          transform: translateY(-2px) perspective(2.5em) rotateX(40deg) scale(1, 0.35);
-          z-index: 100;
-        }
-      }
+      @include btn;
     }
   }
 
   form .input-box input,
   form textarea {
-    @include heightWidth(auto, 100%);
-    font-size: 1.6rem;
-    color: map-get($colors, text);
-    background: map-get($colors, second-bg);
-    box-shadow: 0 0 1rem map-get($colors, main);
-    @include borderAndRad(1px solid map-get($colors, main), 0.8rem);
-    @include padmar(1.5rem, 0.7rem 0);
+    @include formSpecific;
   }
 }
-
-@import "./media";

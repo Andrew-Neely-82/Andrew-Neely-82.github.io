@@ -1,0 +1,140 @@
+@mixin heading {
+  @include flexbox(flex, row, flex-start, center, 0);
+  width: 100%;
+  font-size: 4.5rem;
+  margin-bottom: 5rem;
+
+  span {
+    @include glowSpan;
+  }
+
+  @include screen(mobile) {
+    margin-left: 0.5em;
+  }
+}
+
+@mixin Udemy_certs-container {
+  @include flexbox(grid, center, center, center, 0);
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+
+  @include screen(ipadAir) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include screen(iphone12Pro) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@mixin Udemy_certs {
+  @include flexbox(flex, column, center, center);
+
+  @include screen(mobile) {
+    margin-bottom: 1.5em;
+  }
+}
+
+@mixin Udemy_certs_img {
+  width: 90%;
+  aspect-ratio: 4/3;
+  margin-inline: auto;
+  border: 3px solid map-get($colors, main);
+  border-radius: 2rem;
+  transition: 200ms ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+@mixin Udemy_certs_span {
+  height: 3em;
+  margin-block: 2rem;
+  font-size: 20px;
+  text-align: center;
+
+  @include screen(duo) {
+    font-size: 1.5em;
+  }
+
+  @include screen(mobile) {
+    display: none;
+  }
+}
+
+@mixin modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+  z-index: 999;
+  padding: 1rem;
+
+  overflow: hidden;
+}
+
+@mixin modal_close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: white;
+  color: black;
+  font-size: 2.5rem;
+  font-weight: bold;
+  border: 3px solid white;
+  border-top: none;
+  border-right: none;
+  border-radius: 0 0 0 0.5em;
+  padding: 12px 24px;
+  transition: 250ms all;
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    background: red;
+    color: white;
+  }
+}
+
+@mixin modal_close_img {
+  width: 70%;
+
+  @include screen(laptop) {
+    width: 60%;
+  }
+
+  @include screen(iphoneXR) {
+    width: 80%;
+  }
+
+  @include screen(iphoneSE) {
+    width: 90%;
+  }
+}
+
+@mixin modal_close_h3 {
+  position: absolute;
+  bottom: 5rem;
+  left: auto;
+  color: white;
+  font-size: 3rem;
+  margin-top: 1rem;
+  text-align: center;
+
+  @include screen(iphoneXR) {
+    bottom: 30rem;
+    font-size: 2.4rem;
+  }
+
+  @include screen(iphoneSE) {
+    bottom: 20rem;
+  }
+}

@@ -1,154 +1,44 @@
 @import "../../styling/variables";
 @import "../../styling/mixins";
+@import "./mixins";
 
 .Udemy_ {
   @include flexbox(flex, column, flex-start, center, 0);
   width: 100%;
 
   .heading {
-    margin-bottom: 5rem;
-    margin-left: 7rem;
-
-    @include screen(mobile) {
-      margin-left: 0.5em;
-    }
-
-    @media screen and (max-width: 390px) {
-      display: flex;
-      flex-direction: column !important;
-      justify-content: flex-start;
-      align-items: flex-start !important;
-      margin-inline: 0;
-
-      span {
-        display: block !important;
-      }
-    }
-  }
-
-  .heading {
-    @include flexbox(flex, row, flex-start, center, 0);
-    width: 100%;
-    font-size: 4.5rem;
-
-    span {
-      @include glowSpan;
-    }
+    @include heading;
   }
 
   .Udemy_certs-container {
-    @include flexbox(grid, center, center, center, 0);
-    grid-template-columns: repeat(3, 1fr);
-    width: 100%;
-
-    @media screen and (max-width: 390px) {
-      grid-template-columns: repeat(2, 1fr);
-    }
+    @include Udemy_certs-container;
 
     .Udemy_certs {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      @include Udemy_certs;
 
       img {
-        width: 90%;
-        margin-inline: auto;
-        border: 3px solid map-get($colors, main);
-        border-radius: 2rem;
-        transition: 200ms ease-in-out;
-        cursor: pointer;
-
-        &:hover {
-          transform: scale(1.1);
-        }
-      }
-
-      @include screen(mobile) {
-        margin-bottom: 1.5em;
+        @include Udemy_certs_img;
       }
 
       span {
-        margin-block: 2rem;
-        font-size: 20px;
-
-        @include screen(mobile) {
-          display: none;
-        }
+        @include Udemy_certs_span;
       }
     }
   }
 
   .modal {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(4px);
-    z-index: 999;
-    padding: 1rem;
+    @include modal;
 
     .modal_close {
-      position: absolute;
-      top: 0;
-      right: 0;
-      background-color: white;
-      color: black;
-      font-size: 2.5rem;
-      font-weight: bold;
-      border: 3px solid white;
-      border-top: none;
-      border-right: none;
-      border-radius: 0 0 0 0.5em;
-      padding: 12px 24px;
-      transition: 250ms all;
-      cursor: pointer;
-      user-select: none;
-
-      &:hover {
-        background: red;
-        color: white;
-      }
+      @include modal_close;
     }
 
     img {
-      width: 70%;
-
-      @include screen(laptop) {
-        width: 60%;
-      }
-
-      @include screen(iphoneXR) {
-        width: 80%;
-      }
-
-      @include screen(iphoneSE) {
-        width: 90%;
-      }
+      @include modal_close_img;
     }
 
     h3 {
-      position: absolute;
-      bottom: 5rem;
-      left: auto;
-      color: white;
-      font-size: 3rem;
-      margin-top: 1rem;
-      text-align: center;
-
-      @include screen(iphoneXR) {
-        bottom: 30rem;
-        font-size: 2.4rem;
-      }
-
-      @include screen(iphoneSE) {
-        bottom: 20rem;
-      }
+      @include modal_close_h3;
     }
   }
 }

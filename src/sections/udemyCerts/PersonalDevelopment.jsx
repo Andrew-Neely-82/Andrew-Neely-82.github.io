@@ -17,7 +17,7 @@ const PersonalDevelopment = () => {
   return (
     <section className="Udemy_" id="personalDevelopment">
       <h2 className="heading">
-        Personal &nbsp;<span>Development</span>
+        Personal&nbsp;<span>Development</span>
       </h2>
       {selectedImg && (
         <div className="modal">

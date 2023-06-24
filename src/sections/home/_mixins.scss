@@ -116,13 +116,14 @@
 }
 
 @mixin intro-details_p {
-  @include heightWidth(auto, 100%);
+  @include heightWidth(20rem, 100%);
   font-size: 1.6rem;
   background-color: #112;
   @include borderAndRad(0.6rem solid map-get($colors, main), 2rem);
   @include padmar(2rem, 0);
   line-height: 3rem;
   text-indent: 1em;
+  overflow-y: scroll;
 
   &::before {
     content: '"';
@@ -149,16 +150,10 @@
   }
 
   @include screen(iphoneSE) {
-    font-size: 1.5rem;
-    line-height: 1.25;
-  }
-
-  @include screen(mobile-small) {
-    line-height: 1.25;
+    font-size: 1.6rem;
   }
 
   @include screen(fold) {
-    font-size: 1.25em;
   }
 }
 

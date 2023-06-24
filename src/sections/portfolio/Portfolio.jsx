@@ -7,13 +7,6 @@ const Portfolio = () => {
       <h2 className="heading">
         Latest<span>&nbsp;Projects</span>
       </h2>
-      <span
-        style={{
-          textAlign: "center",
-          fontSize: "large",
-          marginBottom: "1rem",
-          color: "yellow",
-        }}></span>
       <div className="portfolio-wrapper">
         <div className="portfolio-container">
           {portfolioBoxes.map((info, key) => {
