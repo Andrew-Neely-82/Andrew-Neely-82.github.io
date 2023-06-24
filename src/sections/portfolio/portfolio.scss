@@ -1,88 +1,56 @@
 @import "../../styling/variables";
 @import "../../styling/mixins";
+@import "./mixins";
 
 .portfolio {
-  // background: inherit; // TODO: update
   @include flexbox(flex, column, center, 0, 0);
 
   h2 {
-    text-align: end;
-    font-size: 4.5rem;
-    margin-bottom: 4rem;
-    margin-right: 7rem;
+    @include portfolioH2;
   }
 
   .heading {
+    @include heading;
+
     span {
       @include glowSpan;
     }
   }
 
   .portfolio-wrapper {
-    max-height: 70vh;
-    overflow-x: auto;
-    @include borderAndRad(0.5rem solid map-get($colors, main), 2rem);
-    padding: 6rem 4rem 8rem 6rem;
+    @include portfolioWrapper;
 
     .portfolio-container {
-      @include flexbox(grid, auto, 0, center);
-      grid-template-columns: repeat(1, 1fr);
-      gap: 2.5rem;
+      @include portfolio-container;
 
       .portfolio-box {
-        position: relative;
-        @include flexbox(flex);
-        @include borderAndRad(0.5rem solid map-get($colors, main), 2rem);
-        box-shadow: 0 0 1rem map-get($colors, main-bg);
-        overflow: hidden;
+        @include portfolio-box;
 
-        &:hover .portfolio-layer {
-          transform: translateY(0);
-        }
-
-        &:hover img {
-          transform: scale(1.1);
-          filter: blur(4px) brightness(0.5);
+        .portfolio-box_h4 {
+          @include portfolio-box_h4;
         }
 
         img {
-          @include heightWidth(100%, same);
-          @include transition;
-          cursor: pointer;
-
-          &:hover {
-            transform: scale(1.1);
-            filter: blur(3px);
-          }
+          @include portfolio-box_img;
         }
 
         .portfolio-layer {
-          position: absolute;
-          inset: 0 0 0 0;
-          @include flexbox(flex, column, center, center, 0);
-          @include heightWidth(100%, same);
-          text-align: center;
-          background: linear-gradient(rgba(0 0 0 / 0.1), rgba(0 238 221 / 0.25));
-          @include padmar(0 4rem, 0);
-          transform: translateY(100%);
-          @include transition;
-          cursor: pointer;
+          @include portfolio-layer;
 
           h4 {
-            font-size: 3rem;
+            @include portfolio-layer_h4;
           }
 
           p {
-            font-size: 1.5rem;
-            filter: drop-shadow(0 0 0.1em black);
-            margin: 0.3rem 0 1rem;
+            @include portfolio-layer_p;
+
+            span {
+              @include portfolio-layer_span;
+            }
           }
 
           a {
-            @include flexbox(inline-flex, row, center, center, 0);
-            @include heightWidth(5rem, same);
-            background: map-get($colors, text);
-            @include borderAndRad(2px solid map-get($colors, main), 100%);
+            @include portfolio-layer_a;
 
             i {
               font-size: 2rem;
@@ -94,5 +62,3 @@
     }
   }
 }
-
-@import "./media";

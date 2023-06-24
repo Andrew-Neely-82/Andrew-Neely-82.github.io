@@ -1,0 +1,169 @@
+@import "../../styling/variables";
+@import "../../styling/mixins";
+
+
+@mixin portfolioH2 {
+  text-align: end;
+  font-size: 4.5rem;
+  margin-bottom: 4rem;
+  margin-right: 7rem;
+}
+
+@mixin heading {
+  @include flexbox(flex, row, flex-start);
+
+  @include screen(iphoneSE) {
+    width: 100%;
+  }
+}
+
+@mixin portfolioWrapper {
+  max-height: 70vh;
+  overflow-x: auto;
+  @include borderAndRad(0.5rem solid map-get($colors, main), 2rem);
+  padding: 1em;
+  overflow-y: scroll;
+
+  @include screen(iphoneXR) {
+    @include flexbox(flex, column);
+  }
+
+  @include screen(iphoneSE) {
+    height: 45%;
+  }
+}
+
+@mixin portfolio-container {
+  @include flexbox(grid, auto, 0, center);
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2.5rem;
+}
+
+@mixin portfolio-box {
+  position: relative;
+  @include flexbox(flex);
+  @include borderAndRad(0.4rem solid map-get($colors, main), 2rem);
+  box-shadow: 0 0 1rem map-get($colors, main-bg);
+  overflow: hidden;
+
+  &:hover {
+    .portfolio-box_h4 {
+      color: transparent;
+      background: none;
+      transition: 0s ease-in-out;
+    }
+  }
+
+  &:hover {
+    .portfolio-layer {
+      transform: translateY(0);
+
+      h4 {
+        color: transparent;
+        background: transparent;
+      }
+    }
+  }
+
+  &:hover {
+    img {
+      transform: scale(1.1);
+      filter: blur(4px) brightness(0.5);
+    }
+  }
+}
+
+@mixin portfolio-box_h4 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: max-content;
+  transform: translate(-50%, -50%);
+  background: rgba(0 0 0/ 0.5);
+  font-size: 5em;
+  padding: 1rem 2rem;
+  border: 0.125em solid white;
+  border-radius: 10em;
+  filter: drop-shadow(0 0 0.5em rgba(0 0 0/ 0.75));
+  transition: 1s ease-in-out all;
+
+  @include screen(iphoneXR) {
+    font-size: 2em;
+  }
+}
+
+@mixin portfolio-box_img {
+  @include heightWidth(100%, same);
+  @include transition;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.1);
+    filter: blur(3px);
+  }
+}
+
+@mixin portfolio-layer {
+  position: absolute;
+  inset: 0 0 0 0;
+  @include flexbox(flex, column, center, center, 0);
+  @include heightWidth(100%, same);
+  text-align: center;
+  background: linear-gradient(rgba(0 0 0 / 0.35), rgba(0 238 221 / 0.25)), rgba(0 0 0 / 0.35);
+  @include padmar(0 4rem, 0);
+  transform: translateY(100%);
+  @include transition;
+  cursor: pointer;
+  overflow-y: scroll;
+
+  @include screen(iphone12Pro) {
+    @include padmar(0 2rem, 0);
+  }
+
+  @include screen(pixel5) {
+    padding: 1rem;
+  }
+
+  @include screen(fold) {
+    padding: 0rem 1rem;
+  }
+}
+
+@mixin portfolio-layer_span {
+  @include screen(fold) {
+    height: max-content;
+    font-size: 0.75em;
+  }
+}
+
+@mixin portfolio-layer_a {
+  @include flexbox(inline-flex, row, center, center, 0);
+  @include heightWidth(5rem, same);
+  background: map-get($colors, text);
+  @include borderAndRad(2px solid map-get($colors, main), 100%);
+
+  @include screen(iphoneXR) {
+    padding: 2em;
+    margin-bottom: 1em;
+  }
+}
+
+@mixin portfolio-layer_h4 {
+  font-size: 3rem;
+  z-index: 10;
+
+  @include screen(iphone12Pro) {
+    background: rgba(0 0 0 / 0.25);
+    padding: 0.25em 0.5em;
+    border: none;
+    border-radius: 1em;
+  }
+}
+
+@mixin portfolio-layer_p {
+  @include heightWidth(max-content, auto);
+  font-size: 1.5rem;
+  filter: drop-shadow(0 0 0.1em black);
+  padding: 1em 0;
+  margin: 0.3rem 0;
+}

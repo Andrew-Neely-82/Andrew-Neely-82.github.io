@@ -3,7 +3,7 @@
 @import "./mixins"; // long styles
 
 .about {
-  @include home;
+  @include about;
 
   .spline {
     @include flexbox(flex, 0, center, center);
@@ -54,3 +54,5 @@
     // }
   }
 }
+
+

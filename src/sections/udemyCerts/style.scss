@@ -9,6 +9,10 @@
     margin-bottom: 5rem;
     margin-left: 7rem;
 
+    @include screen(mobile) {
+      margin-left: 0.5em;
+    }
+
     @media screen and (max-width: 390px) {
       display: flex;
       flex-direction: column !important;
@@ -60,9 +64,17 @@
         }
       }
 
+      @include screen(mobile) {
+        margin-bottom: 1.5em;
+      }
+
       span {
         margin-block: 2rem;
         font-size: 20px;
+
+        @include screen(mobile) {
+          display: none;
+        }
       }
     }
   }
@@ -106,6 +118,18 @@
 
     img {
       width: 70%;
+
+      @include screen(laptop) {
+        width: 60%;
+      }
+
+      @include screen(iphoneXR) {
+        width: 80%;
+      }
+
+      @include screen(iphoneSE) {
+        width: 90%;
+      }
     }
 
     h3 {
@@ -116,6 +140,15 @@
       font-size: 3rem;
       margin-top: 1rem;
       text-align: center;
+
+      @include screen(iphoneXR) {
+        bottom: 30rem;
+        font-size: 2.4rem;
+      }
+
+      @include screen(iphoneSE) {
+        bottom: 20rem;
+      }
     }
   }
 }

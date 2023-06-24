@@ -1,7 +1,7 @@
 @import "../../styling/variables";
 @import "../../styling/mixins";
 
-@mixin home {
+@mixin about {
   @include flexbox(flex, row, center, center, 0);
   background: linear-gradient(176deg, rgba(0, 38, 55, 1) 25%, rgba(17, 17, 34, 1) 55%);
   gap: 9rem;
@@ -10,6 +10,7 @@
     @include flexbox(flex, column, center, center);
     gap: 2.5rem;
   }
+  padding: 7rem 3% 2rem;
 }
 
 @mixin canvas {

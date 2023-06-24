@@ -5,7 +5,7 @@ const Portfolio = () => {
   return (
     <section className="portfolio" id="portfolio">
       <h2 className="heading">
-        Latest <span>Projects</span>
+        Latest<span>&nbsp;Projects</span>
       </h2>
       <span
         style={{
@@ -19,6 +19,7 @@ const Portfolio = () => {
           {portfolioBoxes.map((info, key) => {
             return (
               <div className="portfolio-box" key={key}>
+                <h4 className="portfolio-box_h4">{info.h4}</h4>
                 <img src={info.img} alt={info.alt} />
                 <div className="portfolio-layer">
                   <h4>{info.h4}</h4>
