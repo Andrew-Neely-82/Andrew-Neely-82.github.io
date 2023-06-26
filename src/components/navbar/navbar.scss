@@ -1,63 +1,24 @@
 @import "../../styling/variables";
 @import "../../styling/mixins";
+@import "./mixins";
 
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  @include flexbox(flex, row, space-between, center, 0);
-  @include heightWidth(auto, 100%);
-  @include padmar(2rem 9%, 0);
-  background: map-get($colors, main-bg);
-  z-index: 100;
-  user-select: none;
-
-  @include screen(laptop) {
-    padding: 2rem 3%;
-  }
+  @include header;
 
   .logo {
-    font-size: 2.5rem;
-    color: map-get($colors, text);
-    font-weight: 600;
-    cursor: pointer;
-    user-select: none;
+    @include logo;
   }
 
   .bx-menu-alt-right {
-    font-size: 3.6rem;
-    color: map-get($colors, text);
-    display: none;
-    user-select: none;
-
-    @include screen(laptop) {
-      font-size: 2.6rem;
-      display: block;
-      color: white;
-    }
+    @include icon;
   }
 
   .navbar {
-    @include screen(laptop) {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      padding: 1rem 3%;
-      background: map-get($colors, main-bg);
-      border-top: 0.1rem solid rgba(0 0 0 /0.2);
-      box-shadow: 0 0.5rem 1rem rgba(0 0 0 /0.2);
-      @include transition;
-      z-index: 1000;
-    }
-
-    &.active {
-      display: block;
-    }
+    @include navbar;
 
     ul {
       display: flex;
+
       @include screen(laptop) {
         flex-direction: column;
       }
@@ -66,28 +27,7 @@
         list-style: none;
 
         a {
-          font-size: 1.7rem;
-          color: map-get($colors, text);
-          margin-left: 4rem;
-          @include transition;
-          user-select: none;
-
-          &:hover {
-            color: map-get($colors, main);
-            filter: drop-shadow(0 0 0.5rem map-get($colors, main));
-            user-select: none;
-          }
-
-          &.active {
-            color: map-get($colors, main);
-            user-select: none;
-          }
-
-          @include screen(laptop) {
-            display: block;
-            font-size: 2rem;
-            margin: 1em 0.5em;
-          }
+          @include navbar_ul_li_a;
         }
       }
     }
