@@ -6,7 +6,7 @@ const Footer = () => {
 
   useEffect(() => {
     const checkFooterVisibility = () => {
-      const contactSection = document.getElementById("message");
+      const contactSection = document.getElementById("bottom");
       const windowHeight = window.innerHeight || document.documentElement.clientHeight;
       const rect = contactSection.getBoundingClientRect();
       const isVisible = rect.top <= windowHeight && rect.top + rect.height >= 0;
@@ -26,8 +26,7 @@ const Footer = () => {
       <div className="footer-text">
         <p>
           Last updated on &nbsp;
-          <span style={{ color: "yellow", textShadow: "none" }}>26 JUNE 2023 &nbsp;</span>
-          by <span style={{ textShadow: "none" }}>Andrew Neely</span>
+          <span style={{ color: "yellow", textShadow: "none" }}>29 JUNE 2023 &nbsp;</span>
         </p>
       </div>
       <div className="footer-iconTop">

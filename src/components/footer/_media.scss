@@ -9,6 +9,7 @@
 
   @include screen(iphone12Pro) {
     @include flexbox(flex, column-reverse, space-between, center, wrap);
+    gap: 1em;
   }
 }
 

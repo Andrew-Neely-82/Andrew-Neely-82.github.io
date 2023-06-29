@@ -3,7 +3,7 @@
 @import "./styling/mixins";
 
 #root {
-  max-height: 100vh;
+  min-height: 100vh;
 
   .LoadingAnimation__ {
     position: absolute;
@@ -108,7 +108,6 @@ $animationStepDuration: calc($animationDuration / 7);
     transform: translate(0, 0);
   }
 }
-
 @keyframes gradient1 {
   from {
     stop-color: #4383b8;

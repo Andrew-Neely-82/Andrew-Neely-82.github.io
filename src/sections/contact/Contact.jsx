@@ -76,6 +76,7 @@ const Contact = () => {
         <textarea ref={messageRef} name="" id="message" cols="30" rows="10" placeholder="Your Message ..." />
         <input className="btn" type="submit" value="Send " />
       </form>
+      <div id="bottom"></div>
     </section>
   );
 };
