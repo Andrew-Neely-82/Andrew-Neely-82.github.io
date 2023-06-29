@@ -17,7 +17,6 @@
   @include heightWidth(35rem !important, same);
   @include borderAndRad(0.6rem solid map-get($colors, main), 100%);
   box-shadow: 0 0 1em map-get($colors, main);
-  transform: perspective(25px);
 
   @include screen(iphoneSE) {
     @include heightWidth(25rem !important, same);

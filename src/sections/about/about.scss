@@ -5,12 +5,10 @@
 .about {
   @include about;
 
-  .spline {
-    @include flexbox(flex, 0, center, center);
+  @include flexbox(flex, 0, center, center);
 
-    canvas {
-      @include canvas;
-    }
+  .img {
+    @include canvas;
   }
 
   .about-content {
@@ -54,5 +52,3 @@
     // }
   }
 }
-
-

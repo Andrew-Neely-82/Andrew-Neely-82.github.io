@@ -1,13 +1,11 @@
-import Spline from "@splinetool/react-spline";
+import { React } from "../../assets/img/index";
 import { info } from "./index";
 import "./about.scss";
 
 const About = () => {
-  const scene = "https://prod.spline.design/LwqzmMfKq7HTx971/scene.splinecode";
-
   return (
     <section className="about" id="about">
-      <Spline scene={scene} className="spline" />
+      <img src={React} alt="programming" className="img" />
       {info.map((info, key) => {
         return (
           <div className="about-content" key={key}>
@@ -16,13 +14,6 @@ const About = () => {
             </h2>
             <h3>{info.h3}</h3>
             <p>{info.p}</p>
-            {/* <div className="btn-container">
-              <span>{info.span1}</span>
-              <span>{info.span2}</span>
-              <a href="#about" className="btn">
-                {info.a}
-              </a>
-            </div> */}
           </div>
         );
       })}
