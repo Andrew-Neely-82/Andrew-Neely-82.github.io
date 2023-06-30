@@ -1,8 +1,5 @@
-import { Codeup } from "./img/export";
-import { useState } from "react";
-import { certs } from "./certs";
-import "./style.scss";
 import Modal from "./modal/Modal";
+import "./style.scss";
 
 const PersonalDevelopment = () => {
   return (

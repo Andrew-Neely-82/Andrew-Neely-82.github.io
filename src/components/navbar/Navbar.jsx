@@ -33,12 +33,10 @@ const Navbar = () => {
     const navbar = document.querySelector(q.nav);
     navbar.classList.toggle(q.active);
   };
-
   const closeNavbar = () => {
     const navbar = document.querySelector(q.nav);
     navbar.classList.remove(q.active);
   };
-
   const scrollToSection = (e) => {
     e.preventDefault();
     const targetId = e.target.getAttribute(q.href);
@@ -49,7 +47,6 @@ const Navbar = () => {
       closeNavbar();
     }
   };
-
   const RenderLinks = () => {
     return info.map((item, linkKey) => {
       const isActive = item.href === activeLink;
