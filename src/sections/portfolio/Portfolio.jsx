@@ -1,42 +1,14 @@
+import PortfolioContainer from "./portfolioContainer/PortfolioContainer.jsx";
 import { SectionHeading } from "../../components/customHTML/export.js";
-import { portfolioBoxes } from "./index.js";
 import "./portfolio.scss";
 
 const Portfolio = () => {
   return (
-    <section className="portfolio" id="portfolio">
+    <section className="Portfolio__" id="portfolio">
       <SectionHeading text="Latest" span="Projects" />
-      <div className="portfolio-wrapper">
-        <div className="portfolio-container">
-          {portfolioBoxes.map((info, key) => {
-            return (
-              <div className="portfolio-box" key={key}>
-                <h4 className="portfolio-box_h4">{info.h4}</h4>
-                <img src={info.img} alt={info.alt} />
-                <div className="portfolio-layer">
-                  <h4>{info.h4}</h4>
-                  <p>
-                    <br />
-                    <span>{info.p1}</span>
-                    <br />
-                    <br />
-                    <span>{info.p2}</span>
-                    <br />
-                    <br />
-                    <span>{info.p3}</span>
-                    <br />
-                    <br />
-                  </p>
-                  <a href={info.a} target="_blank" rel="noreferrer">
-                    <i className={info.i}></i>
-                  </a>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+      <div className="Portfolio__wrapper">
+        <PortfolioContainer />
       </div>
-      <div></div>
     </section>
   );
 };

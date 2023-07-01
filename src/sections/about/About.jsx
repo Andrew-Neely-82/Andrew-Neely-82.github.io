@@ -1,4 +1,4 @@
-import { GradientText, Paragraph } from "../../components/customHTML/export";
+import { CircleImg, GradientText, Paragraph } from "../../components/customHTML/export";
 import { React } from "../../assets/img/index";
 import { info } from "./index";
 import "./about.scss";
@@ -8,7 +8,7 @@ const About = () => {
     <section className="about" id="about">
       <div className="about-content">
         <div className="about-img">
-          <img src={React} alt="programming" className="img" />
+          <CircleImg src={React} alt="programming" />
         </div>
         {info.map((info, key) => {
           return (
@@ -16,7 +16,7 @@ const About = () => {
               <h2 className="heading">
                 {info.h2} <span>{info.h2Span}</span>
               </h2>
-              <>{info.h3}</>
+              <GradientText text={info.h3} />
               <Paragraph text={info.p} />
             </div>
           );

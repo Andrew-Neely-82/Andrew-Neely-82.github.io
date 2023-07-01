@@ -2,31 +2,19 @@
 @import "../../styling/mixins";
 @import "./mixins";
 
-.portfolio {
+.Portfolio__ {
   @include flexbox(flex, column, flex-start, 0, 0);
 
-  h2 {
-    @include portfolioH2;
-  }
-
-  .heading {
-    @include heading;
-
-    span {
-      @include glowSpan;
-    }
-  }
-
-  .portfolio-wrapper {
+  .Portfolio__wrapper {
     @include portfolioWrapper;
 
-    .portfolio-container {
+    .Portfolio__container {
       @include portfolio-container;
 
-      .portfolio-box {
+      .Portfolio__box {
         @include portfolio-box;
 
-        .portfolio-box_h4 {
+        .Portfolio__box_h4 {
           @include portfolio-box_h4;
         }
 
@@ -34,17 +22,13 @@
           @include portfolio-box_img;
         }
 
-        .portfolio-layer {
+        .Portfolio__layer {
           @include portfolio-layer;
 
-          h4 {
-            @include portfolio-layer_h4;
-          }
-
-          p {
+          .Portfolio__layer_p {
             @include portfolio-layer_p;
 
-            span {
+            .Portfolio__layer_p_span {
               @include portfolio-layer_span;
             }
           }
