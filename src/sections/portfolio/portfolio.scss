@@ -3,38 +3,38 @@
 @import "./mixins";
 
 .Portfolio__ {
-  @include flexbox(flex, column, flex-start, 0, 0);
+  @include Portfolio__;
 
   .Portfolio__wrapper {
-    @include portfolioWrapper;
+    @include Portfolio__wrapper;
 
     .Portfolio__container {
-      @include portfolio-container;
+      @include Portfolio__container;
 
       .Portfolio__box {
-        @include portfolio-box;
+        @include Portfolio__box;
 
         .Portfolio__box_h4 {
-          @include portfolio-box_h4;
+          @include Portfolio__box_h4;
         }
 
         img {
-          @include portfolio-box_img;
+          @include Portfolio__box_img;
         }
 
         .Portfolio__layer {
-          @include portfolio-layer;
+          @include Portfolio__layer;
 
           .Portfolio__layer_p {
-            @include portfolio-layer_p;
+            @include Portfolio__layer_p;
 
             .Portfolio__layer_p_span {
-              @include portfolio-layer_span;
+              @include Portfolio__layer_p_span;
             }
           }
 
           a {
-            @include portfolio-layer_a;
+            @include Portfolio__layer_a;
 
             i {
               font-size: 2rem;

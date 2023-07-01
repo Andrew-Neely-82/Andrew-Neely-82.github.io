@@ -1,7 +1,11 @@
 @import "../../styling/variables";
 @import "../../styling/mixins";
 
-@mixin portfolioWrapper {
+@mixin Portfolio__ {
+  @include flexbox(flex, column, flex-start, 0, 0);
+}
+
+@mixin Portfolio__wrapper {
   max-height: 70vh;
   overflow-x: auto;
   @include borderAndRad(0.5rem solid map-get($colors, main), 2rem);
@@ -17,13 +21,13 @@
   }
 }
 
-@mixin portfolio-container {
+@mixin Portfolio__container {
   @include flexbox(grid, auto, 0, center);
   grid-template-columns: repeat(1, 1fr);
   gap: 2.5rem;
 }
 
-@mixin portfolio-box {
+@mixin Portfolio__box {
   position: relative;
   @include flexbox(flex);
   @include borderAndRad(0.4rem solid map-get($colors, main), 2rem);
@@ -54,7 +58,7 @@
   }
 }
 
-@mixin portfolio-box_h4 {
+@mixin Portfolio__box_h4 {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -68,12 +72,17 @@
   filter: drop-shadow(0 0 0.5em rgba(0 0 0/ 0.75));
   transition: 1s ease-in-out all;
 
-  @include screen(iphoneXR) {
+  @include screen(duo) {
     font-size: 2em;
   }
+
+  @include screen(fold) {
+    font-size: 1.25em;
+  }
+
 }
 
-@mixin portfolio-box_img {
+@mixin Portfolio__box_img {
   @include heightWidth(100%, same);
   @include transition;
   cursor: pointer;
@@ -84,7 +93,7 @@
   }
 }
 
-@mixin portfolio-layer {
+@mixin Portfolio__layer {
   position: absolute;
   inset: 0 0 0 0;
   @include flexbox(flex, column, center, center, 0);
@@ -110,7 +119,7 @@
   }
 }
 
-@mixin portfolio-layer_p {
+@mixin Portfolio__layer_p {
   @include heightWidth(max-content, auto);
   font-size: 1.5rem;
   filter: drop-shadow(0 0 0.1em black);
@@ -126,7 +135,7 @@
   }
 }
 
-@mixin portfolio-layer_span {
+@mixin Portfolio__layer_p_span {
   display: block;
   margin-block: 1em;
 
@@ -136,7 +145,7 @@
   }
 }
 
-@mixin portfolio-layer_a {
+@mixin Portfolio__layer_a {
   @include flexbox(inline-flex, row, center, center, 0);
   @include heightWidth(5rem, same);
   background: map-get($colors, text);

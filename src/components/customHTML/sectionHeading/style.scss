@@ -10,3 +10,22 @@
     @include glowSpan;
   }
 }
+
+@include screen(iphoneXR) {
+  .SectionHeading__ {
+    font-size: 3.75em;
+    text-align: center;
+  }
+}
+
+@include screen(iphoneSE) {
+  .SectionHeading__ {
+    font-size: 3em;
+  }
+}
+
+@include screen(fold) {
+  .SectionHeading__ {
+    font-size: 2.25em;
+  }
+}
