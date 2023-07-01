@@ -3,7 +3,7 @@
 @import "./mixins";
 
 .portfolio {
-  @include flexbox(flex, column, center, 0, 0);
+  @include flexbox(flex, column, flex-start, 0, 0);
 
   h2 {
     @include portfolioH2;

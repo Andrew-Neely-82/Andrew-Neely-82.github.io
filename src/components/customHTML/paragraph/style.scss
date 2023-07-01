@@ -1,0 +1,24 @@
+@import "../../../styling/variables";
+@import "../../../styling/mixins";
+
+.Paragraph__ {
+  background-color: #112;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  text-indent: 1em;
+  @include borderAndRad(0.6rem solid map-get($colors, main), 2rem);
+  @include padmar(2rem, 1rem auto);
+  user-select: none;
+
+  &::before,
+  &::after {
+    content: '"';
+    position: relative;
+    font-display: auto;
+  }
+
+  @include screen(iphoneXR) {
+    @include heightWidth(20rem, 100%);
+    overflow-y: scroll;
+  }
+}

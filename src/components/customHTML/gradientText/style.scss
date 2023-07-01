@@ -1,0 +1,11 @@
+@import "../../../styling/variables";
+@import "../../../styling/media";
+
+.GradientText__ {
+  @include gradientHeading;
+  margin-inline-end: auto;
+
+  @include screen(iphoneSE) {
+    font-size: 3rem;
+  }
+}

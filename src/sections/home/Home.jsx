@@ -1,3 +1,4 @@
+import { CircleImg, GradientText, Paragraph } from "../../components/customHTML/export";
 import { Me } from "../../assets/img/index.js";
 import Socials from "./socials/Socials.jsx";
 import { info } from "./info.js";
@@ -14,16 +15,16 @@ const Home = () => {
               <div className="intro">
                 <div className="intro-details">
                   <h3>{info.h3_1}</h3>
-                  <h1>{info.h1}</h1>
+                  <GradientText text={info.h1} />
                   <h3>
                     {info.h3_2}
                     <span>{info.span}</span>
                   </h3>
-                  <p>{info.p}</p>
+                  <Paragraph text={info.p} />
                   <Socials />
                 </div>
                 <div className="home-img">
-                  <img src={Me} alt="me" title="Me!" />
+                  <CircleImg src={Me} alt="Me!" title="Me!" />
                 </div>
               </div>
             </React.Fragment>

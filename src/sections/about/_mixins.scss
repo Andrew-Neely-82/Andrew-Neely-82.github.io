@@ -2,34 +2,56 @@
 @import "../../styling/mixins";
 
 @mixin about {
-  @include flexbox(flex, row, center, center, 0);
+  @include flexbox(flex, 0, center, center, 0);
   background: linear-gradient(176deg, rgba(0, 38, 55, 1) 25%, rgba(17, 17, 34, 1) 55%);
-  gap: 9rem;
+  padding: 10rem 9%;
 
   @include screen(ipadAir) {
     @include flexbox(flex, column, center, center);
     gap: 2.5rem;
   }
-  padding: 7rem 3% 2rem;
 }
 
-@mixin canvas {
+@mixin about-content {
+  @include flexbox(flex, 0, center, center, 0);
+  width: 100%;
+}
+
+@mixin about-img {
+  @include flexbox(flex, 0, flex-start, center, 0);
+  width: 66%;
+
+  @include screen(duo) {
+    justify-content: center !important;
+    width: 100% !important;
+  }
+}
+
+@mixin img {
   @include heightWidth(35rem !important, same);
   @include borderAndRad(0.6rem solid map-get($colors, main), 100%);
   box-shadow: 0 0 1em map-get($colors, main);
+
+  @include screen(duo) {
+    max-width: 22em;
+    min-width: 15em;
+    max-height: 22em;
+    min-height: 15em;
+  }
 
   @include screen(iphoneSE) {
     @include heightWidth(25rem !important, same);
   }
 }
 
+@mixin about-details {
+  @include flexbox(flex, column);
+  width: 100%;
+}
+
 @media (max-width: 770px) {
   .about,
   .about-content {
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
-    // align-items: center;
     @include flexbox(flex, column, center, center);
   }
 
@@ -68,10 +90,12 @@
 
 @mixin h2 {
   line-height: 1.2;
+  margin-inline-end: auto;
 }
 
 @mixin h3 {
   @include gradientHeading;
+  margin-inline-end: auto;
 
   @include screen(iphoneSE) {
     font-size: 3rem;

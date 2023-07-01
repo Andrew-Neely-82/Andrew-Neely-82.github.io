@@ -1,3 +1,4 @@
+import { SectionHeading } from "../../components/customHTML/export";
 import React, { useState, useEffect } from "react";
 import "./skills.scss";
 
@@ -62,10 +63,7 @@ const Skills = () => {
 
   return (
     <section className="skills" id="skills">
-      <h2 className="heading">
-        My <span>&nbsp;Skills</span>
-      </h2>
-
+      <SectionHeading text="My" span="Skills" />
       <div className="skills-container">
         {skillsData.map((skill, index) => {
           const displayValue = isMobile ? (openSkillIndex === index ? "flex" : "none") : "flex";

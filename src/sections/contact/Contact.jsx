@@ -1,3 +1,4 @@
+import { SectionHeading } from "../../components/customHTML/export";
 import { useState, useEffect, useRef } from "react";
 import "./contact.scss";
 
@@ -59,9 +60,7 @@ const Contact = () => {
 
   return (
     <section className="contact" id="contact">
-      <h2 className="heading">
-        Contact <span>Me!</span>
-      </h2>
+      <SectionHeading text="Contact" span="Me!" />
       <span className="yellow-text">Updating the form below soon!</span>
       <span className="yellow-text">Please use Linkedin button above in Home section</span>
       <form action={`#`}>

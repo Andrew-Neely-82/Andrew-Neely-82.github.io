@@ -5,50 +5,33 @@
 .about {
   @include about;
 
-  @include flexbox(flex, 0, center, center);
-
-  .img {
-    @include canvas;
-  }
-
   .about-content {
-    .heading {
-      font-size: 4.5rem;
+    @include about-content;
 
-      span {
-        @include glowSpan;
+    .about-img {
+      @include about-img;
+
+      .img {
+        @include img;
       }
     }
 
-    h2 {
-      @include h2;
+    .about-details {
+      @include about-details;
+
+      .heading {
+        font-size: 4.5rem;
+
+        span {
+          @include glowSpan;
+        }
+      }
+      h2 {
+        @include h2;
+      }
+      h3 {
+        @include h3;
+      }
     }
-
-    h3 {
-      @include h3;
-    }
-
-    p {
-      @include p;
-    }
-
-    // .btn-container {
-    //   display: flex;
-    //   flex-direction: column;
-    //   @include flexbox(flex, column, flex-end, flex-end);
-
-    //   span {
-    //     color: yellow;
-
-    //     &:nth-of-type(2) {
-    //       margin-bottom: 2rem;
-    //       padding: 0;
-    //     }
-    //   }
-
-    //   .btn {
-    //     @include btn;
-    //   }
-    // }
   }
 }

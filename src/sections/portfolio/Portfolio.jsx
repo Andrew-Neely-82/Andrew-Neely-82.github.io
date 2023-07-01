@@ -1,12 +1,11 @@
+import { SectionHeading } from "../../components/customHTML/export.js";
 import { portfolioBoxes } from "./index.js";
 import "./portfolio.scss";
 
 const Portfolio = () => {
   return (
     <section className="portfolio" id="portfolio">
-      <h2 className="heading">
-        Latest<span>&nbsp;Projects</span>
-      </h2>
+      <SectionHeading text="Latest" span="Projects" />
       <div className="portfolio-wrapper">
         <div className="portfolio-container">
           {portfolioBoxes.map((info, key) => {

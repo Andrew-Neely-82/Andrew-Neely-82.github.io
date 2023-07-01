@@ -1,0 +1,12 @@
+@import "../../../styling/variables";
+@import "../../../styling/mixins";
+
+.SectionHeading__ {
+  width: 100%;
+  font-size: 4.5rem;
+  margin-bottom: 5rem;
+
+  .SectionHeading__span {
+    @include glowSpan;
+  }
+}
