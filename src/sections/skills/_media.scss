@@ -23,6 +23,8 @@
     .skills-container {
       display: flex;
       align-items: flex-start;
+      max-width: 400px;
+      margin-inline: auto;
 
       .skills-box {
         @include heightWidth(auto !important, 40rem !important);
