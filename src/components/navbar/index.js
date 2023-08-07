@@ -11,6 +11,28 @@ export const scroller = (closeNavbar) => {
   };
 };
 
+export const highlighter = (setActiveLink) => {
+  return () => {
+    const sections = document.querySelectorAll(q.section);
+
+    window.addEventListener("scroll", () => {
+      const currentSection = [...sections].find((section) => {
+        const top = window.scrollY;
+        const offset = section.offsetTop - 150;
+        const height = section.offsetHeight;
+        return top >= offset && top < offset + height;
+      });
+
+      if (currentSection) {
+        const currentLinkId = currentSection.getAttribute(q.id);
+        setActiveLink(currentLinkId);
+      } else {
+        setActiveLink(null);
+      }
+    });
+  };
+};
+
 export const q = {
   id: "id",
   section: "section",

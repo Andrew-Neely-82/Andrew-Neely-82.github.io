@@ -1,33 +1,9 @@
-import { scroller, icon, iconId, info, q, scrollSettings } from "./index";
+import { scroller, highlighter, icon, iconId, info, q } from "./index";
 import React, { useEffect, useState } from "react";
 import "./navbar.scss";
 
 const Navbar = () => {
   const [activeLink, setActiveLink] = useState(q.home);
-
-  const highlightActiveNavLink = () => {
-    const sections = document.querySelectorAll(q.section);
-
-    window.addEventListener("scroll", () => {
-      const currentSection = [...sections].find((section) => {
-        const top = window.scrollY;
-        const offset = section.offsetTop - 150;
-        const height = section.offsetHeight;
-        return top >= offset && top < offset + height;
-      });
-
-      if (currentSection) {
-        const currentLinkId = currentSection.getAttribute(q.id);
-        setActiveLink(currentLinkId);
-      } else {
-        setActiveLink(null);
-      }
-    });
-  };
-
-  useEffect(() => {
-    highlightActiveNavLink();
-  }, []);
 
   const toggleNavbar = () => {
     const navbar = document.querySelector(q.nav);
@@ -40,6 +16,11 @@ const Navbar = () => {
   };
 
   const scrollToSection = scroller(closeNavbar);
+  const highlightActiveNavLink = highlighter(setActiveLink);
+
+  useEffect(() => {
+    highlightActiveNavLink();
+  }, [highlightActiveNavLink]);
 
   const RenderLinks = () => {
     return info.map((item, linkKey) => {
