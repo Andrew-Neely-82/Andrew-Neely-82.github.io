@@ -1,4 +1,4 @@
-import { icon, iconId, info, q, scrollSettings } from "./index";
+import { scroller, icon, iconId, info, q, scrollSettings } from "./index";
 import React, { useEffect, useState } from "react";
 import "./navbar.scss";
 
@@ -33,20 +33,14 @@ const Navbar = () => {
     const navbar = document.querySelector(q.nav);
     navbar.classList.toggle(q.active);
   };
+
   const closeNavbar = () => {
     const navbar = document.querySelector(q.nav);
     navbar.classList.remove(q.active);
   };
-  const scrollToSection = (e) => {
-    e.preventDefault();
-    const targetId = e.target.getAttribute(q.href);
-    const targetSection = document.querySelector(targetId);
 
-    if (targetSection) {
-      targetSection.scrollIntoView(scrollSettings);
-      closeNavbar();
-    }
-  };
+  const scrollToSection = scroller(closeNavbar);
+
   const RenderLinks = () => {
     return info.map((item, linkKey) => {
       const isActive = item.href === activeLink;

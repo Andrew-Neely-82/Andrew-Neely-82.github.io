@@ -1,3 +1,16 @@
+export const scroller = (closeNavbar) => {
+  return (e) => {
+    e.preventDefault();
+    const targetId = e.target.getAttribute(q.href);
+    const targetSection = document.querySelector(targetId);
+
+    if (targetSection) {
+      targetSection.scrollIntoView(scrollSettings);
+      closeNavbar();
+    }
+  };
+};
+
 export const q = {
   id: "id",
   section: "section",
