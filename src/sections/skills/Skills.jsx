@@ -63,29 +63,31 @@ const Skills = () => {
 
   return (
     <section className="skills" id="skills">
-      <SectionHeading text="My" span="Skills" />
-      <div className="skills-container">
-        {skillsData.map((skill, index) => {
-          const displayValue = isMobile ? (openSkillIndex === index ? "flex" : "none") : "flex";
+      <div className="wrapper">
+        <SectionHeading text="My" span="Skills" />
+        <div className="skills-container">
+          {skillsData.map((skill, index) => {
+            const displayValue = isMobile ? (openSkillIndex === index ? "flex" : "none") : "flex";
 
-          return (
-            <div className="skills-box" key={index}>
-              <div className="skills-box-header">
-                <i className={skill.icon}></i>
-                <h3>{skill.name}</h3>
-                <i className={`bx ${openSkillIndex === index ? "bx-up-arrow-alt" : "bx-down-arrow-alt"}`} style={{ display: isMobile ? "flex" : "none" }} onClick={() => toggleSkill(index)} onTouchStart={() => toggleSkill(index)}></i>
+            return (
+              <div className="skills-box" key={index}>
+                <div className="skills-box-header">
+                  <i className={skill.icon}></i>
+                  <h3>{skill.name}</h3>
+                  <i className={`bx ${openSkillIndex === index ? "bx-up-arrow-alt" : "bx-down-arrow-alt"}`} style={{ display: isMobile ? "flex" : "none" }} onClick={() => toggleSkill(index)} onTouchStart={() => toggleSkill(index)}></i>
+                </div>
+                <p className="skill-description" style={{ display: displayValue }}>
+                  {skill.description}
+                </p>
+                <div className="btn-container" style={{ display: displayValue }}>
+                  <a href={skill.link} target="_blank" className="btn" rel="noreferrer">
+                    Read More
+                  </a>
+                </div>
               </div>
-              <p className="skill-description" style={{ display: displayValue }}>
-                {skill.description}
-              </p>
-              <div className="btn-container" style={{ display: displayValue }}>
-                <a href={skill.link} target="_blank" className="btn" rel="noreferrer">
-                  Read More
-                </a>
-              </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </section>
   );

@@ -38,15 +38,17 @@ const Navbar = () => {
 
   return (
     <nav className="header">
-      <a href="#home" className="logo" title="Portfolio" onClick={scrollToSection}>
-        My Portfolio
-      </a>
-      <i className={icon} id={iconId} onClick={toggleNavbar}></i>
-      <nav className="navbar">
-        <ul>
-          <RenderLinks />
-        </ul>
-      </nav>
+      <div className="wrapper" style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <a href="#home" className="logo" title="Portfolio" onClick={scrollToSection}>
+          My Portfolio
+        </a>
+        <i className={icon} id={iconId} onClick={toggleNavbar}></i>
+        <nav className="navbar">
+          <ul>
+            <RenderLinks />
+          </ul>
+        </nav>
+      </div>
     </nav>
   );
 };

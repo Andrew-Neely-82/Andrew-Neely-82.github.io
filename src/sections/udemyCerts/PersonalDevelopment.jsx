@@ -5,8 +5,10 @@ import "./style.scss";
 const PersonalDevelopment = () => {
   return (
     <section className="Udemy_" id="personalDevelopment">
-      <SectionHeading text="Personal" span="Development" />
-      <Modal />
+      <div className="wrapper">
+        <SectionHeading text="Personal" span="Development" />
+        <Modal />
+      </div>
     </section>
   );
 };

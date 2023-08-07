@@ -5,9 +5,11 @@ import "./portfolio.scss";
 const Portfolio = () => {
   return (
     <section className="Portfolio__" id="portfolio">
-      <SectionHeading text="Latest" span="Projects" />
-      <div className="Portfolio__wrapper">
-        <PortfolioContainer />
+      <div className="wrapper">
+        <SectionHeading text="Latest" span="Projects" />
+        <div className="Portfolio__wrapper">
+          <PortfolioContainer />
+        </div>
       </div>
     </section>
   );

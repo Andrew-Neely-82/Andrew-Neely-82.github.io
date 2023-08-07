@@ -60,22 +60,24 @@ const Contact = () => {
 
   return (
     <section className="contact" id="contact">
-      <SectionHeading text="Contact" span="Me!" />
-      <span className="yellow-text">Updating the form below soon!</span>
-      <span className="yellow-text">Please use Linkedin button above in Home section</span>
-      <form action={`#`}>
-        <div className="input-box">
-          <input ref={nameRef} type="text" name="name" id="name" placeholder="Full Name" />
-          <input ref={emailRef} type="email" name="email" id="email" placeholder="Email Address" />
-        </div>
-        <div className="input-box">
-          <input ref={numberRef} type="text" name="number" id="number" placeholder="Contact Number" />
-          <input ref={subjectRef} type="text" name="subject" id="subject" placeholder="Email Subject" />
-        </div>
-        <textarea ref={messageRef} name="" id="message" cols="30" rows="10" placeholder="Your Message ..." />
-        <input className="btn" type="submit" value="Send " />
-      </form>
-      <div id="bottom"></div>
+      <div className="wrapper">
+        <SectionHeading text="Contact" span="Me!" />
+        <h6 className="yellow-text">Updating the form below soon!</h6>
+        <h6 className="yellow-text">Please use Linkedin button above in Home section</h6>
+        <form action={`#`}>
+          <div className="input-box">
+            <input ref={nameRef} type="text" name="name" id="name" placeholder="Full Name" />
+            <input ref={emailRef} type="email" name="email" id="email" placeholder="Email Address" />
+          </div>
+          <div className="input-box">
+            <input ref={numberRef} type="text" name="number" id="number" placeholder="Contact Number" />
+            <input ref={subjectRef} type="text" name="subject" id="subject" placeholder="Email Subject" />
+          </div>
+          <textarea ref={messageRef} name="" id="message" cols="30" rows="10" placeholder="Your Message ..." />
+          <input className="btn" type="submit" value="Send " />
+        </form>
+        <div id="bottom"></div>
+      </div>
     </section>
   );
 };
