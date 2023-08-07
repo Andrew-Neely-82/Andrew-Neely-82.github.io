@@ -1,21 +1,15 @@
-export function dimensions(setWidth) {
-  return () => {
-    setWidth(window.innerWidth);
-  };
-}
-
 export const skillsData = [
   {
     name: "HTML 5",
     icon: "bx bxl-html5",
     description: "Experienced in crafting semantic and accessible HTML5 markup for responsive and modern web applications. Familiar with SEO best practices and performance optimization techniques.",
-    link: "#skills",
+    link: "https://en.wikipedia.org/wiki/HTML5#:~:text=HTML5%20is%20a%20markup%20language,as%20the%20HTML%20Living%20Standard",
   },
   {
     name: "CSS/SCSS",
     icon: "devicon-sass-original",
     description: "Skilled in using CSS and SCSS/Sass to create visually appealing and responsive designs. Proficient in implementing animations, transitions, and working with CSS frameworks like Bootstrap and Tailwind CSS.",
-    link: "#skills",
+    link: "https://sass-lang.com",
   },
   {
     name: "Javascript",

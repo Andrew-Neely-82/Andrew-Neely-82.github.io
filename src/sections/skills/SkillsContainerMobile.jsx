@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { skillsData } from ".";
+import React, { useEffect, useState } from "react";
+import { dimensions, skillsData } from ".";
 
-const SkillsContainer = () => {
+const SkillsContainerMobile = () => {
   const [openSkillIndex, setOpenSkillIndex] = useState(-1);
 
   const toggleSkill = (index) => {
@@ -9,7 +9,7 @@ const SkillsContainer = () => {
   };
 
   return (
-    <div className="skills-container-other">
+    <div className="skills-container-mobile">
       <div className="skills-container">
         {skillsData.map((skill, index) => {
           const isSkillOpen = openSkillIndex === index;
@@ -20,9 +20,12 @@ const SkillsContainer = () => {
               <div className="skills-box-header">
                 <i className={skill.icon}></i>
                 <h3>{skill.name}</h3>
+                <i className={`bx ${isSkillOpen ? "bx-up-arrow-alt" : "bx-down-arrow-alt"}`} onClick={() => toggleSkill(index)}></i>
               </div>
-              <p className="skill-description">{skill.description}</p>
-              <div className="btn-container">
+              <p className="skill-description" style={{ display: displayValue }}>
+                {skill.description}
+              </p>
+              <div className="btn-container" style={{ display: displayValue }}>
                 <a href={skill.link} target="_blank" className="btn" rel="noreferrer">
                   Read More
                 </a>
@@ -35,4 +38,4 @@ const SkillsContainer = () => {
   );
 };
 
-export default SkillsContainer;
+export default SkillsContainerMobile;
