@@ -87,7 +87,7 @@
       }
 
       .btn-container {
-        @include flexbox(flex, row, center, 0, 0);
+        margin: auto;
 
         .btn {
           position: relative;
