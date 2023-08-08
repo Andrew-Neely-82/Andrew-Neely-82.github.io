@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { skillsData } from ".";
 
 const SkillsContainerMobile = () => {
@@ -26,7 +26,7 @@ const SkillsContainerMobile = () => {
               <div className="skills-box-header">
                 <i className={skill.icon}></i>
                 <h3>{skill.name}</h3>
-                <button onClick={() => toggleSkill(index)}>
+                <button onClick={() => toggleSkill(index)} onTouchCancel={() => toggleSkill(index)}>
                   <i className={`bx ${isSkillOpen ? "bx-up-arrow-alt" : "bx-down-arrow-alt"}`}></i>
                 </button>
               </div>

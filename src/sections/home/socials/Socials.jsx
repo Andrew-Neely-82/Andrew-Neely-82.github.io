@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { links } from "../links";
 import "../home.scss";
 
@@ -8,9 +7,9 @@ const Socials = (key) => {
       {links.map((info, key) => {
         return (
           <span className="social-media_icon" key={key}>
-            <Link to={info.href} target="_blank">
+            <a href={info.href} target="_blank" rel="noreferrer">
               <i className={info.class} title={info.title}></i>
-            </Link>
+            </a>
           </span>
         );
       })}
