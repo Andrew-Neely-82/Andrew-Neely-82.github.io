@@ -75,15 +75,21 @@
           margin-left: 1rem;
         }
 
-        .bx:nth-child(3) {
-          @include flexbox(flex, 0, center, center);
-          color: map-get($colors, main-bg);
-          font-size: 4rem;
-          background-color: map-get($colors, main);
-          @include heightWidth(4rem, same);
+        button {
+          margin-inline-start: auto;
+          background: transparent;
+          border: none;
+          
+          .bx:nth-child(3) {
+            @include flexbox(flex, 0, center, center);
+            color: map-get($colors, main-bg);
+            font-size: 4rem;
+            background-color: map-get($colors, main);
+            @include heightWidth(4rem, same);
 
-          border-radius: 100%;
-          margin-left: auto;
+            border-radius: 100%;
+            margin-left: auto;
+          }
         }
       }
 

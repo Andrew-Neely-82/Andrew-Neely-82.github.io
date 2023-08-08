@@ -1,4 +1,4 @@
-import { scroller, closeIcon, highlighter, icon, info, q } from "./index";
+import { scroller, highlighter, info, q } from "./index";
 import React, { useEffect, useState } from "react";
 import "./navbar.scss";
 

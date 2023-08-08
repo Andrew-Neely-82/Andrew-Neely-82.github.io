@@ -20,7 +20,9 @@ const SkillsContainerMobile = () => {
               <div className="skills-box-header">
                 <i className={skill.icon}></i>
                 <h3>{skill.name}</h3>
-                <i className={`bx ${isSkillOpen ? "bx-up-arrow-alt" : "bx-down-arrow-alt"}`} onClick={() => toggleSkill(index)}></i>
+                <button onClick={() => toggleSkill(index)}>
+                  <i className={`bx ${isSkillOpen ? "bx-up-arrow-alt" : "bx-down-arrow-alt"}`}></i>
+                </button>
               </div>
               <p className="skill-description" style={{ display: displayValue }}>
                 {skill.description}
