@@ -5,29 +5,37 @@
 .header {
   @include header;
 
-  .logo {
-    @include logo;
-  }
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-  .bx-menu-alt-right {
-    @include icon;
-  }
-
-  .navbar {
-    @include navbar;
-
-    ul {
-      display: flex;
-
-      @include screen(laptop) {
-        flex-direction: column;
+    .title-container {
+      .title {
+        @include logo;
       }
+    }
 
-      li {
-        list-style: none;
+    .bx {
+      @include icon;
+    }
 
-        a {
-          @include navbar_ul_li_a;
+    .navbar {
+      @include navbar;
+
+      ul {
+        display: flex;
+
+        @include screen(laptop) {
+          flex-direction: column;
+        }
+
+        li {
+          list-style: none;
+
+          a {
+            @include navbar_ul_li_a;
+          }
         }
       }
     }
@@ -36,4 +44,25 @@
 
 .header.sticky {
   border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
+}
+
+svg {
+  .line {
+    transition: all 0.25s ease-in-out;
+    fill: white;
+  }
+
+  .line1.open {
+    transform: rotate(45deg) translate(6px, -7px);
+    width: 16px;
+  }
+
+  .line2.open {
+    opacity: 0;
+  }
+
+  .line3.open {
+    transform: rotate(-45deg) translate(-21px, 1px);
+    width: 16px;
+  }
 }

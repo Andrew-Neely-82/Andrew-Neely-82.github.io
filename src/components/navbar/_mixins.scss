@@ -20,6 +20,7 @@
   font-weight: 600;
   cursor: pointer;
   user-select: none;
+  width: 100%;
 }
 
 @mixin icon {
@@ -36,22 +37,48 @@
 }
 
 @mixin navbar {
+  transition: all 250ms ease;
   @include screen(laptop) {
     display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    padding: 1rem 3%;
-    background: map-get($colors, main-bg);
-    border-top: 0.1rem solid rgba(0 0 0 /0.2);
-    box-shadow: 0 0.5rem 1rem rgba(0 0 0 /0.2);
-    @include transition;
-    z-index: 1000;
   }
 
   &.active {
     display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 2rem 3%;
+    background: rgba(17 17 34 /0.75);
+    backdrop-filter: blur(10px);
+    border-top: 0.1rem solid rgba(0 0 0 /0.2);
+    box-shadow: 0 0.5rem 1rem rgba(0 0 0 /0.2);
+    z-index: 1000;
+    overflow-y: scroll;
+    animation: slide-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+
+    @keyframes slide-left {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  &.not-active {
+    display: none;
+
+    @media (min-width: 1025px) {
+      position: static;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100%;
+      background: transparent;
+      box-shadow: none;
+    }
   }
 }
 

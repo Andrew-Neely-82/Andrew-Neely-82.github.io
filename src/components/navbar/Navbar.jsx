@@ -1,9 +1,12 @@
-import { scroller, highlighter, icon, iconId, info, q } from "./index";
+import { scroller, closeIcon, highlighter, icon, info, q } from "./index";
 import React, { useEffect, useState } from "react";
 import "./navbar.scss";
 
 const Navbar = () => {
   const [activeLink, setActiveLink] = useState(q.home);
+  const [open, setOpen] = useState(false);
+
+  const iconHandler = () => setOpen(!open);
 
   const toggleNavbar = () => {
     const navbar = document.querySelector(q.nav);
@@ -13,6 +16,7 @@ const Navbar = () => {
   const closeNavbar = () => {
     const navbar = document.querySelector(q.nav);
     navbar.classList.remove(q.active);
+    setOpen(!open)
   };
 
   const scrollToSection = scroller(closeNavbar);
@@ -38,16 +42,36 @@ const Navbar = () => {
 
   return (
     <nav className="header">
-      <div className="wrapper" style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <a href="#home" className="logo" title="Portfolio" onClick={scrollToSection}>
-          My Portfolio
-        </a>
-        <i className={icon} id={iconId} onClick={toggleNavbar}></i>
-        <nav className="navbar">
+      <div className="wrapper">
+        <div className="title-container" style={{ display: "flex", width: "20rem" }}>
+          <a href="#home" className="title" onClick={scrollToSection}>
+            My Portfolio
+          </a>
+        </div>
+        {/* <i
+          className={open ? closeIcon : icon}
+          onClick={() => {
+            toggleNavbar();
+            iconHandler();
+          }}></i> */}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          onClick={() => {
+            toggleNavbar();
+            iconHandler();
+          }}
+          viewBox="0 0 24 24">
+          <rect className={`line line1 ${open ? "open" : ""}`} x="4" y="6" width="16" height="2"></rect>
+          <rect className={`line line2 ${open ? "open" : ""}`} x="8" y="11" width="12" height="2"></rect>
+          <rect className={`line line3 ${open ? "open" : ""}`} x="13" y="16" width="7" height="2"></rect>
+        </svg>
+        <div className={`navbar links ${open ? "active" : "not-active"}`}>
           <ul>
             <RenderLinks />
           </ul>
-        </nav>
+        </div>
       </div>
     </nav>
   );

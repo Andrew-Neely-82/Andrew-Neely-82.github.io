@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { dimensions, skillsData } from ".";
+import React, { useState } from "react";
+import { skillsData } from ".";
 
 const SkillsContainerMobile = () => {
   const [openSkillIndex, setOpenSkillIndex] = useState(-1);

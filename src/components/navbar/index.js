@@ -44,6 +44,7 @@ export const q = {
 };
 
 export const icon = "bx bx-menu-alt-right";
+export const closeIcon = "bx bx-x";
 export const iconId = "menu-icon";
 
 export const scrollSettings = { behavior: "smooth", block: "start" };
