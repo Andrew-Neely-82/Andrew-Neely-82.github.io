@@ -16,7 +16,7 @@ const Navbar = () => {
   const closeNavbar = () => {
     const navbar = document.querySelector(q.nav);
     navbar.classList.remove(q.active);
-    setOpen(!open)
+    setOpen(!open);
   };
 
   const scrollToSection = scroller(closeNavbar);
@@ -56,6 +56,7 @@ const Navbar = () => {
           }}></i> */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
+          className="bx"
           width="24"
           height="24"
           onClick={() => {

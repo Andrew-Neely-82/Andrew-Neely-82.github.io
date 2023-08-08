@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.1f210b3d.css",
-    "main.js": "/static/js/main.8aa10d41.js",
+    "main.css": "/static/css/main.05d976a0.css",
+    "main.js": "/static/js/main.9a8c1e7b.js",
     "static/media/GraduationCertificate.png": "/static/media/GraduationCertificate.42c33f4cbdb050a70826.png",
     "static/media/SASS-CERT.jpg": "/static/media/SASS-CERT.d5d1803ba0edc00baaef.jpg",
     "static/media/Python for Absolute Beginners.jpg": "/static/media/Python for Absolute Beginners.e94a671ee09216f773db.jpg",
@@ -9,11 +9,11 @@
     "static/media/react.jpg": "/static/media/react.17d2ed2c9d3666c7a135.jpg",
     "static/media/Me.jpg": "/static/media/Me.f5bcaaa660b7215fb027.jpg",
     "index.html": "/index.html",
-    "main.1f210b3d.css.map": "/static/css/main.1f210b3d.css.map",
-    "main.8aa10d41.js.map": "/static/js/main.8aa10d41.js.map"
+    "main.05d976a0.css.map": "/static/css/main.05d976a0.css.map",
+    "main.9a8c1e7b.js.map": "/static/js/main.9a8c1e7b.js.map"
   },
   "entrypoints": [
-    "static/css/main.1f210b3d.css",
-    "static/js/main.8aa10d41.js"
+    "static/css/main.05d976a0.css",
+    "static/js/main.9a8c1e7b.js"
   ]
 }

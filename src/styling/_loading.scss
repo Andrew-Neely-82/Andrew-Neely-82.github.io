@@ -64,6 +64,7 @@ $animationStepDuration: calc($animationDuration / 7);
     transform: translate(0, 0);
   }
 }
+
 @keyframes gradient1 {
   from {
     stop-color: #4383b8;
@@ -75,6 +76,7 @@ $animationStepDuration: calc($animationDuration / 7);
     stop-color: #4383b8;
   }
 }
+
 @keyframes gradient2 {
   from {
     stop-color: #4aa06c;
@@ -98,11 +100,10 @@ $animationStepDuration: calc($animationDuration / 7);
 
 svg#loading {
   display: block;
-  margin: auto;
+  // margin: auto;
   width: 20rem;
   height: auto;
-  //transform : rotate(180deg);
-  //animation: rotate $animationDuration / 2 linear 0s infinite;
+  // animation: rotate $animationDuration / 2 linear 0s infinite;
 
   #gradient > stop[offset="0%"] {
     animation: gradient1 $animationDuration ease 0s infinite;

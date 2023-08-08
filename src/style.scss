@@ -7,8 +7,10 @@
 
   .LoadingAnimation__ {
     position: absolute;
-    inset: 0 0;
-    margin: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -75%);
+    // margin: auto;
   }
 }
 
@@ -16,15 +18,16 @@
   position: absolute;
   height: fit-content;
   font-size: 1.5em;
-  inset: 60% calc(50% - 25%);
+  inset: 55% calc(50% - 25%);
   text-align: center;
   margin: auto;
+  margin-top: 1rem;
 
   @include screen(iphone12Pro) {
     position: absolute;
     height: fit-content;
     font-size: 1.5em;
-    inset: 65% 25%;
+    inset: 60% 25%;
     text-align: center;
     margin: auto;
   }
