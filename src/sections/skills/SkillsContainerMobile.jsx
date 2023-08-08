@@ -5,7 +5,13 @@ const SkillsContainerMobile = () => {
   const [openSkillIndex, setOpenSkillIndex] = useState(-1);
 
   const toggleSkill = (index) => {
-    setOpenSkillIndex((prevIndex) => (prevIndex === index ? -1 : index));
+    if (openSkillIndex === index) {
+      // If the clicked skill is already open, close it
+      setOpenSkillIndex(-1);
+    } else {
+      // If a different skill is open, close it and open the clicked skill
+      setOpenSkillIndex(index);
+    }
   };
 
   return (
@@ -13,10 +19,10 @@ const SkillsContainerMobile = () => {
       <div className="skills-container">
         {skillsData.map((skill, index) => {
           const isSkillOpen = openSkillIndex === index;
-          const displayValue = isSkillOpen ? "block" : "none";
+          const skillClassName = isSkillOpen ? "skills-box open" : "skills-box";
 
           return (
-            <div className="skills-box" key={index}>
+            <div className={skillClassName} key={index}>
               <div className="skills-box-header">
                 <i className={skill.icon}></i>
                 <h3>{skill.name}</h3>
@@ -24,10 +30,10 @@ const SkillsContainerMobile = () => {
                   <i className={`bx ${isSkillOpen ? "bx-up-arrow-alt" : "bx-down-arrow-alt"}`}></i>
                 </button>
               </div>
-              <p className="skill-description" style={{ display: displayValue }}>
+              <p className="skill-description" style={{ display: isSkillOpen ? "block" : "none" }}>
                 {skill.description}
               </p>
-              <div className="btn-container" style={{ display: displayValue }}>
+              <div className="btn-container" style={{ display: isSkillOpen ? "block" : "none" }}>
                 <a href={skill.link} target="_blank" className="btn" rel="noreferrer">
                   Read More
                 </a>
