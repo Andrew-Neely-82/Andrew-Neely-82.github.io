@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.086dfdcb.css",
-    "main.js": "/static/js/main.7769dc2b.js",
+    "main.js": "/static/js/main.660d05af.js",
     "static/media/GraduationCertificate.png": "/static/media/GraduationCertificate.42c33f4cbdb050a70826.png",
     "static/media/SASS-CERT.jpg": "/static/media/SASS-CERT.d5d1803ba0edc00baaef.jpg",
     "static/media/Python for Absolute Beginners.jpg": "/static/media/Python for Absolute Beginners.e94a671ee09216f773db.jpg",
@@ -10,10 +10,10 @@
     "static/media/Me.jpg": "/static/media/Me.f5bcaaa660b7215fb027.jpg",
     "index.html": "/index.html",
     "main.086dfdcb.css.map": "/static/css/main.086dfdcb.css.map",
-    "main.7769dc2b.js.map": "/static/js/main.7769dc2b.js.map"
+    "main.660d05af.js.map": "/static/js/main.660d05af.js.map"
   },
   "entrypoints": [
     "static/css/main.086dfdcb.css",
-    "static/js/main.7769dc2b.js"
+    "static/js/main.660d05af.js"
   ]
 }

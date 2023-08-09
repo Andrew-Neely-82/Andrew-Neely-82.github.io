@@ -16,8 +16,12 @@
       }
     }
 
-    svg {
-      @include icon;
+    button {
+      background: none;
+      
+      svg {
+        @include icon;
+      }
     }
 
     .navbar {
@@ -47,6 +51,8 @@
 }
 
 svg {
+  cursor: pointer;
+
   .line {
     transition: all 0.25s ease-in-out;
     fill: white;

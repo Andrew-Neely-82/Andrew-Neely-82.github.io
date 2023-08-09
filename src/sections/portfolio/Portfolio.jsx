@@ -3,11 +3,28 @@ import { SectionHeading } from "../../components/customHTML/export.js";
 import "./portfolio.scss";
 
 const Portfolio = () => {
+  const props = {
+    section: {
+      className: "Portfolio__",
+      id: "portfolio",
+    },
+    div: {
+      className: "wrapper",
+    },
+    sectionHeading: {
+      text: "Latest",
+      span: "Projects",
+    },
+    div2: {
+      className: "Portfolio__wrapper",
+    },
+  };
+  
   return (
-    <section className="Portfolio__" id="portfolio">
-      <div className="wrapper">
-        <SectionHeading text="Latest" span="Projects" />
-        <div className="Portfolio__wrapper">
+    <section {...props.section}>
+      <div {...props.div}>
+        <SectionHeading {...props.sectionHeading} />
+        <div {...props.div2}>
           <PortfolioContainer />
         </div>
       </div>

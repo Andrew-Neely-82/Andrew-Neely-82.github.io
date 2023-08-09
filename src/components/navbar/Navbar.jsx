@@ -1,12 +1,10 @@
-import { scroller, highlighter, info, q } from "./index";
+import { scroller, highlighter, info, q, propsNav } from "./index";
 import React, { useEffect, useState } from "react";
 import "./navbar.scss";
 
 const Navbar = () => {
   const [activeLink, setActiveLink] = useState(q.home);
   const [open, setOpen] = useState(false);
-
-  const iconHandler = () => setOpen(!open);
 
   const toggleNavbar = () => {
     const navbar = document.querySelector(q.nav);
@@ -19,8 +17,10 @@ const Navbar = () => {
     setOpen(!open);
   };
 
+  const iconHandler = () => setOpen(!open);
   const scrollToSection = scroller(closeNavbar);
   const highlightActiveNavLink = highlighter(setActiveLink);
+  const props = propsNav(toggleNavbar, iconHandler, open);
 
   useEffect(() => {
     highlightActiveNavLink();
@@ -44,31 +44,23 @@ const Navbar = () => {
     <nav className="header">
       <div className="wrapper">
         <div className="title-container" style={{ display: "flex", width: "20rem" }}>
-          <a href="#home" className="title" onClick={scrollToSection}>
+          <a href="#home" className="title">
             My Portfolio
           </a>
         </div>
-        {/* <i
-          className={open ? closeIcon : icon}
+        <button
           onClick={() => {
             toggleNavbar();
             iconHandler();
-          }}></i> */}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="bx"
-          width="24"
-          height="24"
-          onClick={() => {
-            toggleNavbar();
-            iconHandler();
-          }}
-          viewBox="0 0 24 24">
-          <rect className={`line line1 ${open ? "open" : ""}`} x="4" y="6" width="16" height="2"></rect>
-          <rect className={`line line2 ${open ? "open" : ""}`} x="8" y="11" width="12" height="2"></rect>
-          <rect className={`line line3 ${open ? "open" : ""}`} x="13" y="16" width="7" height="2"></rect>
-        </svg>
-        <div className={`navbar links ${open ? "active" : "not-active"}`}>
+          }}>
+          <svg {...props.svg}>
+            <rect {...props.rect1} />
+            <rect {...props.rect2} />
+            <rect {...props.rect3} />
+          </svg>
+        </button>
+
+        <div {...props.menu}>
           <ul>
             <RenderLinks />
           </ul>
@@ -79,3 +71,10 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+// {/* <i
+//   className={open ? closeIcon : icon}
+//   onClick={() => {
+//     toggleNavbar();
+//     iconHandler();
+//   }}></i> */}

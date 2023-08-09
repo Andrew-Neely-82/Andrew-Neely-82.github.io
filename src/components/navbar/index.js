@@ -81,3 +81,24 @@ export const info = [
     a: `Contact`,
   },
 ];
+
+export const propsNav = (toggleNavbar, iconHandler, open) => {
+  return {
+    a: { href: "#home", className: "title" },
+    svg: {
+      xmlns: "http://www.w3.org/2000/svg",
+      className: "bx",
+      height: "24",
+      width: "24",
+      onClick: () => {
+        toggleNavbar();
+        iconHandler();
+      },
+      viewBox: "0 0 24 24",
+    },
+    rect1: { className: `line line1 ${open ? "open" : ""}`, x: "4", y: "6", width: "16", height: "2" },
+    rect2: { className: `line line2 ${open ? "open" : ""}`, x: "8", y: "11", width: "12", height: "2" },
+    rect3: { className: `line line3 ${open ? "open" : ""}`, x: "13", y: "16", width: "7", height: "2" },
+    menu: { className: `navbar links ${open ? "active" : "not-active"}` },
+  };
+};
