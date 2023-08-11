@@ -1,3 +1,20 @@
+export const props = {
+  section: {
+    className: "Portfolio__",
+    id: "portfolio",
+  },
+  div: {
+    className: "wrapper",
+  },
+  sectionHeading: {
+    text: "Latest",
+    span: "Projects",
+  },
+  div2: {
+    className: "Portfolio__wrapper",
+  },
+};
+
 export const portfolioBoxes = [
   {
     img: "https://neilpatel.com/wp-content/uploads/2021/07/social-media-profile_featured-image.png",

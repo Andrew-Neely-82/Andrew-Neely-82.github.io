@@ -25,6 +25,10 @@
   @include flexbox(grid, auto, 0, center);
   grid-template-columns: repeat(3, 1fr);
   gap: 2.5rem;
+
+  @media (max-width: 414px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @mixin Portfolio__box {
@@ -71,6 +75,10 @@
   border-radius: 10em;
   filter: drop-shadow(0 0 0.5em rgba(0 0 0/ 0.75));
   transition: 1s ease-in-out all;
+
+  @media (max-width: 414px) {
+    font-size: 125% !important;
+  }
 
   @include screen(duo) {
     font-size: 2em;
