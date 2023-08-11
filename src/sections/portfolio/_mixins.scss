@@ -23,7 +23,7 @@
 
 @mixin Portfolio__container {
   @include flexbox(grid, auto, 0, center);
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 2.5rem;
 }
 
@@ -65,7 +65,7 @@
   width: max-content;
   transform: translate(-50%, -50%);
   background: rgba(0 0 0/ 0.5);
-  font-size: 5em;
+  font-size: 200%;
   padding: 1rem 2rem;
   border: 0.125em solid white;
   border-radius: 10em;
@@ -79,7 +79,6 @@
   @include screen(fold) {
     font-size: 1.25em;
   }
-
 }
 
 @mixin Portfolio__box_img {

@@ -24,34 +24,6 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 
-    // TODO: Make more symmetrical
-
-    &:before {
-      content: "";
-      position: absolute;
-      width: 42%;
-      height: 35%;
-      border-top: 3px dotted map-get($colors, main);
-      border-left: 3px dotted map-get($colors, main);
-      border-radius: 5rem 0 0 0;
-      // transform: translate(-3rem, -28rem); // save these for later
-      // transform: translate(-3rem, -94%); // save these for later
-      transform: translate(-2em, -16vh);
-      z-index: -1;
-    }
-
-    &:after {
-      content: "";
-      position: absolute;
-      width: 40%;
-      height: 50%;
-      border-bottom: 3px dotted map-get($colors, main);
-      border-right: 3px dotted map-get($colors, main);
-      border-radius: 0 0 5rem 0;
-      transform: translate(42.75vw, 8.75vh);
-      z-index: -1;
-    }
-
     .skills-box {
       @include flexbox(flex, column, space-evenly);
       @include heightWidth(40rem !important, auto !important);
@@ -79,7 +51,7 @@
           margin-inline-start: auto;
           background: transparent;
           border: none;
-          
+
           .bx:nth-child(3) {
             @include flexbox(flex, 0, center, center);
             color: map-get($colors, main-bg);
@@ -176,6 +148,34 @@
 @import "./media";
 
 .skills-container-other {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -2rem;
+    left: -2rem;
+    height: 19rem;
+    width: 50%;
+    border: 4px dashed map-get($colors, main);
+    border-right: 0;
+    border-bottom: 0;
+    border-radius: 3rem 0 0 0;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -2rem;
+    right: -2rem;
+    height: 20rem;
+    width: 50%;
+    border: 4px dashed map-get($colors, main);
+    border-top: 0;
+    border-left: 0;
+    border-radius: 0 0 3rem 0;
+  }
+
   @media (max-width: 788px) {
     display: none;
   }
