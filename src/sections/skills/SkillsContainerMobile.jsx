@@ -33,11 +33,11 @@ const SkillsContainerMobile = () => {
               <p className="skill-description" style={{ display: isSkillOpen ? "block" : "none" }}>
                 {skill.description}
               </p>
-              <div className="btn-container" style={{ display: isSkillOpen ? "block" : "none" }}>
+              {/* <div className="btn-container" style={{ display: isSkillOpen ? "block" : "none" }}>
                 <a href={skill.link} target="_blank" className="btn" rel="noreferrer">
                   Read More
                 </a>
-              </div>
+              </div> */}
             </div>
           );
         })}

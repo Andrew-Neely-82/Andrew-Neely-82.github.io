@@ -1,6 +1,6 @@
 import { SectionHeading } from "../../components/customHTML/export";
-import SkillsContainer from "./SkillsContainer";
 import SkillsContainerMobile from "./SkillsContainerMobile";
+import SkillsContainer from "./SkillsContainer";
 import "./skills.scss";
 
 const Skills = () => {

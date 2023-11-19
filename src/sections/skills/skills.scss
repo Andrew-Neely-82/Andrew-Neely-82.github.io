@@ -26,7 +26,7 @@
 
     .skills-box {
       @include flexbox(flex, column, space-evenly);
-      @include heightWidth(40rem !important, auto !important);
+      @include heightWidth(30rem !important, auto !important);
       background: radial-gradient(rgba(0 0 0 / 0.1), map-get($colors, second-bg));
       @include borderAndRad(0.2rem solid map-get($colors, main), 2rem);
       @include padmar(3rem 2rem 4rem, 0);
