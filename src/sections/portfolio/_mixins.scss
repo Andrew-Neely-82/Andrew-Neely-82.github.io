@@ -34,6 +34,7 @@
 @mixin Portfolio__box {
   position: relative;
   @include flexbox(flex);
+  height: 25rem;
   @include borderAndRad(0.4rem solid map-get($colors, main), 2rem);
   box-shadow: 0 0 1rem map-get($colors, main-bg);
   overflow: hidden;
