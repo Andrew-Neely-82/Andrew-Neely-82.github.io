@@ -90,9 +90,10 @@
 }
 
 @mixin Portfolio__box_img {
-  @include heightWidth(100%, same);
+  @include heightWidth(auto, 100%);
   @include transition;
   cursor: pointer;
+  object-fit: cover;
 
   &:hover {
     transform: scale(1.1);

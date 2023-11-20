@@ -1,5 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
 import { useForm, ValidationError } from "@formspree/react";
+import React, { useEffect, useRef, useState } from "react";
+import { checkVisibilityFunc } from "./index";
 
 function useAnimatedPlaceholders(refs) {
   const [animated, setAnimated] = useState(false);
@@ -32,18 +33,7 @@ function useAnimatedPlaceholders(refs) {
       }
     };
 
-    const checkVisibility = () => {
-      const contactSection = document.getElementById("contact");
-      if (!contactSection) return;
-
-      const rect = contactSection.getBoundingClientRect();
-      const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-      const isVisible = rect.top <= windowHeight && rect.top + rect.height >= 0;
-
-      if (isVisible) {
-        animatePlaceholders();
-      }
-    };
+    const checkVisibility = checkVisibilityFunc(animatePlaceholders);
 
     checkVisibility();
     document.addEventListener("scroll", checkVisibility);
@@ -53,7 +43,6 @@ function useAnimatedPlaceholders(refs) {
     };
   }, [refs, animated]);
 }
-
 
 function ContactForm() {
   const [state, handleSubmit] = useForm("xjvqdjpk");
