@@ -9,9 +9,10 @@ export const links = [
     class: "bx bxl-linkedin",
     title: "My LinkedIn",
   },
-  {
-    href: "https://alumni.codeup.com/candidate/andrew-neely/",
-    class: "bx bxs-school",
-    title: "My Codeup Alumni Page",
-  },
+  // * Codeup no longer exists
+  // {
+  //   href: "https://alumni.codeup.com/candidate/andrew-neely/",
+  //   class: "bx bxs-school",
+  //   title: "My Codeup Alumni Page",
+  // },
 ];

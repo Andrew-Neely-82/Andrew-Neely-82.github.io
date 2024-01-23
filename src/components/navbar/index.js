@@ -102,3 +102,11 @@ export const propsNav = (toggleNavbar, iconHandler, open) => {
     menu: { className: `navbar links ${open ? "active" : "not-active"}` },
   };
 };
+
+export const closeNavbarFunc = (setOpen, open) => {
+  return () => {
+    const navbar = document.querySelector(q.nav);
+    navbar.classList.remove(q.active);
+    setOpen(!open);
+  };
+};

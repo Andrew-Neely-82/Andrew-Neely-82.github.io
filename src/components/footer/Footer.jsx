@@ -32,7 +32,7 @@ const Footer = () => {
         </div>
         <div className="footer-iconTop">
           <a href="#home">
-            <i className="bx bx-up-arrow-alt"></i>
+            <i className="bx bx-up-arrow-alt"/>
           </a>
         </div>
       </div>

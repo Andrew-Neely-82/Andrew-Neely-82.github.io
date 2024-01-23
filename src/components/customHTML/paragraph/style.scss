@@ -2,13 +2,13 @@
 @import "../../../styling/mixins";
 
 .Paragraph__ {
+  @include heightWidth(20rem, 100%);
   background-color: #112;
   font-size: 1.6rem;
-  line-height: 1.6;
+  line-height: 2.5rem;
   text-indent: 1em;
   @include borderAndRad(0.6rem solid map-get($colors, main), 2rem);
   @include padmar(2rem, 1rem auto);
-  user-select: none;
 
   &::before,
   &::after {

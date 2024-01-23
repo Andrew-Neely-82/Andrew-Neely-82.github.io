@@ -1,4 +1,4 @@
-import { scroller, highlighter, info, q, propsNav } from "./index";
+import { scroller, highlighter, info, q, propsNav, closeNavbarFunc } from "./index";
 import React, { useEffect, useState } from "react";
 import "./navbar.scss";
 
@@ -11,12 +11,7 @@ const Navbar = () => {
     navbar.classList.toggle(q.active);
   };
 
-  const closeNavbar = () => {
-    const navbar = document.querySelector(q.nav);
-    navbar.classList.remove(q.active);
-    setOpen(!open);
-  };
-
+  const closeNavbar = closeNavbarFunc(setOpen, open);
   const iconHandler = () => setOpen(!open);
   const scrollToSection = scroller(closeNavbar);
   const highlightActiveNavLink = highlighter(setActiveLink);
@@ -40,6 +35,11 @@ const Navbar = () => {
     });
   };
 
+  const onClickFunc = () => {
+    toggleNavbar();
+    iconHandler();
+  };
+
   return (
     <nav className="header">
       <div className="wrapper">
@@ -48,18 +48,13 @@ const Navbar = () => {
             My Portfolio
           </a>
         </div>
-        <button
-          onClick={() => {
-            toggleNavbar();
-            iconHandler();
-          }}>
+        <button onClick={onClickFunc}>
           <svg {...props.svg}>
             <rect {...props.rect1} />
             <rect {...props.rect2} />
             <rect {...props.rect3} />
           </svg>
         </button>
-
         <div {...props.menu}>
           <ul>
             <RenderLinks />
@@ -71,10 +66,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-// {/* <i
-//   className={open ? closeIcon : icon}
-//   onClick={() => {
-//     toggleNavbar();
-//     iconHandler();
-//   }}></i> */}

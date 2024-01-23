@@ -116,20 +116,7 @@
 }
 
 @mixin intro-details_p {
-  @include heightWidth(20rem, 100%);
-  font-size: 1.6rem;
-  background-color: #112;
-  @include borderAndRad(0.6rem solid map-get($colors, main), 2rem);
   @include padmar(2rem, 0);
-  line-height: 3rem;
-  text-indent: 1em;
-
-  &::before {
-    content: '"';
-  }
-  &::after {
-    content: '"';
-  }
 
   @include screen(ipadPro) {
     overflow-y: scroll;
