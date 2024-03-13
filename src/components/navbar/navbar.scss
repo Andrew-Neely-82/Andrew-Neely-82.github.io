@@ -18,7 +18,7 @@
 
     button {
       background: none;
-      
+
       svg {
         @include icon;
       }
@@ -50,25 +50,64 @@
   border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
 }
 
-svg {
+// * Old menu toggle
+// svg {
+//   cursor: pointer;
+
+//   .line {
+//     transition: all 0.25s ease-in-out;
+//     fill: white;
+//   }
+
+//   .line1.open {
+//     transform: rotate(45deg) translate(6px, -7px);
+//     width: 16px;
+//   }
+
+//   .line2.open {
+//     opacity: 0;
+//   }
+
+//   .line3.open {
+//     transform: rotate(-45deg) translate(-21px, 1px);
+//     width: 16px;
+//   }
+// }
+
+.hamburger {
   cursor: pointer;
 
-  .line {
-    transition: all 0.25s ease-in-out;
-    fill: white;
+  input {
+    display: none;
+
+    &:checked + svg {
+      transform: rotate(-45deg);
+
+      .line-top-bottom {
+        stroke-dasharray: 20 300;
+        stroke-dashoffset: -32.42;
+      }
+    }
   }
 
-  .line1.open {
-    transform: rotate(45deg) translate(6px, -7px);
-    width: 16px;
-  }
+  svg {
+    /* The size of the SVG defines the overall size */
+    height: 3em;
+    /* Define the transition for transforming the SVG */
+    transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  .line2.open {
-    opacity: 0;
-  }
+    .line {
+      fill: none;
+      stroke: white;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 3;
+      /* Define the transition for transforming the Stroke */
+      transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-  .line3.open {
-    transform: rotate(-45deg) translate(-21px, 1px);
-    width: 16px;
+    .line-top-bottom {
+      stroke-dasharray: 12 63;
+    }
   }
 }
