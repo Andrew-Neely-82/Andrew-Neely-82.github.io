@@ -110,4 +110,8 @@
       stroke-dasharray: 12 63;
     }
   }
+
+  @media (width >= 1025px) {
+    display: none;
+  }
 }
